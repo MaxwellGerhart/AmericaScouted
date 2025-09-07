@@ -114,7 +114,7 @@ body.light-theme .theme-toggle, body.light-theme .theme-icon { color: #ffffff; }
 
 /* ================= Light Theme Overrides ================= */
 body.light-theme {
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     color: #1a1d21;
 }
 
@@ -137,8 +137,8 @@ body.light-theme .info-panel,
 body.light-theme .coverage-info,
 body.light-theme .season-info {
     background-color: #ffffff;
-    border-color: #e2e8f0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    border-color: #e7e7e7;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.04);
 }
 
 body.light-theme .match-card { border: 1px solid #e2e8f0; }
@@ -166,7 +166,7 @@ body.light-theme .match-date-header { color: #003FA3; }
 body.light-theme .team-info .team-name { color: #1a1d21; }
 body.light-theme .team-conference { color: #64748b; }
 body.light-theme .results-info,
-body.light-theme .subtitle { color: #4b5563; }
+body.light-theme .subtitle { color: #4e4e4e; }
 
 /* Pagination */
 body.light-theme .page-btn { background-color: #ffffff; color: #1a1d21; border: 1px solid #d1d9e2; }
