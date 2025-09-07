@@ -1,7 +1,10 @@
 Flask==2.3.3
-pandas==2.1.1
+# Upgrade pandas for Python 3.13 wheel availability
+pandas==2.2.3
+# Explicit numpy pin with Py 3.13 wheels
+numpy==2.1.1
 gunicorn==21.2.0
 requests==2.31.0
 unidecode==1.3.6
 rapidfuzz==3.2.0
-scipy==1.11.3
+# Removed scipy (no longer needed after ratings feature removal). Re-add if needed.
