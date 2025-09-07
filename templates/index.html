@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}America Scouted - Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="hero-section">
+        <h1>America Scouted</h1>
+        <p>Your premier destination for NCAA soccer statistics and player analytics</p>
+        
+        <div class="quick-links">
+            <a href="{{ url_for('players', gender='men') }}" class="btn btn-primary">
+                View Men's Players
+            </a>
+            <a href="{{ url_for('players', gender='women') }}" class="btn btn-primary">
+                View Women's Players
+            </a>
+        </div>
+        
+        {% if weeks %}
+        <div class="season-info">
+            <h3>2025 Season Coverage</h3>
+            <p>Data available from {{ weeks[0].display }} through {{ weeks[-1].display }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

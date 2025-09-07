@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}{{ gender.title() }}'s Players - America Scouted{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="players-header">
+        <div class="page-title">
+            <h1>{{ gender.title() }}'s Players</h1>
+            {% if current_week_display %}
+            <p class="subtitle">Data through {{ current_week_display }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="gender-toggle">
+            <a href="{{ url_for('players', gender='men', week=current_week, position=position, team=team, division=division, search=search, sort=sort_by) }}" 
+               class="gender-btn {% if gender == 'men' %}active{% endif %}">Men</a>
+            <a href="{{ url_for('players', gender='women', week=current_week, position=position, team=team, division=division, search=search, sort=sort_by) }}" 
+               class="gender-btn {% if gender == 'women' %}active{% endif %}">Women</a>
+        </div>
+    </div>
+
+    <div class="filters-section">
+        <form method="GET" class="filters-form">
+            <input type="hidden" name="gender" value="{{ gender }}">
+            
+            <div class="filter-group">
+                <label for="search">Search Player:</label>
+                <input type="text" name="search" id="search" class="filter-input" 
+                       placeholder="Enter player name..." value="{{ search or '' }}">
+            </div>
+            
+            <div class="filter-group">
+                <label for="week">Week Ending:</label>
+                <select name="week" id="week" class="filter-select">
+                    {% for week in weeks %}
+                    <option value="{{ week.code }}" {% if week.code == current_week %}selected{% endif %}>
+                        {{ week.display }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="position">Position:</label>
+                <select name="position" id="position" class="filter-select">
+                    <option value="all" {% if position == 'all' %}selected{% endif %}>All Positions</option>
+                    {% for pos in positions %}
+                    <option value="{{ pos }}" {% if pos == position %}selected{% endif %}>{{ pos }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="team">Team:</label>
+                <select name="team" id="team" class="filter-select">
+                    <option value="all" {% if team == 'all' %}selected{% endif %}>All Teams</option>
+                    {% for t in teams %}
+                    <option value="{{ t }}" {% if t == team %}selected{% endif %}>{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="division">Division:</label>
+                <select name="division" id="division" class="filter-select">
+                    <option value="all" {% if division == 'all' %}selected{% endif %}>All Divisions</option>
+                    {% for div in divisions %}
+                    <option value="{{ div }}" {% if div == division %}selected{% endif %}>{{ div.upper() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="sort">Sort by:</label>
+                <select name="sort" id="sort" class="filter-select">
+                    <option value="Points" {% if sort_by == 'Points' %}selected{% endif %}>Points</option>
+                    <option value="Goals" {% if sort_by == 'Goals' %}selected{% endif %}>Goals</option>
+                    <option value="Assists" {% if sort_by == 'Assists' %}selected{% endif %}>Assists</option>
+                    <option value="Shots" {% if sort_by == 'Shots' %}selected{% endif %}>Shots</option>
+                    <option value="Minutes Played" {% if sort_by == 'Minutes Played' %}selected{% endif %}>Minutes</option>
+                    <option value="Saves" {% if sort_by == 'Saves' %}selected{% endif %}>Saves</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </form>
+    </div>
+
+    {% if players %}
+    <div class="results-info">
+        <p>Showing {{ players|length }} of {{ total_players }} players</p>
+    </div>
+
+    <div class="players-table-wrapper">
+        <table class="players-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th class="sortable" data-column="Name">
+                        Name
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Name' and sort_order == 'desc' else '↑' if sort_by == 'Name' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Dominant Position">
+                        Position
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Dominant Position' and sort_order == 'desc' else '↑' if sort_by == 'Dominant Position' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Team">
+                        Team
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Team' and sort_order == 'desc' else '↑' if sort_by == 'Team' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Division">
+                        Division
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Division' and sort_order == 'desc' else '↑' if sort_by == 'Division' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Points">
+                        Points
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Points' and sort_order == 'desc' else '↑' if sort_by == 'Points' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Goals">
+                        Goals
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Goals' and sort_order == 'desc' else '↑' if sort_by == 'Goals' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Assists">
+                        Assists
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Assists' and sort_order == 'desc' else '↑' if sort_by == 'Assists' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Shots">
+                        Shots
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Shots' and sort_order == 'desc' else '↑' if sort_by == 'Shots' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Shots On Target">
+                        SOT
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Shots On Target' and sort_order == 'desc' else '↑' if sort_by == 'Shots On Target' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Minutes Played">
+                        Minutes
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Minutes Played' and sort_order == 'desc' else '↑' if sort_by == 'Minutes Played' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Matches Played">
+                        Matches
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Matches Played' and sort_order == 'desc' else '↑' if sort_by == 'Matches Played' else '' }}</span>
+                    </th>
+                    {% if sort_by == 'Saves' %}
+                    <th class="sortable" data-column="Saves">
+                        Saves
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Saves' and sort_order == 'desc' else '↑' if sort_by == 'Saves' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Goals Against">
+                        GA
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Goals Against' and sort_order == 'desc' else '↑' if sort_by == 'Goals Against' else '' }}</span>
+                    </th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr class="player-row">
+                    <td class="rank">{{ loop.index + (current_page - 1) * 50 }}</td>
+                    <td class="player-name">
+                        <div class="name-container">
+                            <span class="name">{{ player.Name }}</span>
+                        </div>
+                    </td>
+                    <td class="position">
+                        <span class="position-badge {{ player.position_color }}">
+                            {{ player.get('Dominant Position', 'Unknown') }}
+                        </span>
+                    </td>
+                    <td class="team">{{ player.Team }}</td>
+                    <td class="division">
+                        <span class="division-badge">{{ player.Division.upper() }}</span>
+                    </td>
+                    <td class="points">{{ player.Points|int }}</td>
+                    <td class="goals">{{ player.Goals|int }}</td>
+                    <td class="assists">{{ player.Assists|int }}</td>
+                    <td class="shots">{{ player.Shots|int }}</td>
+                    <td class="sot">{{ player.get('Shots On Target', 0)|int }}</td>
+                    <td class="minutes">{{ player.get('Minutes Played', 0)|int }}</td>
+                    <td class="matches">{{ player.get('Matches Played', 0)|int }}</td>
+                    {% if sort_by == 'Saves' %}
+                    <td class="saves">{{ player.get('Saves', 0)|int }}</td>
+                    <td class="ga">{{ player.get('Goals Against', 0)|int }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    {% if total_pages > 1 %}
+    <div class="pagination">
+        {% if current_page > 1 %}
+        <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=current_page-1) }}" class="page-btn">Previous</a>
+        {% endif %}
+        
+        {% for page_num in range(1, total_pages + 1) %}
+            {% if page_num == current_page %}
+            <span class="page-btn active">{{ page_num }}</span>
+            {% elif page_num <= 3 or page_num > total_pages - 3 or (page_num >= current_page - 1 and page_num <= current_page + 1) %}
+            <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=page_num) }}" class="page-btn">{{ page_num }}</a>
+            {% elif page_num == 4 or page_num == total_pages - 3 %}
+            <span class="page-btn dots">...</span>
+            {% endif %}
+        {% endfor %}
+        
+        {% if current_page < total_pages %}
+        <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=current_page+1) }}" class="page-btn">Next</a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="no-data">
+        <h3>No players found</h3>
+        <p>Try adjusting your filters or selecting a different week.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

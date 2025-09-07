@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ gender.title() }}'s Matches - America Scouted{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="players-header">
+        <div class="page-title">
+            <h1>{{ gender.title() }}'s Matches</h1>
+            {% if current_week_display %}
+            <p class="subtitle">Data through {{ current_week_display }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="gender-toggle">
+            <a href="{{ url_for('matches', gender='men', division=division, conference=conference) }}" 
+               class="gender-btn {% if gender == 'men' %}active{% endif %}">Men</a>
+            <a href="{{ url_for('matches', gender='women', division=division, conference=conference) }}" 
+               class="gender-btn {% if gender == 'women' %}active{% endif %}">Women</a>
+        </div>
+    </div>
+
+    <div class="filters-section">
+        <form method="GET" class="filters-form">
+            <input type="hidden" name="gender" value="{{ gender }}">
+            
+            <div class="filter-group">
+                <label for="division">Division:</label>
+                <select name="division" id="division" class="filter-select">
+                    <option value="all" {% if division == 'all' %}selected{% endif %}>All Divisions</option>
+                    {% for div in divisions %}
+                    <option value="{{ div }}" {% if div == division %}selected{% endif %}>{{ div.upper() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="conference">Conference:</label>
+                <select name="conference" id="conference" class="filter-select">
+                    <option value="all" {% if conference == 'all' %}selected{% endif %}>All Conferences</option>
+                    {% for conf in conferences %}
+                    <option value="{{ conf }}" {% if conf == conference %}selected{% endif %}>{{ conf }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </form>
+    </div>
+
+    {% if matches_by_date %}
+    <div class="results-info">
+        <p>Showing {{ total_matches }} matches</p>
+    </div>
+
+    {% for date, matches in matches_by_date.items() %}
+    <div class="match-date-section">
+        <h3 class="match-date-header">{{ date }}</h3>
+        <div class="match-cards-grid">
+            {% for match in matches %}
+            <div class="match-card">
+                <div class="match-status">
+                    {% if match.status == 'live' %}
+                    <span class="live-indicator">LIVE</span>
+                    {% else %}
+                    <span class="match-time">{{ match.start_time }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="match-teams">
+                    <div class="team-row">
+                        <div class="team-info">
+                            <span class="team-name">{{ match.home_team_short or 'TBD' }}</span>
+                            <span class="team-conference">{{ match.home_conference or '' }}</span>
+                        </div>
+                        <div class="team-score">{{ match.home_team_score }}</div>
+                    </div>
+                    
+                    <div class="team-row">
+                        <div class="team-info">
+                            <span class="team-name">{{ match.away_team_short or 'TBD' }}</span>
+                            <span class="team-conference">{{ match.away_conference or '' }}</span>
+                        </div>
+                        <div class="team-score">{{ match.away_team_score }}</div>
+                    </div>
+                </div>
+                
+                <div class="match-division">
+                    {% if match.division and match.division != '' and match.division != 'nan' %}
+                    <span class="division-badge">{{ match.division.upper() }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% else %}
+    <div class="no-data">
+        <h3>No matches found</h3>
+        <p>Try adjusting your filters or check back later for match data.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

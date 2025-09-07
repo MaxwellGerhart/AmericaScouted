@@ -1,0 +1,292 @@
+gender,division,game_id,boxscore_id,date,status,start_time,home_team_full,home_team_short,home_team_score,home_record,home_conference,away_team_full,away_team_short,away_team_score,away_record,away_conference,home_shots,home_sot,away_shots,away_sot
+women,d1,6393000,6463219,08-14-2025,final,12:00PM ET,Mercyhurst University,Mercyhurst,1,(0-0-1),NEC,Northern Kentucky University,Northern Ky.,1,(0-0-1),Horizon,12.0,6.0,15.0,10.0
+women,d1,357049,6467380,08-14-2025,final,12:00PM ET,Alabama State University,Alabama St.,2,(0-0-1),SWAC,Mobile,Mobile,2,(0-0-0),IND,10.0,4.0,8.0,4.0
+women,d1,6387012,6462486,08-14-2025,final,01:00PM ET,American University,American,0,(0-1-0),Patriot,George Washington University,George Washington,1,(1-0-0),Atlantic 10,10.0,2.0,4.0,3.0
+women,d1,6397128,6464088,08-14-2025,final,01:00PM ET,Central Michigan University,Central Mich.,0,(0-1-0),MAC,Butler University,Butler,2,(1-0-0),Big East,3.0,1.0,20.0,10.0
+women,d1,6412043,6466739,08-14-2025,final,02:00PM ET,East Carolina University,East Carolina,1,(0-1-0),American,Liberty University,Liberty,3,(1-0-0),CUSA,9.0,2.0,18.0,10.0
+women,d1,6391318,6463100,08-14-2025,final,03:00PM ET,Eastern Kentucky University,Eastern Ky.,3,(1-0-0),ASUN,University of Toledo,Toledo,1,(0-1-0),MAC,11.0,6.0,18.0,12.0
+women,d1,341923,6463881,08-14-2025,final,03:00PM ET,University of North Carolina Wilmington,UNCW,0,(0-1-0),CAA,The University of North Carolina at Charlotte,Charlotte,2,(1-0-0),American,6.0,2.0,8.0,4.0
+women,d1,6395454,6463692,08-14-2025,final,04:00PM ET,Villanova University,Villanova,1,(0-1-0),Big East,University of Michigan,Michigan,2,(1-0-0),Big Ten,9.0,3.0,16.0,6.0
+women,d1,6402017,6464988,08-14-2025,final,04:00PM ET,"University of Massachusetts, Amherst",Massachusetts,1,(1-0-0),MAC,St. John's University (New York),St. John's (NY),0,(0-1-0),Big East,13.0,5.0,5.0,2.0
+women,d1,6409757,6466462,08-14-2025,final,04:00PM ET,Siena University,Siena,2,(1-0-0),MAAC,Lafayette College,Lafayette,0,(0-1-0),Patriot,8.0,5.0,7.0,1.0
+women,d1,352334,6467010,08-14-2025,final,04:00PM ET,Robert Morris University,Robert Morris,0,(0-1-0),Horizon,U.S. Naval Academy,Navy,3,(1-0-0),Patriot,7.0,3.0,11.0,6.0
+women,d1,6390140,6478594,08-14-2025,final,04:00PM ET,Ohio University,Ohio,2,(1-0-0),MAC,Western Kentucky University,Western Ky.,0,(0-1-0),CUSA,12.0,7.0,7.0,3.0
+women,d1,6405969,6465898,08-14-2025,final,04:30PM ET,Eastern Michigan University,Eastern Mich.,0,(0-1-0),MAC,University of Cincinnati,Cincinnati,4,(1-0-0),Big 12,6.0,2.0,19.0,8.0
+women,d1,6389842,6462885,08-14-2025,final,05:00PM ET,University of South Dakota,South Dakota,1,(0-0-1),Summit League,University of Northern Iowa,UNI,1,(0-0-1),MVC,21.0,6.0,9.0,5.0
+women,d1,6391865,6463141,08-14-2025,final,05:00PM ET,Arkansas State University,Arkansas St.,2,(1-0-0),Sun Belt,Texas A&M University-Corpus Christi,A&M-Corpus Christi,1,(0-1-0),Southland,17.0,8.0,14.0,4.0
+women,d1,6400725,6464818,08-14-2025,final,05:00PM ET,University of Richmond,Richmond,5,(1-0-0),Atlantic 10,Virginia Military Institute,VMI,0,(0-1-0),SoCon,19.0,13.0,10.0,8.0
+women,d1,6405962,6465896,08-14-2025,final,05:00PM ET,DePaul University,DePaul,6,(1-0-0),Big East,Chicago State University,Chicago St.,2,(0-1-0),NEC,23.0,12.0,7.0,3.0
+women,d1,6408992,6466410,08-14-2025,final,05:00PM ET,Viterbo,Viterbo,0,(0-0-0),IND,University of St. Thomas (Minnesota),St. Thomas (MN),5,(1-0-0),Summit League,6.0,5.0,19.0,11.0
+women,d1,6411967,6466732,08-14-2025,final,05:00PM ET,Murray State University,Murray St.,2,(1-0-0),MVC,Troy University,Troy,0,(0-1-0),Sun Belt,21.0,8.0,10.0,4.0
+women,d1,6389758,6462844,08-14-2025,final,06:00PM ET,Canisius University,Canisius,0,(0-1-0),MAAC,"University at Buffalo, the State University of New York",Buffalo,3,(1-0-0),MAC,4.0,3.0,17.0,12.0
+women,d1,6391101,6463075,08-14-2025,final,06:00PM ET,University of Louisiana Monroe,ULM,4,(1-0-0),Sun Belt,Southeastern Louisiana University,Southeastern La.,0,(0-1-0),Southland,8.0,4.0,1.0,0.0
+women,d1,6395399,6463675,08-14-2025,final,06:00PM ET,Western Carolina University,Western Caro.,2,(0-1-0),SoCon,Appalachian State University,App State,3,(1-0-0),Sun Belt,16.0,9.0,13.0,5.0
+women,d1,6399400,6464521,08-14-2025,final,06:00PM ET,La Salle University,La Salle,3,(1-0-0),Atlantic 10,Bucknell University,Bucknell,2,(0-1-0),Patriot,11.0,7.0,12.0,6.0
+women,d1,6403357,6465353,08-14-2025,final,06:00PM ET,College of the Holy Cross,Holy Cross,0,(0-1-0),Patriot,Fairfield University,Fairfield,1,(1-0-0),MAAC,13.0,6.0,15.0,6.0
+women,d1,6403674,6465457,08-14-2025,final,06:00PM ET,University of Illinois Chicago,UIC,0,(0-1-0),MVC,University of Illinois Urbana-Champaign,Illinois,1,(1-0-0),Big Ten,9.0,5.0,16.0,11.0
+women,d1,6405683,6465843,08-14-2025,final,06:00PM ET,Stony Brook University,Stony Brook,2,(0-1-0),CAA,University of Massachusetts Lowell,UMass Lowell,4,(1-0-0),America East,26.0,13.0,13.0,7.0
+women,d1,6406654,6465974,08-14-2025,final,06:00PM ET,University of Delaware,Delaware,5,(1-0-0),CUSA,Mount St. Mary's University,Mount St. Mary's,2,(0-1-0),MAAC,26.0,9.0,5.0,5.0
+women,d1,6407155,6466049,08-14-2025,final,06:00PM ET,Longwood University,Longwood,4,(1-0-0),Big South,Alabama A&M University,Alabama A&M,0,(0-1-0),SWAC,21.0,9.0,3.0,0.0
+women,d1,6410325,6466589,08-14-2025,final,06:00PM ET,University of Tennessee at Chattanooga,Chattanooga,4,(1-0-0),SoCon,Winthrop University,Winthrop,0,(0-1-0),Big South,19.0,6.0,6.0,1.0
+women,d1,6411736,6466695,08-14-2025,final,06:00PM ET,Georgia Southern University,Ga. Southern,3,(1-0-0),Sun Belt,Samford University,Samford,2,(0-1-0),SoCon,10.0,4.0,18.0,7.0
+women,d1,6412598,6466763,08-14-2025,final,06:00PM ET,Drexel University,Drexel,1,(0-0-1),CAA,Saint Peter's University,Saint Peter's,1,(0-0-1),MAAC,18.0,10.0,8.0,2.0
+women,d1,351830,6466964,08-14-2025,final,06:00PM ET,Seton Hall University,Seton Hall,3,(1-0-0),Big East,Monmouth University,Monmouth,1,(0-1-0),CAA,7.0,3.0,12.0,8.0
+women,d1,354888,6467332,08-14-2025,final,06:00PM ET,University of Rhode Island,Rhode Island,2,(1-0-0),Atlantic 10,Le Moyne College,Le Moyne,1,(0-1-0),NEC,21.0,8.0,9.0,5.0
+women,d1,6387810,6478581,08-14-2025,final,06:00PM ET,Indiana University Indianapolis,IU Indy,1,(0-1-0),Horizon,Southern Illinois University Edwardsville,SIUE,2,(1-0-0),OVC,18.0,6.0,11.0,5.0
+women,d1,6388350,6478584,08-14-2025,final,06:00PM ET,University of North Carolina Asheville,UNC Asheville,0,(0-1-0),Big South,University of Miami (Florida),Miami (FL),1,(1-0-0),ACC,7.0,3.0,15.0,7.0
+women,d1,6388856,6478589,08-14-2025,final,06:00PM ET,"University of Maryland, College Park",Maryland,3,(1-0-0),Big Ten,Lehigh University,Lehigh,0,(0-1-0),Patriot,16.0,10.0,5.0,3.0
+women,d1,6389460,6478592,08-14-2025,final,06:00PM ET,Stetson University,Stetson,1,(1-0-0),ASUN,Gardner-Webb University,Gardner-Webb,0,(0-1-0),Big South,14.0,9.0,7.0,1.0
+women,d1,6387618,6478580,08-14-2025,final,06:30PM ET,Providence College,Providence,1,(1-0-0),Big East,U.S. Military Academy,Army West Point,0,(0-1-0),Patriot,11.0,5.0,10.0,5.0
+women,d1,6390016,6462896,08-14-2025,final,07:00PM ET,The University of North Carolina at Greensboro,UNC Greensboro,1,(0-1-0),SoCon,Davidson College,Davidson,2,(1-0-0),Atlantic 10,13.0,7.0,6.0,5.0
+women,d1,339326,6462982,08-14-2025,final,07:00PM ET,The Ohio State University,Ohio St.,1,(0-0-1),Big Ten,Clemson University,Clemson,1,(0-0-1),ACC,19.0,7.0,15.0,3.0
+women,d1,6390948,6463061,08-14-2025,final,07:00PM ET,Iowa State University,Iowa St.,2,(0-0-1),Big 12,Portland State University,Portland St.,2,(0-0-1),Big Sky,13.0,4.0,12.0,3.0
+women,d1,6391610,6463125,08-14-2025,final,07:00PM ET,Hofstra University,Hofstra,2,(1-0-0),CAA,Saint Joseph's University,Saint Joseph's,1,(0-1-0),Atlantic 10,22.0,5.0,2.0,2.0
+women,d1,6394616,6463495,08-14-2025,final,07:00PM ET,Wake Forest University,Wake Forest,2,(1-0-0),ACC,Southern Methodist University,SMU,0,(0-1-0),ACC,5.0,3.0,7.0,1.0
+women,d1,6394763,6463506,08-14-2025,final,07:00PM ET,Rice University,Rice,2,(1-0-0),American,Houston Christian University,Houston Christian,1,(0-1-0),Southland,24.0,12.0,12.0,5.0
+women,d1,341344,6463564,08-14-2025,final,07:00PM ET,Howard University,Howard,0,(0-1-0),NEC,University of North Florida,North Florida,2,(1-0-0),ASUN,8.0,2.0,16.0,9.0
+women,d1,6395125,6463613,08-14-2025,final,07:00PM ET,Wofford College,Wofford,0,(0-1-0),SoCon,University of South Carolina Upstate,USC Upstate,1,(1-0-0),Big South,6.0,0.0,5.0,3.0
+women,d1,6395492,6463710,08-14-2025,final,07:00PM ET,Boston College,Boston College,4,(1-0-0),ACC,Stonehill College,Stonehill,1,(0-1-0),NEC,19.0,10.0,7.0,4.0
+women,d1,6395797,6463829,08-14-2025,final,07:00PM ET,University of Notre Dame,Notre Dame,2,(1-0-0),ACC,Western Michigan University,Western Mich.,1,(0-1-0),MAC,18.0,6.0,11.0,5.0
+women,d1,6396576,6463958,08-14-2025,final,07:00PM ET,Virginia Commonwealth University,VCU,1,(0-0-1),Atlantic 10,Elon University,Elon,1,(0-0-1),CAA,18.0,9.0,4.0,2.0
+women,d1,6396709,6464003,08-14-2025,final,07:00PM ET,"Rutgers, The State University of New Jersey, New Brunswick",Rutgers,3,(1-0-0),Big Ten,New Jersey Institute of Technology,NJIT,0,(0-1-0),America East,21.0,10.0,3.0,0.0
+women,d1,342509,6464092,08-14-2025,final,07:00PM ET,University of Memphis,Memphis,6,(1-0-0),American,The University of Southern Mississippi,Southern Miss.,0,(0-1-0),Sun Belt,17.0,10.0,5.0,2.0
+women,d1,6397923,6464293,08-14-2025,final,07:00PM ET,Merrimack College,Merrimack,1,(0-0-1),MAAC,University of Vermont,Vermont,1,(0-0-1),America East,4.0,1.0,28.0,18.0
+women,d1,6398935,6464447,08-14-2025,final,07:00PM ET,College of Charleston (South Carolina),Col. of Charleston,0,(0-1-0),CAA,"University of South Carolina, Columbia",South Carolina,1,(1-0-0),SEC,9.0,1.0,14.0,9.0
+women,d1,6398967,6464451,08-14-2025,final,07:00PM ET,Duke University,Duke,3,(1-0-0),ACC,Pennsylvania State University,Penn St.,2,(0-1-0),Big Ten,28.0,7.0,8.0,3.0
+women,d1,6399187,6464460,08-14-2025,final,07:00PM ET,University of Montana,Montana,3,(1-0-0),Big Sky,Southern Utah University,Southern Utah,0,(0-1-0),WAC,21.0,8.0,6.0,2.0
+women,d1,6399240,6464471,08-14-2025,final,07:00PM ET,Southern Illinois University at Carbondale,Southern Ill.,4,(1-0-0),MVC,Eastern Illinois University,Eastern Ill.,0,(0-1-0),OVC,10.0,6.0,5.0,1.0
+women,d1,6399346,6464500,08-14-2025,final,07:00PM ET,Jacksonville University,Jacksonville,9,(1-0-0),ASUN,Edward Waters University,Edward Waters,0,(0-0-0),SIAC,53.0,35.0,1.0,0.0
+women,d1,6399828,6464663,08-14-2025,final,07:00PM ET,Purdue University,Purdue,4,(1-0-0),Big Ten,Indiana State University,Indiana St.,0,(0-1-0),MVC,26.0,14.0,4.0,2.0
+women,d1,6404841,6465730,08-14-2025,final,07:00PM ET,Georgetown University,Georgetown,2,(0-0-1),Big East,Old Dominion University,Old Dominion,2,(0-0-1),Sun Belt,10.0,5.0,9.0,6.0
+women,d1,6405663,6465834,08-14-2025,final,07:00PM ET,High Point University,High Point,0,(0-1-0),Big South,Virginia Polytechnic Institute and State University,Virginia Tech,2,(1-0-0),ACC,4.0,2.0,28.0,15.0
+women,d1,6407860,6466172,08-14-2025,final,07:00PM ET,Florida Atlantic University,Fla. Atlantic,1,(0-0-1),American,Loyola University Maryland,Loyola Maryland,1,(0-0-1),Patriot,6.0,3.0,13.0,5.0
+women,d1,6409846,6466486,08-14-2025,final,07:00PM ET,University of West Georgia,West Ga.,2,(0-1-0),ASUN,Jacksonville State University,Jacksonville St.,3,(1-0-0),CUSA,6.0,3.0,20.0,10.0
+women,d1,6411946,6466726,08-14-2025,final,07:00PM ET,Purdue University Fort Wayne,Purdue Fort Wayne,0,(0-0-1),Horizon,University of Akron,Akron,0,(0-0-1),MAC,12.0,7.0,17.0,8.0
+women,d1,351083,6466858,08-14-2025,final,07:00PM ET,"University of Tennessee, Knoxville",Tennessee,2,(1-0-0),SEC,"University of North Carolina, Chapel Hill",North Carolina,0,(0-1-0),ACC,7.0,5.0,14.0,6.0
+women,d1,351166,6466895,08-14-2025,final,07:00PM ET,Georgia State University,Georgia St.,7,(1-0-0),Sun Belt,Truett-McConnell,Truett-McConnell,0,(0-0-0),IND,24.0,13.0,2.0,2.0
+women,d1,6416185,6466945,08-14-2025,final,07:00PM ET,West Virginia University,West Virginia,0,(0-1-0),Big 12,University of Virginia,Virginia,1,(1-0-0),ACC,14.0,5.0,8.0,2.0
+women,d1,351916,6466967,08-14-2025,final,07:00PM ET,Tennessee Technological University,Tennessee Tech,0,(0-1-0),OVC,Lipscomb University,Lipscomb,2,(1-0-0),ASUN,3.0,2.0,12.0,6.0
+women,d1,6417220,6466984,08-14-2025,final,07:00PM ET,Morehead State University,Morehead St.,0,(0-1-0),OVC,Marshall University,Marshall,3,(1-0-0),Sun Belt,5.0,2.0,19.0,12.0
+women,d1,352640,6467079,08-14-2025,final,07:00PM ET,Florida State University,Florida St.,5,(1-0-0),ACC,University of Florida,Florida,0,(0-1-0),SEC,26.0,9.0,7.0,3.0
+women,d1,6420731,6467139,08-14-2025,final,07:00PM ET,North Carolina State University,NC State,0,(0-1-0),ACC,James Madison University,James Madison,3,(1-0-0),Sun Belt,13.0,6.0,13.0,4.0
+women,d1,353889,6467195,08-14-2025,final,07:00PM ET,Southeast Missouri State University,Southeast Mo. St.,3,(0-1-0),OVC,University of Evansville,Evansville,4,(1-0-0),MVC,10.0,6.0,17.0,10.0
+women,d1,354312,6467199,08-14-2025,final,07:00PM ET,Wright State University,Wright St.,0,(0-1-0),Horizon,University of Dayton,Dayton,2,(1-0-0),Atlantic 10,3.0,1.0,35.0,17.0
+women,d1,354669,6467231,08-14-2025,final,07:00PM ET,University of Pittsburgh,Pittsburgh,2,(1-0-0),ACC,Xavier University,Xavier,0,(0-1-0),Big East,9.0,5.0,13.0,5.0
+women,d1,354748,6467252,08-14-2025,final,07:00PM ET,Presbyterian College,Presbyterian,0,(0-0-1),Big South,The Citadel,The Citadel,0,(0-0-1),SoCon,14.0,3.0,17.0,10.0
+women,d1,6422694,6467288,08-14-2025,final,07:00PM ET,Wagner College,Wagner,1,(0-0-1),NEC,"University of Maryland, Baltimore County",UMBC,1,(0-0-1),America East,11.0,7.0,6.0,3.0
+women,d1,6386705,6478575,08-14-2025,final,07:00PM ET,Temple University,Temple,3,(1-0-0),American,Iona University,Iona,0,(0-1-0),MAAC,12.0,6.0,8.0,4.0
+women,d1,6387143,6478577,08-14-2025,final,07:00PM ET,Queens University of Charlotte,Queens (NC),0,(0-0-1),ASUN,Campbell University,Campbell,0,(0-0-1),CAA,5.0,5.0,13.0,4.0
+women,d1,6388343,6478583,08-14-2025,final,07:00PM ET,Furman University,Furman,0,(0-1-0),SoCon,University of South Florida,South Fla.,1,(1-0-0),American,7.0,5.0,15.0,9.0
+women,d1,6388399,6478585,08-14-2025,final,07:00PM ET,Cleveland State University,Cleveland St.,0,(0-1-0),Horizon,Kent State University,Kent St.,1,(1-0-0),MAC,3.0,0.0,16.0,8.0
+women,d1,6388466,6478586,08-14-2025,final,07:00PM ET,Illinois State University,Illinois St.,1,(0-1-0),MVC,Lindenwood University,Lindenwood,2,(1-0-0),OVC,10.0,6.0,7.0,4.0
+women,d1,6389107,6478590,08-14-2025,final,07:00PM ET,University of Detroit Mercy,Detroit Mercy,2,(1-0-0),Horizon,Valparaiso University,Valparaiso,1,(0-1-0),MVC,8.0,3.0,6.0,6.0
+women,d1,6389427,6478591,08-14-2025,final,07:00PM ET,Bowling Green State University,Bowling Green,1,(1-0-0),MAC,Oakland University,Oakland,0,(0-1-0),Horizon,10.0,3.0,5.0,3.0
+women,d1,337311,6462444,08-14-2025,final,07:30PM ET,Kansas State University,Kansas St.,2,(1-0-0),Big 12,Oral Roberts University,Oral Roberts,0,(0-1-0),Summit League,8.0,5.0,6.0,2.0
+women,d1,340961,6463377,08-14-2025,final,07:30PM ET,University of Kentucky,Kentucky,4,(1-0-0),SEC,Jackson State University,Jackson St.,0,(0-1-0),SWAC,25.0,9.0,1.0,1.0
+women,d1,342429,6464065,08-14-2025,final,07:30PM ET,Belmont University,Belmont,1,(0-1-0),MVC,Middle Tennessee State University,Middle Tenn.,2,(1-0-0),CUSA,7.0,5.0,10.0,7.0
+women,d1,345301,6465368,08-14-2025,final,07:30PM ET,The University of Texas Rio Grande Valley,UTRGV,0,(0-1-0),Southland,Tarleton State University,Tarleton St.,1,(1-0-0),WAC,7.0,1.0,7.0,3.0
+women,d1,6407164,6466058,08-14-2025,final,07:30PM ET,"University of Arkansas, Fayetteville",Arkansas,2,(0-1-0),SEC,University of Iowa,Iowa,3,(1-0-0),Big Ten,18.0,6.0,11.0,7.0
+women,d1,349491,6466665,08-14-2025,final,07:30PM ET,Auburn University,Auburn,0,(0-1-0),SEC,University of Louisville,Louisville,1,(1-0-0),ACC,10.0,5.0,6.0,2.0
+women,d1,351729,6466932,08-14-2025,final,07:30PM ET,University of Georgia,Georgia,0,(0-1-0),SEC,"University of California, Los Angeles",UCLA,1,(1-0-0),Big Ten,11.0,3.0,11.0,7.0
+women,d1,338460,6462744,08-14-2025,final,08:00PM ET,"Indiana University, Bloomington",Indiana,6,(1-0-0),Big Ten,Youngstown State University,Youngstown St.,1,(0-1-0),Horizon,32.0,15.0,3.0,3.0
+women,d1,6390594,6462999,08-14-2025,final,08:00PM ET,University of Texas at Austin,Texas,2,(0-1-0),SEC,Northwestern State University,Northwestern St.,3,(1-0-0),Southland,25.0,16.0,7.0,7.0
+women,d1,339420,6463026,08-14-2025,final,08:00PM ET,University of Central Arkansas,Central Ark.,1,(0-1-0),ASUN,The University of Tulsa,Tulsa,2,(1-0-0),American,12.0,7.0,22.0,11.0
+women,d1,340143,6463171,08-14-2025,final,08:00PM ET,East Texas A&M University,East Texas A&M,4,(1-0-0),Southland,University of Arkansas at Little Rock,Little Rock,1,(0-1-0),OVC,12.0,7.0,19.0,1.0
+women,d1,6394585,6463464,08-14-2025,final,08:00PM ET,University of Wisconsin-Green Bay,Green Bay,1,(0-1-0),Horizon,North Dakota State University,North Dakota St.,3,(1-0-0),Summit League,8.0,3.0,16.0,6.0
+women,d1,341658,6463697,08-14-2025,final,08:00PM ET,University of Alabama at Birmingham,UAB,1,(0-1-0),American,University of Central Florida,UCF,2,(1-0-0),Big 12,7.0,4.0,10.0,7.0
+women,d1,341691,6463721,08-14-2025,final,08:00PM ET,Vanderbilt University,Vanderbilt,7,(1-0-0),SEC,Austin Peay State University,Austin Peay,0,(0-1-0),ASUN,35.0,17.0,3.0,2.0
+women,d1,6397124,6464085,08-14-2025,final,08:00PM ET,University of Nebraska-Lincoln,Nebraska,6,(1-0-0),Big Ten,University of Southern Indiana,Southern Ind.,0,(0-1-0),OVC,24.0,11.0,6.0,4.0
+women,d1,342715,6464239,08-14-2025,final,08:00PM ET,Stephen F. Austin State University,SFA,1,(0-0-1),Southland,Sam Houston State University,Sam Houston,1,(0-0-1),CUSA,17.0,6.0,9.0,4.0
+women,d1,6397959,6464311,08-14-2025,final,08:00PM ET,"University of Minnesota, Twin Cities",Minnesota,1,(0-1-0),Big Ten,Brigham Young University,BYU,3,(1-0-0),Big 12,15.0,5.0,26.0,12.0
+women,d1,344284,6464832,08-14-2025,final,08:00PM ET,Loyola University Chicago,Loyola Chicago,0,(0-1-0),Atlantic 10,Northwestern University,Northwestern,2,(1-0-0),Big Ten,9.0,3.0,14.0,5.0
+women,d1,344975,6465103,08-14-2025,final,08:00PM ET,Saint Mary's College of California,Saint Mary's (CA),2,(0-0-1),WCC,"California State University, Northridge",CSUN,2,(0-0-1),Big West,18.0,5.0,5.0,2.0
+women,d1,345184,6465278,08-14-2025,final,08:00PM ET,University of Louisiana at Lafayette,Louisiana,4,(1-0-0),Sun Belt,Lamar University,Lamar University,1,(0-1-0),Southland,12.0,6.0,5.0,4.0
+women,d1,345314,6465397,08-14-2025,final,08:00PM ET,McNeese State University,McNeese,0,(0-1-0),Southland,University of North Dakota,North Dakota,6,(1-0-0),Summit League,7.0,2.0,23.0,16.0
+women,d1,348093,6466149,08-14-2025,final,08:00PM ET,Louisiana State University,LSU,2,(1-0-0),SEC,University of South Alabama,South Alabama,0,(0-1-0),Sun Belt,16.0,6.0,6.0,2.0
+women,d1,348399,6466230,08-14-2025,final,08:00PM ET,University of Kansas,Kansas,5,(1-0-0),Big 12,Missouri State University,Missouri St.,2,(0-1-0),CUSA,23.0,12.0,5.0,3.0
+women,d1,348613,6466304,08-14-2025,final,08:00PM ET,University of Nebraska at Omaha,Omaha,1,(0-0-1),Summit League,University of Northern Colorado,Northern Colo.,1,(0-0-1),Big Sky,10.0,5.0,10.0,5.0
+women,d1,348969,6466448,08-14-2025,final,08:00PM ET,Northern Illinois University,NIU,0,(0-1-0),MAC,Marquette University,Marquette,2,(1-0-0),Big East,8.0,4.0,8.0,5.0
+women,d1,354524,6467224,08-14-2025,final,08:00PM ET,University of North Texas,North Texas,1,(0-1-0),American,University of the Incarnate Word,UIW,2,(1-0-0),Southland,38.0,14.0,6.0,2.0
+women,d1,6387038,6478576,08-14-2025,final,08:00PM ET,"University of Missouri, Columbia",Missouri,1,(0-0-1),SEC,South Dakota State University,South Dakota St.,1,(0-0-1),Summit League,6.0,2.0,11.0,5.0
+women,d1,337618,6478578,08-14-2025,final,08:00PM ET,University of Missouri-Kansas City,Kansas City,0,(0-1-0),Summit League,Saint Louis University,Saint Louis,4,(1-0-0),Atlantic 10,3.0,1.0,15.0,12.0
+women,d1,337685,6478579,08-14-2025,final,08:00PM ET,Drake University,Drake,1,(0-0-1),MVC,University of Wyoming,Wyoming,1,(0-0-1),Mountain West,5.0,3.0,9.0,2.0
+women,d1,337896,6478582,08-14-2025,final,08:00PM ET,U.S. Air Force Academy,Air Force,1,(0-1-0),Mountain West,University of Denver,Denver,2,(1-0-0),Summit League,19.0,5.0,14.0,4.0
+women,d1,338346,6478587,08-14-2025,final,08:00PM ET,University of Wisconsin-Madison,Wisconsin,3,(1-0-0),Big Ten,University of Wisconsin-Milwaukee,Milwaukee,1,(0-1-0),Horizon,24.0,10.0,2.0,1.0
+women,d1,338413,6478588,08-14-2025,final,08:00PM ET,University of North Alabama,North Ala.,0,(0-1-0),ASUN,East Tennessee State University,ETSU,1,(1-0-0),SoCon,4.0,0.0,14.0,11.0
+women,d1,6389751,6478593,08-14-2025,final,08:00PM ET,University of Oklahoma,Oklahoma,4,(1-0-0),SEC,Creighton University,Creighton,1,(0-1-0),Big East,15.0,9.0,10.0,7.0
+women,d1,339096,6478595,08-14-2025,final,08:00PM ET,Texas Christian University,TCU,6,(1-0-0),Big 12,Pepperdine University,Pepperdine,1,(0-1-0),WCC,17.0,11.0,7.0,2.0
+women,d1,6390242,6478596,08-14-2025,final,08:00PM ET,Louisiana Tech University,Louisiana Tech,2,(0-1-0),CUSA,University of Alabama,Alabama,6,(1-0-0),SEC,9.0,3.0,25.0,13.0
+women,d1,342799,6464284,08-14-2025,final,08:30PM ET,Texas State University,Texas St.,9,(1-0-0),Sun Belt,Our Lady of the Lake,Our Lady of the Lake,1,(0-0-0),IND,37.0,24.0,3.0,2.0
+women,d1,351743,6466940,08-14-2025,final,08:30PM ET,"Texas A&M University, College Station",Texas A&M,1,(0-0-1),SEC,Baylor University,Baylor,1,(0-0-1),Big 12,18.0,5.0,16.0,5.0
+women,d1,351103,6466871,08-14-2025,final,08:35PM ET,University of Texas at San Antonio,UTSA,0,(0-0-1),American,University of Houston,Houston,0,(0-0-1),Big 12,10.0,3.0,18.0,7.0
+women,d1,340379,6463184,08-14-2025,final,09:00PM ET,University of Colorado Boulder,Colorado,1,(0-0-1),Big 12,Michigan State University,Michigan St.,1,(0-0-1),Big Ten,9.0,3.0,20.0,5.0
+women,d1,6402212,6465035,08-14-2025,final,09:00PM ET,University of Texas at El Paso,UTEP,0,(0-1-0),CUSA,Abilene Christian University,Abilene Christian,1,(1-0-0),WAC,14.0,6.0,9.0,5.0
+women,d1,345477,6465525,08-14-2025,final,09:00PM ET,Colorado State University,Colorado St.,2,(1-0-0),Mountain West,Utah Tech University,Utah Tech,1,(0-1-0),WAC,9.0,4.0,19.0,7.0
+women,d1,348712,6466381,08-14-2025,final,09:00PM ET,New Mexico State University,New Mexico St.,1,(0-1-0),CUSA,Colorado College,Colorado Col.,2,(1-0-0),Mountain West,5.0,2.0,10.0,6.0
+women,d1,6417499,6466998,08-14-2025,final,09:00PM ET,Seattle University,Seattle U,1,(1-0-0),WCC,Eastern Washington University,Eastern Wash.,0,(0-1-0),Big Sky,17.0,6.0,8.0,1.0
+women,d1,354445,6467215,08-14-2025,final,09:00PM ET,Oklahoma State University,Oklahoma St.,2,(1-0-0),Big 12,Mercer University,Mercer,0,(0-1-0),SoCon,26.0,8.0,8.0,4.0
+women,d1,6411373,6466679,08-14-2025,final,09:30PM ET,University of New Mexico,New Mexico,8,(1-0-0),Mountain West,Texas Southern University,Texas Southern,0,(0-1-0),SWAC,31.0,18.0,5.0,2.0
+women,d1,6390301,6495682,08-14-2025,final,09:30PM ET,University of Oregon,Oregon,4,(1-0-0),Big Ten,Weber State University,Weber St.,0,(0-1-0),Big Sky,17.0,10.0,13.0,7.0
+women,d1,6391240,6463092,08-14-2025,final,10:00PM ET,University of Washington,Washington,1,(0-0-1),Big Ten,Oregon State University,Oregon St.,1,(0-0-1),WCC,16.0,4.0,5.0,3.0
+women,d1,340504,6463231,08-14-2025,final,10:00PM ET,Grand Canyon University,Grand Canyon,1,(0-1-0),Mountain West,"University of California, Irvine",UC Irvine,4,(1-0-0),Big West,12.0,4.0,13.0,8.0
+women,d1,6393970,6463283,08-14-2025,final,10:00PM ET,University of San Diego,San Diego,3,(0-0-1),WCC,California Polytechnic State University,Cal Poly,3,(0-0-1),Big West,12.0,6.0,20.0,8.0
+women,d1,343412,6464480,08-14-2025,final,10:00PM ET,Gonzaga University,Gonzaga,1,(0-1-0),WCC,University of Utah,Utah,2,(1-0-0),Big 12,11.0,3.0,18.0,7.0
+women,d1,6401161,6464883,08-14-2025,final,10:00PM ET,California Baptist University,California Baptist,1,(1-0-0),WAC,"California State University, Bakersfield",CSU Bakersfield,0,(0-1-0),Big West,7.0,5.0,22.0,10.0
+women,d1,345163,6465240,08-14-2025,final,10:00PM ET,"University of California, Davis",UC Davis,1,(0-0-1),Big West,"California State University, Fresno",Fresno St.,1,(0-0-1),Mountain West,13.0,6.0,14.0,5.0
+women,d1,349159,6466548,08-14-2025,final,10:00PM ET,University of Idaho,Idaho,2,(1-0-0),Big Sky,"University of California, Riverside",UC Riverside,0,(0-1-0),Big West,10.0,4.0,3.0,2.0
+women,d1,349440,6466640,08-14-2025,final,10:00PM ET,University of Arizona,Arizona,5,(1-0-0),Big 12,"University of Nevada, Las Vegas",UNLV,0,(0-1-0),Mountain West,15.0,8.0,6.0,1.0
+women,d1,349469,6466651,08-14-2025,final,10:00PM ET,"University of California, San Diego",UC San Diego,2,(0-1-0),Big West,"University of California, Berkeley",California,3,(1-0-0),ACC,11.0,7.0,17.0,9.0
+women,d1,6412961,6466771,08-14-2025,final,10:00PM ET,San Diego State University,San Diego St.,0,(0-1-0),Mountain West,Texas Tech University,Texas Tech,4,(1-0-0),Big 12,8.0,3.0,15.0,8.0
+women,d1,350504,6466797,08-14-2025,final,10:00PM ET,Arizona State University,Arizona St.,2,(1-0-0),Big 12,"University of Nevada, Reno",Nevada,0,(0-1-0),Mountain West,18.0,11.0,5.0,2.0
+women,d1,350939,6466844,08-14-2025,final,10:00PM ET,Washington State University,Washington St.,0,(0-1-0),WCC,Utah State University,Utah St.,1,(1-0-0),Mountain West,11.0,2.0,13.0,7.0
+women,d1,351936,6466970,08-14-2025,final,10:00PM ET,University of the Pacific,Pacific,0,(0-1-0),WCC,"California State University, Sacramento",Sacramento St.,3,(1-0-0),Big Sky,12.0,4.0,13.0,9.0
+women,d1,352433,6467036,08-14-2025,final,10:00PM ET,Stanford University,Stanford,7,(1-0-0),ACC,University of San Francisco,San Francisco,0,(0-1-0),WCC,30.0,15.0,4.0,0.0
+women,d1,6427570,6467375,08-14-2025,final,10:00PM ET,Northern Arizona University,Northern Ariz.,3,(1-0-0),Big Sky,Embry-Riddle (AZ),Embry-Riddle (AZ),1,(0-0-0),IND,34.0,17.0,5.0,1.0
+women,d1,6395437,6495755,08-14-2025,final,10:00PM ET,Long Beach State University,Long Beach St.,2,(1-0-0),Big West,"University of Hawaii, Manoa",Hawaii,1,(0-1-0),Big West,16.0,8.0,5.0,1.0
+women,d1,6407346,6466103,08-14-2025,final,10:30PM ET,Santa Clara University,Santa Clara,3,(1-0-0),WCC,San Jose State University,San Jose St.,0,(0-1-0),Mountain West,13.0,10.0,5.0,3.0
+women,d1,351241,6466901,08-14-2025,final,10:30PM ET,"University of California, Santa Barbara",UC Santa Barbara,1,(0-1-0),Big West,Loyola Marymount University,LMU (CA),2,(1-0-0),WCC,27.0,10.0,10.0,5.0
+women,d1,6422766,6467330,08-15-2025,pre,11:30AM ET,LSU-Shreveport,LSU-Shreveport,,(0-0-0),IND,Grambling State University,Grambling,,(0-0-0),SWAC,,,,
+women,d1,340434,6463200,08-15-2025,final,01:00PM ET,Syracuse University,Syracuse,5,(1-0-0),ACC,Charleston Southern University,Charleston So.,0,(0-1-0),Big South,14.0,10.0,5.0,2.0
+women,d1,339085,6462926,08-15-2025,final,05:00PM ET,Manhattan University,Manhattan,1,(0-0-1),MAAC,Long Island University,LIU,1,(0-0-1),NEC,10.0,4.0,8.0,2.0
+women,d1,339461,6463043,08-15-2025,final,05:00PM ET,William & Mary,William & Mary,1,(0-0-1),CAA,George Mason University,George Mason,1,(0-0-1),Atlantic 10,8.0,3.0,6.0,2.0
+women,d1,355159,6467360,08-15-2025,final,05:00PM ET,"University of Arkansas, Pine Bluff",Ark.-Pine Bluff,2,(0-0-1),SWAC,Williams Baptist,Williams Baptist,2,(0-0-0),IND,6.0,3.0,14.0,6.0
+women,d1,6403730,6465497,08-15-2025,final,06:00PM ET,Western Illinois University,Western Ill.,2,(1-0-0),OVC,St. Ambrose,St. Ambrose,0,(0-0-0),IND,17.0,8.0,9.0,2.0
+women,d1,351158,6466887,08-15-2025,final,07:00PM ET,Fordham University,Fordham,4,(1-0-0),Atlantic 10,Marist University,Marist,0,(0-1-0),MAAC,24.0,10.0,10.0,6.0
+women,d1,6390350,6462981,08-16-2025,final,05:00PM ET,Rio Grande,Rio Grande,0,(0-0-0),IND,Western Kentucky University,Western Ky.,10,(1-1-0),CUSA,1.0,0.0,22.0,12.0
+women,d1,6396842,6464045,08-16-2025,final,08:00PM ET,University of Northern Colorado,Northern Colo.,1,(1-0-1),Big Sky,Oral Roberts University,Oral Roberts,0,(0-2-0),Summit League,10.0,4.0,14.0,10.0
+women,d1,337747,6462601,08-17-2025,final,10:30AM ET,Manhattan University,Manhattan,1,(0-1-1),MAAC,U.S. Military Academy,Army West Point,4,(1-1-0),Patriot,6.0,2.0,14.0,7.0
+women,d1,337687,6462584,08-17-2025,final,11:00AM ET,Drake University,Drake,1,(0-1-1),MVC,University of South Dakota,South Dakota,2,(1-0-1),Summit League,7.0,2.0,8.0,4.0
+women,d1,344033,6464729,08-17-2025,final,11:00AM ET,University of Georgia,Georgia,6,(1-1-0),SEC,University at Albany,UAlbany,0,(0-1-0),America East,34.0,11.0,1.0,0.0
+women,d1,6409863,6466493,08-17-2025,final,11:00AM ET,University of Nebraska at Omaha,Omaha,6,(1-0-1),Summit League,University of Wisconsin-Green Bay,Green Bay,3,(0-2-0),Horizon,11.0,10.0,5.0,5.0
+women,d1,354717,6467241,08-17-2025,final,11:30AM ET,Grambling State University,Grambling,3,(1-0-0),SWAC,Nicholls State University,Nicholls,0,(0-1-0),Southland,18.0,8.0,4.0,1.0
+women,d1,6394764,6463508,08-17-2025,final,12:00PM ET,The University of Texas Rio Grande Valley,UTRGV,0,(0-2-0),Southland,Rice University,Rice,6,(2-0-0),American,5.0,3.0,19.0,11.0
+women,d1,345095,6465182,08-17-2025,final,12:00PM ET,University of Maine,Maine,0,(0-1-0),America East,University of Rhode Island,Rhode Island,2,(2-0-0),Atlantic 10,11.0,4.0,11.0,4.0
+women,d1,345566,6465586,08-17-2025,final,12:00PM ET,University of Central Arkansas,Central Ark.,3,(1-1-0),ASUN,University of Louisiana Monroe,ULM,1,(1-1-0),Sun Belt,7.0,4.0,20.0,9.0
+women,d1,6406879,6466003,08-17-2025,final,12:00PM ET,Sacred Heart University,Sacred Heart,0,(0-0-1),MAAC,University of Vermont,Vermont,0,(0-0-2),America East,12.0,7.0,14.0,4.0
+women,d1,350865,6466832,08-17-2025,final,12:00PM ET,East Tennessee State University,ETSU,1,(1-0-1),SoCon,University of Alabama at Birmingham,UAB,1,(0-1-1),American,9.0,3.0,7.0,2.0
+women,d1,351925,6466968,08-17-2025,final,12:00PM ET,University of South Alabama,South Alabama,2,(1-1-0),Sun Belt,Tennessee Technological University,Tennessee Tech,0,(0-2-0),OVC,13.0,5.0,2.0,0.0
+women,d1,339327,6462983,08-17-2025,final,12:30PM ET,Ohio University,Ohio,0,(1-1-0),MAC,Clemson University,Clemson,1,(1-0-1),ACC,8.0,4.0,9.0,4.0
+women,d1,337523,6462488,08-17-2025,final,01:00PM ET,Drexel University,Drexel,2,(0-0-2),CAA,George Washington University,George Washington,2,(1-0-1),Atlantic 10,9.0,3.0,13.0,5.0
+women,d1,338272,6462686,08-17-2025,final,01:00PM ET,Kent State University,Kent St.,2,(1-1-0),MAC,Duquesne University,Duquesne,3,(1-0-0),Atlantic 10,10.0,6.0,15.0,8.0
+women,d1,339475,6463045,08-17-2025,final,01:00PM ET,Bowling Green State University,Bowling Green,0,(1-1-0),MAC,University of Illinois Urbana-Champaign,Illinois,1,(2-0-0),Big Ten,5.0,3.0,14.0,6.0
+women,d1,6391323,6463101,08-17-2025,final,01:00PM ET,University of Cincinnati,Cincinnati,1,(1-0-1),Big 12,University of Toledo,Toledo,1,(0-1-1),MAC,12.0,8.0,5.0,3.0
+women,d1,6392935,6463201,08-17-2025,final,01:00PM ET,St. Bonaventure University,St. Bonaventure,1,(0-0-1),Atlantic 10,Charleston Southern University,Charleston So.,1,(0-1-1),Big South,6.0,5.0,10.0,5.0
+women,d1,6393462,6463257,08-17-2025,final,01:00PM ET,Boston University,Boston U.,3,(1-0-0),Patriot,University of New Hampshire,New Hampshire,0,(0-1-0),America East,22.0,8.0,6.0,1.0
+women,d1,6394137,6463352,08-17-2025,final,01:00PM ET,"University of Arkansas, Pine Bluff",Ark.-Pine Bluff,0,(0-1-1),SWAC,University of Arkansas at Little Rock,Little Rock,7,(1-1-0),OVC,0.0,0.0,45.0,17.0
+women,d1,6394256,6463379,08-17-2025,final,01:00PM ET,University of Kentucky,Kentucky,7,(2-0-0),SEC,University of West Georgia,West Ga.,0,(0-2-0),ASUN,28.0,10.0,0.0,0.0
+women,d1,341622,6463677,08-17-2025,final,01:00PM ET,Appalachian State University,App State,1,(2-0-0),Sun Belt,University of Miami (Florida),Miami (FL),0,(1-1-0),ACC,5.0,2.0,16.0,6.0
+women,d1,6395473,6463701,08-17-2025,final,01:00PM ET,University of Michigan,Michigan,4,(2-0-0),Big Ten,University of Detroit Mercy,Detroit Mercy,0,(1-1-0),Horizon,15.0,10.0,3.0,1.0
+women,d1,6395611,6463760,08-17-2025,final,01:00PM ET,Boston College,Boston College,4,(2-0-0),ACC,"Fairleigh Dickinson University, Metropolitan Campus",FDU,0,(0-1-0),NEC,20.0,10.0,9.0,6.0
+women,d1,6395670,6463781,08-17-2025,final,01:00PM ET,Morehead State University,Morehead St.,1,(1-1-0),OVC,Austin Peay State University,Austin Peay,0,(0-2-0),ASUN,7.0,2.0,7.0,3.0
+women,d1,342507,6464090,08-17-2025,final,01:00PM ET,Central Michigan University,Central Mich.,0,(0-2-0),MAC,Loyola University Chicago,Loyola Chicago,1,(1-1-0),Atlantic 10,6.0,4.0,17.0,9.0
+women,d1,6397865,6464277,08-17-2025,final,01:00PM ET,Wake Forest University,Wake Forest,1,(2-0-0),ACC,Louisiana State University,LSU,0,(1-1-0),SEC,11.0,3.0,8.0,3.0
+women,d1,342817,6464302,08-17-2025,final,01:00PM ET,Lehigh University,Lehigh,1,(0-2-0),Patriot,Binghamton University,Binghamton,2,(1-0-0),America East,10.0,4.0,17.0,7.0
+women,d1,343401,6464478,08-17-2025,final,01:00PM ET,University of Akron,Akron,1,(1-0-1),MAC,Eastern Illinois University,Eastern Ill.,0,(0-2-0),OVC,14.0,7.0,9.0,4.0
+women,d1,6399385,6464509,08-17-2025,final,01:00PM ET,Colgate University,Colgate,1,(0-0-1),Patriot,"University at Buffalo, the State University of New York",Buffalo,1,(1-0-1),MAC,5.0,4.0,19.0,7.0
+women,d1,6399421,6464532,08-17-2025,final,01:00PM ET,Georgia Southern University,Ga. Southern,1,(1-1-0),Sun Belt,Jacksonville University,Jacksonville,4,(2-0-0),ASUN,15.0,6.0,13.0,10.0
+women,d1,6399883,6464665,08-17-2025,final,01:00PM ET,Ball State University,Ball St.,2,(0-1-0),MAC,Purdue University,Purdue,5,(2-0-0),Big Ten,5.0,3.0,21.0,9.0
+women,d1,6400258,6464703,08-17-2025,final,01:00PM ET,"University of Tennessee, Knoxville",Tennessee,9,(2-0-0),SEC,Eastern Kentucky University,Eastern Ky.,0,(1-1-0),ASUN,35.0,18.0,0.0,0.0
+women,d1,6401557,6464961,08-17-2025,final,01:00PM ET,Hofstra University,Hofstra,3,(2-0-0),CAA,Quinnipiac University,Quinnipiac,0,(0-1-0),MAAC,13.0,7.0,6.0,3.0
+women,d1,345290,6465355,08-17-2025,final,01:00PM ET,Northeastern University,Northeastern,1,(0-0-1),CAA,College of the Holy Cross,Holy Cross,1,(0-1-1),Patriot,13.0,8.0,10.0,3.0
+women,d1,346014,6465645,08-17-2025,final,01:00PM ET,University of Connecticut,UConn,1,(1-0-0),Big East,Stony Brook University,Stony Brook,0,(0-2-0),CAA,10.0,4.0,5.0,2.0
+women,d1,6404817,6465721,08-17-2025,final,01:00PM ET,U.S. Naval Academy,Navy,2,(2-0-0),Patriot,Temple University,Temple,0,(1-1-0),American,10.0,7.0,10.0,2.0
+women,d1,347093,6465830,08-17-2025,final,01:00PM ET,Western Carolina University,Western Caro.,1,(1-1-0),SoCon,High Point University,High Point,0,(0-2-0),Big South,10.0,4.0,6.0,4.0
+women,d1,347879,6466052,08-17-2025,final,01:00PM ET,Delaware State University,Delaware St.,1,(1-0-0),NEC,Alabama A&M University,Alabama A&M,0,(0-2-0),SWAC,11.0,5.0,16.0,7.0
+women,d1,6408065,6466216,08-17-2025,final,01:00PM ET,Illinois State University,Illinois St.,0,(0-2-0),MVC,Northwestern University,Northwestern,1,(2-0-0),Big Ten,10.0,7.0,21.0,11.0
+women,d1,349026,6466464,08-17-2025,final,01:00PM ET,"University of North Carolina, Chapel Hill",North Carolina,5,(1-1-0),ACC,Siena University,Siena,0,(1-1-0),MAAC,34.0,15.0,1.0,1.0
+women,d1,6411376,6466680,08-17-2025,final,01:00PM ET,Texas A&M University-Corpus Christi,A&M-Corpus Christi,1,(0-1-1),Southland,University of New Mexico,New Mexico,1,(1-0-1),Mountain West,5.0,1.0,17.0,6.0
+women,d1,6416468,6466963,08-17-2025,final,01:00PM ET,Monmouth University,Monmouth,1,(0-2-0),CAA,University of Pittsburgh,Pittsburgh,3,(2-0-0),ACC,4.0,2.0,23.0,10.0
+women,d1,354700,6467236,08-17-2025,final,01:00PM ET,Wright State University,Wright St.,4,(1-1-0),Horizon,Fairmont State University,Fairmont St.,0,(0-0-0),MEC,18.0,11.0,6.0,2.0
+women,d1,6422480,6467237,08-17-2025,final,01:00PM ET,Florida Gulf Coast University,FGCU,6,(1-0-0),ASUN,Webber Int'l,Webber Int'l,0,(0-0-0),IND,35.0,21.0,3.0,0.0
+women,d1,354869,6467316,08-17-2025,final,01:00PM ET,"University of Maryland, Baltimore County",UMBC,1,(1-0-1),America East,Mercyhurst University,Mercyhurst,0,(0-1-1),NEC,11.0,2.0,3.0,1.0
+women,d1,6422756,6467325,08-17-2025,final,01:00PM ET,Stonehill College,Stonehill,0,(0-2-0),NEC,Bryant University,Bryant,1,(1-0-0),America East,8.0,3.0,13.0,6.0
+women,d1,6422790,6467342,08-17-2025,final,01:00PM ET,Davidson College,Davidson,3,(2-0-0),Atlantic 10,University of South Carolina Upstate,USC Upstate,0,(1-1-0),Big South,8.0,4.0,5.0,1.0
+women,d1,6393097,6463232,08-17-2025,final,01:30PM ET,University of Arizona,Arizona,1,(2-0-0),Big 12,"University of California, Irvine",UC Irvine,0,(1-1-0),Big West,10.0,6.0,3.0,1.0
+women,d1,6386613,6462445,08-17-2025,final,02:00PM ET,Kansas State University,Kansas St.,2,(2-0-0),Big 12,Portland State University,Portland St.,0,(0-1-1),Big Sky,18.0,4.0,3.0,1.0
+women,d1,337545,6462502,08-17-2025,final,02:00PM ET,University of Kansas,Kansas,1,(2-0-0),Big 12,South Dakota State University,South Dakota St.,0,(0-1-1),Summit League,16.0,6.0,5.0,3.0
+women,d1,6390649,6463027,08-17-2025,final,02:00PM ET,The University of Tulsa,Tulsa,3,(2-0-0),American,Stephen F. Austin State University,SFA,2,(0-1-1),Southland,17.0,10.0,12.0,5.0
+women,d1,6393850,6463272,08-17-2025,final,02:00PM ET,Jacksonville State University,Jacksonville St.,0,(1-0-1),CUSA,University of North Alabama,North Ala.,0,(0-1-1),ASUN,10.0,5.0,7.0,2.0
+women,d1,6394586,6463466,08-17-2025,final,02:00PM ET,Marquette University,Marquette,2,(2-0-0),Big East,North Dakota State University,North Dakota St.,0,(1-1-0),Summit League,14.0,7.0,5.0,2.0
+women,d1,341763,6463771,08-17-2025,final,02:00PM ET,University of Southern Indiana,Southern Ind.,0,(0-2-0),OVC,Cleveland State University,Cleveland St.,2,(1-1-0),Horizon,21.0,9.0,7.0,3.0
+women,d1,6396645,6463976,08-17-2025,final,02:00PM ET,Middle Tennessee State University,Middle Tenn.,3,(2-0-0),CUSA,Jackson State University,Jackson St.,0,(0-2-0),SWAC,19.0,13.0,1.0,1.0
+women,d1,6403446,6465375,08-17-2025,final,02:00PM ET,Tarleton State University,Tarleton St.,2,(1-1-0),WAC,Houston Christian University,Houston Christian,3,(1-1-0),Southland,13.0,4.0,14.0,8.0
+women,d1,6403828,6465550,08-17-2025,final,02:00PM ET,"Southern University, Baton Rouge",Southern U.,1,(1-0-0),SWAC,The University of Southern Mississippi,Southern Miss.,0,(0-2-0),Sun Belt,3.0,2.0,16.0,5.0
+women,d1,6405972,6465900,08-17-2025,final,02:00PM ET,Chicago State University,Chicago St.,2,(0-1-1),NEC,Southern Illinois University Edwardsville,SIUE,2,(1-0-1),OVC,18.0,8.0,10.0,8.0
+women,d1,6408520,6466263,08-17-2025,final,02:00PM ET,University of Richmond,Richmond,0,(1-1-0),Atlantic 10,Coastal Carolina University,Coastal Carolina,1,(1-0-0),Sun Belt,9.0,6.0,7.0,4.0
+women,d1,6410497,6466615,08-17-2025,final,02:00PM ET,University of Nebraska-Lincoln,Nebraska,1,(1-0-1),Big Ten,Missouri State University,Missouri St.,1,(0-1-1),CUSA,20.0,9.0,10.0,7.0
+women,d1,354493,6467217,08-17-2025,final,02:00PM ET,Prairie View A&M University,Prairie View,0,(0-1-0),SWAC,University of North Dakota,North Dakota,3,(2-0-0),Summit League,1.0,1.0,13.0,8.0
+women,d1,6387949,6462634,08-17-2025,final,03:00PM ET,Colorado College,Colorado Col.,0,(1-0-1),Mountain West,University of Denver,Denver,0,(1-0-1),Summit League,10.0,3.0,15.0,7.0
+women,d1,338700,6462794,08-17-2025,final,03:00PM ET,Murray State University,Murray St.,0,(1-1-0),MVC,Lindenwood University,Lindenwood,1,(2-0-0),OVC,12.0,6.0,8.0,4.0
+women,d1,339694,6463093,08-17-2025,final,03:00PM ET,Oregon State University,Oregon St.,2,(0-1-1),WCC,Weber State University,Weber St.,3,(1-1-0),Big Sky,15.0,2.0,24.0,12.0
+women,d1,6394816,6463566,08-17-2025,final,03:00PM ET,Howard University,Howard,4,(1-1-0),NEC,Hampton University,Hampton,1,(0-1-0),CAA,18.0,12.0,12.0,5.0
+women,d1,6399299,6464489,08-17-2025,final,03:00PM ET,University of Colorado Boulder,Colorado,4,(1-0-1),Big 12,U.S. Air Force Academy,Air Force,1,(0-2-0),Mountain West,14.0,7.0,15.0,8.0
+women,d1,6402365,6465069,08-17-2025,final,03:00PM ET,Eastern Washington University,Eastern Wash.,2,(1-1-0),Big Sky,Southern Utah University,Southern Utah,1,(0-2-0),WAC,19.0,12.0,15.0,11.0
+women,d1,6403577,6465417,08-17-2025,final,03:00PM ET,San Jose State University,San Jose St.,0,(0-2-0),Mountain West,"California State University, Northridge",CSUN,1,(1-0-1),Big West,5.0,3.0,14.0,8.0
+women,d1,6415170,6466865,08-17-2025,final,03:00PM ET,Pepperdine University,Pepperdine,2,(0-1-1),WCC,"University of Hawaii, Manoa",Hawaii,2,(0-1-1),Big West,13.0,7.0,14.0,8.0
+women,d1,352164,6466993,08-17-2025,final,03:00PM ET,New Mexico State University,New Mexico St.,1,(1-1-0),CUSA,Abilene Christian University,Abilene Christian,0,(1-1-0),WAC,6.0,3.0,10.0,5.0
+women,d1,6386710,6462467,08-17-2025,final,04:00PM ET,Iona University,Iona,1,(1-1-0),MAAC,Le Moyne College,Le Moyne,0,(0-2-0),NEC,5.0,2.0,5.0,3.0
+women,d1,342816,6464299,08-17-2025,final,04:00PM ET,Merrimack College,Merrimack,2,(1-0-1),MAAC,University of Massachusetts Lowell,UMass Lowell,1,(1-1-0),America East,17.0,8.0,15.0,5.0
+women,d1,346412,6465681,08-17-2025,final,04:00PM ET,Alcorn State University,Alcorn,1,(0-1-0),SWAC,Troy University,Troy,3,(1-1-0),Sun Belt,3.0,2.0,8.0,5.0
+women,d1,6413761,6466798,08-17-2025,final,04:00PM ET,Northern Arizona University,Northern Ariz.,1,(1-1-0),Big Sky,"University of Nevada, Reno",Nevada,2,(1-1-0),Mountain West,16.0,3.0,14.0,8.0
+women,d1,352393,6467020,08-17-2025,final,04:00PM ET,University of Washington,Washington,4,(1-0-1),Big Ten,University of Idaho,Idaho,0,(1-1-0),Big Sky,15.0,8.0,6.0,4.0
+women,d1,353605,6467150,08-17-2025,final,04:00PM ET,Stanford University,Stanford,5,(2-0-0),ACC,Santa Clara University,Santa Clara,1,(1-1-0),WCC,28.0,13.0,2.0,1.0
+women,d1,6421663,6467204,08-17-2025,final,04:00PM ET,Lafayette College,Lafayette,1,(1-1-0),Patriot,Central Connecticut State University,Central Conn. St.,0,(0-1-0),NEC,12.0,6.0,5.0,3.0
+women,d1,6388861,6462761,08-17-2025,final,05:00PM ET,"University of Maryland, College Park",Maryland,5,(2-0-0),Big Ten,Saint Francis University,Saint Francis,0,(0-1-0),NEC,26.0,16.0,3.0,1.0
+women,d1,340834,6463294,08-17-2025,final,05:00PM ET,"California State University, Fullerton",Cal St. Fullerton,0,(0-0-1),Big West,"University of California, Berkeley",California,0,(1-0-1),ACC,3.0,1.0,20.0,5.0
+women,d1,6410398,6466592,08-17-2025,final,05:00PM ET,Campbell University,Campbell,1,(1-0-1),CAA,University of North Florida,North Florida,0,(1-1-0),ASUN,15.0,4.0,9.0,1.0
+women,d1,6414834,6466833,08-17-2025,final,05:00PM ET,Virginia Polytechnic Institute and State University,Virginia Tech,5,(2-0-0),ACC,Virginia Commonwealth University,VCU,1,(0-1-1),Atlantic 10,24.0,11.0,12.0,6.0
+women,d1,354907,6467350,08-17-2025,final,05:00PM ET,"Rutgers, The State University of New Jersey, New Brunswick",Rutgers,2,(2-0-0),Big Ten,Fairfield University,Fairfield,0,(1-1-0),MAAC,11.0,3.0,16.0,7.0
+women,d1,337522,6462487,08-17-2025,final,06:00PM ET,Towson University,Towson,5,(1-0-0),CAA,Mount St. Mary's University,Mount St. Mary's,0,(0-2-0),MAAC,29.0,16.0,4.0,2.0
+women,d1,6387154,6462535,08-17-2025,final,06:00PM ET,Queens University of Charlotte,Queens (NC),1,(0-0-2),ASUN,Gardner-Webb University,Gardner-Webb,1,(0-1-1),Big South,15.0,5.0,9.0,6.0
+women,d1,338222,6462670,08-17-2025,final,06:00PM ET,"University of South Carolina, Columbia",South Carolina,3,(2-0-0),SEC,University of South Florida,South Fla.,1,(1-1-0),American,15.0,10.0,10.0,5.0
+women,d1,6388563,6462708,08-17-2025,final,06:00PM ET,University of Illinois Chicago,UIC,0,(0-2-0),MVC,University of Wisconsin-Madison,Wisconsin,1,(2-0-0),Big Ten,2.0,2.0,13.0,4.0
+women,d1,6389839,6462884,08-17-2025,final,06:00PM ET,University of Wisconsin-Milwaukee,Milwaukee,4,(1-1-0),Horizon,University of Northern Iowa,UNI,0,(0-1-1),MVC,24.0,14.0,7.0,4.0
+women,d1,6392071,6463157,08-17-2025,final,06:00PM ET,Furman University,Furman,2,(1-1-0),SoCon,Georgia State University,Georgia St.,1,(1-1-0),Sun Belt,8.0,4.0,16.0,7.0
+women,d1,6395482,6463703,08-17-2025,final,06:00PM ET,University of Central Florida,UCF,3,(2-0-0),Big 12,Florida Atlantic University,Fla. Atlantic,1,(0-1-1),American,19.0,12.0,5.0,1.0
+women,d1,6403643,6465445,08-17-2025,final,06:00PM ET,Syracuse University,Syracuse,1,(1-1-0),ACC,Niagara University,Niagara,2,(1-0-0),MAAC,29.0,11.0,5.0,4.0
+women,d1,6410611,6466628,08-17-2025,final,06:00PM ET,University of Delaware,Delaware,2,(2-0-0),CUSA,Bucknell University,Bucknell,1,(0-2-0),Patriot,11.0,6.0,10.0,3.0
+women,d1,349900,6466738,08-17-2025,final,06:00PM ET,James Madison University,James Madison,2,(1-0-1),Sun Belt,Liberty University,Liberty,2,(1-0-1),CUSA,7.0,5.0,13.0,6.0
+women,d1,6413008,6466786,08-17-2025,final,06:00PM ET,Longwood University,Longwood,2,(2-0-0),Big South,American University,American,1,(0-2-0),Patriot,15.0,8.0,13.0,8.0
+women,d1,6417538,6467007,08-17-2025,final,06:00PM ET,Loyola University Maryland,Loyola Maryland,2,(1-0-1),Patriot,Saint Peter's University,Saint Peter's,0,(0-1-1),MAAC,15.0,4.0,7.0,2.0
+women,d1,6418110,6467059,08-17-2025,final,06:00PM ET,Old Dominion University,Old Dominion,1,(1-0-1),Sun Belt,William & Mary,William & Mary,0,(0-1-1),CAA,10.0,4.0,6.0,3.0
+women,d1,6388352,6462673,08-17-2025,final,07:00PM ET,Wofford College,Wofford,0,(0-2-0),SoCon,University of North Carolina Asheville,UNC Asheville,1,(1-1-0),Big South,14.0,6.0,9.0,3.0
+women,d1,6389111,6462778,08-17-2025,final,07:00PM ET,Oakland University,Oakland,1,(0-1-1),Horizon,Valparaiso University,Valparaiso,1,(0-1-1),MVC,10.0,5.0,6.0,1.0
+women,d1,339012,6462897,08-17-2025,final,07:00PM ET,The University of North Carolina at Greensboro,UNC Greensboro,2,(0-2-0),SoCon,University of North Carolina Wilmington,UNCW,3,(1-1-0),CAA,14.0,8.0,10.0,6.0
+women,d1,6392787,6463185,08-17-2025,final,07:00PM ET,Michigan State University,Michigan St.,0,(0-0-2),Big Ten,University of Dayton,Dayton,0,(1-0-1),Atlantic 10,11.0,2.0,9.0,4.0
+women,d1,6395284,6463644,08-17-2025,final,07:00PM ET,The University of North Carolina at Charlotte,Charlotte,2,(2-0-0),American,Radford University,Radford,1,(0-1-0),Big South,11.0,6.0,13.0,5.0
+women,d1,342253,6463962,08-17-2025,final,07:00PM ET,Elon University,Elon,4,(1-0-1),CAA,Virginia Military Institute,VMI,0,(0-2-0),SoCon,26.0,12.0,4.0,1.0
+women,d1,346027,6465672,08-17-2025,final,07:00PM ET,Vanderbilt University,Vanderbilt,2,(2-0-0),SEC,University of Louisville,Louisville,0,(1-1-0),ACC,8.0,4.0,13.0,3.0
+women,d1,348223,6466203,08-17-2025,final,07:00PM ET,Bellarmine University,Bellarmine,2,(1-0-0),ASUN,Miami University (Ohio),Miami (OH),0,(0-1-0),MAC,7.0,5.0,15.0,8.0
+women,d1,6410383,6466590,08-17-2025,final,07:00PM ET,University of Alabama,Alabama,1,(2-0-0),SEC,University of Tennessee at Chattanooga,Chattanooga,0,(1-1-0),SoCon,26.0,10.0,5.0,0.0
+women,d1,349486,6466663,08-17-2025,final,07:00PM ET,Auburn University,Auburn,0,(0-1-1),SEC,Samford University,Samford,0,(0-1-1),SoCon,13.0,4.0,13.0,4.0
+women,d1,349717,6466689,08-17-2025,final,07:00PM ET,Belmont University,Belmont,1,(1-1-0),MVC,Southeast Missouri State University,Southeast Mo. St.,0,(0-2-0),OVC,18.0,8.0,4.0,3.0
+women,d1,6413299,6466793,08-17-2025,final,07:00PM ET,Florida State University,Florida St.,2,(2-0-0),ACC,Florida International University,FIU,0,(0-1-0),CUSA,13.0,5.0,0.0,0.0
+women,d1,352824,6467095,08-17-2025,final,07:00PM ET,East Carolina University,East Carolina,1,(0-1-1),American,North Carolina State University,NC State,1,(0-1-1),ACC,14.0,7.0,17.0,8.0
+women,d1,6422561,6467253,08-17-2025,final,07:00PM ET,South Carolina State University,South Carolina St.,1,(0-1-0),DI Independent,Presbyterian College,Presbyterian,2,(1-0-1),Big South,3.0,2.0,5.0,2.0
+women,d1,341823,6463805,08-17-2025,final,07:30PM ET,"University of Arkansas, Fayetteville",Arkansas,2,(0-1-1),SEC,University of Notre Dame,Notre Dame,2,(1-0-1),ACC,11.0,6.0,12.0,7.0
+women,d1,349187,6466571,08-17-2025,final,07:30PM ET,Indiana State University,Indiana St.,13,(1-1-0),MVC,St. Mary-Woods,St. Mary-Woods,0,(0-0-0),IND,59.0,31.0,1.0,0.0
+women,d1,6388803,6462745,08-17-2025,final,08:00PM ET,Texas Tech University,Texas Tech,4,(2-0-0),Big 12,Youngstown State University,Youngstown St.,1,(0-2-0),Horizon,38.0,16.0,2.0,2.0
+women,d1,6389755,6462843,08-17-2025,final,08:00PM ET,University of Oklahoma,Oklahoma,4,(2-0-0),SEC,Oklahoma State University,Oklahoma St.,1,(1-1-0),Big 12,19.0,9.0,6.0,5.0
+women,d1,6390596,6463001,08-17-2025,final,08:00PM ET,Southern Methodist University,SMU,2,(1-1-0),ACC,Northwestern State University,Northwestern St.,0,(1-1-0),Southland,27.0,8.0,6.0,0.0
+women,d1,339859,6463142,08-17-2025,final,08:00PM ET,University of Tennessee at Martin,UT Martin,1,(0-0-1),OVC,Arkansas State University,Arkansas St.,1,(1-0-1),Sun Belt,13.0,9.0,11.0,6.0
+women,d1,342534,6464108,08-17-2025,final,08:00PM ET,University of Memphis,Memphis,3,(2-0-0),American,University of Mississippi,Ole Miss,2,(0-1-0),SEC,14.0,8.0,6.0,4.0
+women,d1,6397975,6464317,08-17-2025,final,08:00PM ET,"University of Minnesota, Twin Cities",Minnesota,3,(1-1-0),Big Ten,University of St. Thomas (Minnesota),St. Thomas (MN),0,(1-1-0),Summit League,32.0,17.0,7.0,5.0
+women,d1,6401098,6464867,08-17-2025,final,08:00PM ET,University of Southern California,Southern California,4,(1-0-0),Big Ten,California Baptist University,California Baptist,0,(1-1-0),WAC,17.0,7.0,3.0,3.0
+women,d1,6402218,6465039,08-17-2025,final,08:00PM ET,University of Texas at El Paso,UTEP,4,(1-1-0),CUSA,Texas Southern University,Texas Southern,0,(0-2-0),SWAC,23.0,9.0,9.0,3.0
+women,d1,6402887,6465189,08-17-2025,final,08:00PM ET,University of Missouri-Kansas City,Kansas City,1,(0-2-0),Summit League,Creighton University,Creighton,2,(1-1-0),Big East,4.0,3.0,8.0,5.0
+women,d1,6403772,6465530,08-17-2025,final,08:00PM ET,Utah Tech University,Utah Tech,2,(1-1-0),WAC,"University of California, Riverside",UC Riverside,0,(0-2-0),Big West,17.0,4.0,4.0,2.0
+women,d1,6410467,6466608,08-17-2025,final,08:00PM ET,University of North Texas,North Texas,2,(1-1-0),American,Sam Houston State University,Sam Houston,0,(0-1-1),CUSA,12.0,3.0,11.0,2.0
+women,d1,6419084,6467105,08-17-2025,final,08:00PM ET,University of Houston,Houston,4,(1-0-1),Big 12,St. Mary's University (Texas),St. Mary's (TX),0,(0-0-0),Lone Star,27.0,9.0,2.0,0.0
+women,d1,354443,6467214,08-17-2025,final,08:00PM ET,Northern Illinois University,NIU,1,(1-1-0),MAC,DePaul University,DePaul,0,(1-1-0),Big East,7.0,4.0,11.0,2.0
+women,d1,357968,6495691,08-17-2025,final,08:00PM ET,Louisiana Tech University,Louisiana Tech,1,(0-1-1),CUSA,McNeese State University,McNeese,1,(0-1-1),Southland,18.0,9.0,8.0,6.0
+women,d1,6390210,6462937,08-17-2025,final,08:30PM ET,University of Texas at San Antonio,UTSA,0,(0-1-1),American,Texas Christian University,TCU,1,(2-0-0),Big 12,5.0,4.0,13.0,5.0
+women,d1,6398236,6464382,08-17-2025,final,08:30PM ET,University of the Incarnate Word,UIW,0,(1-1-0),Southland,Texas State University,Texas St.,5,(2-0-0),Sun Belt,5.0,3.0,15.0,10.0
+women,d1,6414894,6466850,08-17-2025,final,08:30PM ET,"Texas A&M University, College Station",Texas A&M,1,(1-0-1),SEC,Lamar University,Lamar University,0,(0-2-0),Southland,22.0,9.0,9.0,1.0
+women,d1,6394448,6463415,08-17-2025,final,09:00PM ET,Idaho State University,Idaho St.,1,(0-0-1),Big Sky,Boise State University,Boise St.,1,(0-0-1),Mountain West,18.0,5.0,11.0,4.0
+women,d1,6402350,6465065,08-17-2025,final,09:30PM ET,University of Oregon,Oregon,0,(1-0-1),Big Ten,University of Portland,Portland,0,(0-0-1),WCC,8.0,3.0,9.0,2.0
+women,d1,341694,6463728,08-17-2025,final,10:00PM ET,Long Beach State University,Long Beach St.,1,(1-1-0),Big West,University of Texas at Austin,Texas,2,(1-1-0),SEC,20.0,12.0,11.0,8.0
+women,d1,6402988,6465249,08-17-2025,final,10:00PM ET,University of the Pacific,Pacific,1,(0-2-0),WCC,"University of California, Davis",UC Davis,2,(1-0-1),Big West,8.0,2.0,13.0,6.0
+women,d1,6412969,6466774,08-17-2025,final,10:00PM ET,San Diego State University,San Diego St.,1,(1-1-0),Mountain West,"California State University, Bakersfield",CSU Bakersfield,0,(0-2-0),Big West,17.0,5.0,6.0,2.0
+women,d2,6399346,6464500,08-14-2025,final,07:00PM ET,Jacksonville University,Jacksonville,9,(1-0-0),ASUN,Edward Waters University,Edward Waters,0,(0-0-0),SIAC,53.0,35.0,1.0,0.0
+women,d2,354700,6467236,08-17-2025,final,01:00PM ET,Wright State University,Wright St.,4,(1-1-0),Horizon,Fairmont State University,Fairmont St.,0,(0-0-0),MEC,18.0,11.0,6.0,2.0
+women,d2,6419084,6467105,08-17-2025,final,08:00PM ET,University of Houston,Houston,4,(1-0-1),Big 12,St. Mary's University (Texas),St. Mary's (TX),0,(0-0-0),Lone Star,27.0,9.0,2.0,0.0

@@ -1,0 +1,368 @@
+gender,division,game_id,boxscore_id,date,status,start_time,home_team_full,home_team_short,home_team_score,home_record,home_conference,away_team_full,away_team_short,away_team_score,away_record,away_conference,home_shots,home_sot,away_shots,away_sot
+men,d1,352802,6466028,09-01-2025,pre,12:00PM ET,Villanova University,Villanova,1,(1-0-1),Big East,Saint Joseph's University,Saint Joseph's,0,(1-0-1),Atlantic 10,16.0,3.0,9.0,3.0
+men,d1,347745,6465192,09-01-2025,pre,01:00PM ET,Georgetown University,Georgetown,1,(0-1-0),Big East,University of Vermont,Vermont,1,(2-0-0),America East,10.0,6.0,5.0,2.0
+men,d1,348065,6465303,09-01-2025,pre,01:00PM ET,Rider University,Rider,3,(0-1-0),MAAC,George Washington University,George Washington,0,(1-1-0),Atlantic 10,10.0,6.0,12.0,4.0
+men,d1,348242,6465328,09-01-2025,pre,01:00PM ET,U.S. Naval Academy,Navy,2,(0-0-1),Patriot,Niagara University,Niagara,0,(1-0-0),MAAC,19.0,8.0,5.0,1.0
+men,d1,351705,6465866,09-01-2025,pre,01:00PM ET,University of Kentucky,Kentucky,0,(2-0-0),Sun Belt,"University of California, Los Angeles",UCLA,0,(0-2-1),Big Ten,10.0,3.0,10.0,4.0
+men,d1,345228,6464966,09-01-2025,pre,02:00PM ET,University of Michigan,Michigan,1,(1-0-1),Big Ten,Bowling Green State University,Bowling Green,0,(1-1-1),MVC,13.0,6.0,2.0,0.0
+men,d1,352531,6465949,09-01-2025,pre,02:00PM ET,Western Michigan University,Western Mich.,2,(0-2-0),MVC,University of New Hampshire,New Hampshire,1,(0-2-1),America East,20.0,11.0,9.0,3.0
+men,d1,353836,6466100,09-01-2025,pre,02:00PM ET,Michigan State University,Michigan St.,1,(1-1-0),Big Ten,University of Detroit Mercy,Detroit Mercy,0,(2-0-1),Horizon,20.0,4.0,2.0,1.0
+men,d1,342339,6464548,09-01-2025,pre,04:00PM ET,Pennsylvania State University,Penn St.,1,(1-1-1),Big Ten,Missouri State University,Missouri St.,3,(1-1-0),American,11.0,3.0,10.0,3.0
+men,d1,342748,6464591,09-01-2025,pre,04:00PM ET,Yale University,Yale,0,(0-0-0),Ivy League,Syracuse University,Syracuse,1,(1-1-1),ACC,1.0,1.0,28.0,9.0
+men,d1,348467,6465376,09-01-2025,pre,04:00PM ET,Robert Morris University,Robert Morris,1,(0-0-2),Horizon,Mount St. Mary's University,Mount St. Mary's,0,(0-0-1),MAAC,21.0,13.0,10.0,3.0
+men,d1,356012,6466409,09-01-2025,pre,04:00PM ET,"University of Massachusetts, Amherst",Massachusetts,4,(2-0-1),Summit League,Stonehill College,Stonehill,0,(1-2-0),NEC,19.0,8.0,4.0,2.0
+men,d1,341303,6464337,09-01-2025,pre,05:00PM ET,"University of Maryland, Baltimore County",UMBC,1,(1-0-0),America East,Howard University,Howard,0,(0-2-0),NEC,22.0,9.0,4.0,2.0
+men,d1,349490,6465605,09-01-2025,pre,06:00PM ET,College of Charleston (South Carolina),Col. of Charleston,2,(0-2-0),CAA,"University of North Carolina, Chapel Hill",North Carolina,0,(3-0-0),ACC,6.0,2.0,15.0,1.0
+men,d1,354644,6466191,09-01-2025,pre,06:00PM ET,University of South Carolina Upstate,USC Upstate,1,(0-1-1),Big South,University of Alabama at Birmingham,UAB,3,(0-0-0),American,10.0,2.0,17.0,8.0
+men,d1,339552,6463888,09-01-2025,pre,06:00PM ET,William & Mary,William & Mary,1,(0-0-0),CAA,"Rutgers, The State University of New Jersey, New Brunswick",Rutgers,4,(1-0-1),Big Ten,10.0,8.0,18.0,11.0
+men,d1,337856,6463498,09-01-2025,pre,07:00PM ET,Butler University,Butler,0,(1-2-0),Big East,Indiana University Indianapolis,IU Indy,1,(0-0-2),Horizon,16.0,6.0,6.0,2.0
+men,d1,338669,6463614,09-01-2025,pre,07:00PM ET,"University of Maryland, College Park",Maryland,6,(1-0-0),Big Ten,Saint Francis University,Saint Francis,0,(0-2-0),NEC,30.0,14.0,2.0,2.0
+men,d1,339446,6463859,09-01-2025,pre,07:00PM ET,Creighton University,Creighton,0,(0-1-0),Big East,The University of Tulsa,Tulsa,0,(0-1-1),American,10.0,4.0,10.0,3.0
+men,d1,343757,6464682,09-01-2025,pre,07:00PM ET,University of Rhode Island,Rhode Island,1,(0-1-1),Atlantic 10,Providence College,Providence,3,(0-2-0),Big East,9.0,3.0,20.0,9.0
+men,d1,345014,6464940,09-01-2025,pre,07:00PM ET,University of Virginia,Virginia,1,(2-1-0),ACC,American University,American,0,(0-2-0),Patriot,22.0,11.0,5.0,1.0
+men,d1,349122,6465529,09-01-2025,pre,07:00PM ET,Fairfield University,Fairfield,0,(2-0-0),MAAC,Brown University,Brown,1,(0-0-0),Ivy League,6.0,1.0,10.0,4.0
+men,d1,349785,6465633,09-01-2025,pre,07:00PM ET,University of Akron,Akron,1,(2-0-0),Big East,Cleveland State University,Cleveland St.,0,(0-1-1),Horizon,15.0,4.0,2.0,0.0
+men,d1,339057,6463749,09-01-2025,pre,07:30PM ET,Northwestern University,Northwestern,2,(2-0-0),Big Ten,University of Illinois Chicago,UIC,3,(1-0-0),MVC,9.0,3.0,15.0,7.0
+men,d1,345629,6465047,09-01-2025,pre,08:00PM ET,San Diego State University,San Diego St.,1,(2-1-0),WAC,University of San Diego,San Diego,2,(1-1-1),WCC,6.0,2.0,12.0,4.0
+men,d1,345758,6465073,09-01-2025,pre,08:00PM ET,University of Wisconsin-Madison,Wisconsin,0,(1-1-0),Big Ten,University of Portland,Portland,1,(1-0-0),WCC,6.0,2.0,13.0,6.0
+men,d1,342021,6464490,09-01-2025,pre,08:30PM ET,University of Missouri-Kansas City,Kansas City,2,(1-0-1),Summit League,Northern Illinois University,NIU,1,(2-0-1),MVC,9.0,4.0,18.0,6.0
+men,d1,352603,6466004,09-01-2025,pre,10:00PM ET,University of San Francisco,San Francisco,1,(2-1-0),WCC,"California State University, Bakersfield",CSU Bakersfield,0,(0-2-0),Big West,17.0,5.0,6.0,1.0
+men,d1,341973,6464479,09-01-2025,pre,10:15PM ET,"University of California, Riverside",UC Riverside,2,(0-2-0),Big West,U.S. Air Force Academy,Air Force,2,(0-3-0),WAC,19.0,4.0,8.0,4.0
+men,d1,337430,6463318,09-02-2025,pre,01:00PM ET,Iona University,Iona,1,(0-0-2),MAAC,Monmouth University,Monmouth,2,(0-2-0),CAA,13.0,6.0,9.0,6.0
+men,d1,340992,6464289,09-02-2025,pre,05:00PM ET,Dartmouth College,Dartmouth,0,(0-0-0),Ivy League,Bryant University,Bryant,1,(0-0-1),America East,5.0,3.0,3.0,2.0
+men,d1,343475,6464644,09-02-2025,pre,05:00PM ET,Boston College,Boston College,1,(1-0-0),ACC,Northeastern University,Northeastern,0,(1-0-1),CAA,15.0,5.0,14.0,6.0
+men,d1,346649,6465091,09-02-2025,pre,06:00PM ET,Stony Brook University,Stony Brook,3,(1-1-0),CAA,Quinnipiac University,Quinnipiac,0,(0-2-0),MAAC,23.0,10.0,9.0,1.0
+men,d1,352585,6465993,09-02-2025,pre,06:00PM ET,Lehigh University,Lehigh,2,(0-0-1),Patriot,Old Dominion University,Old Dominion,2,(1-0-1),Sun Belt,7.0,4.0,11.0,6.0
+men,d1,339343,6463828,09-02-2025,pre,07:00PM ET,Georgia Southern University,Ga. Southern,1,(2-0-1),Sun Belt,Stetson University,Stetson,0,(1-2-0),ASUN,15.0,7.0,6.0,1.0
+men,d1,339613,6463961,09-02-2025,pre,07:00PM ET,"University of South Carolina, Columbia",South Carolina,3,(1-0-0),Sun Belt,Florida International University,FIU,2,(1-0-1),American,8.0,5.0,13.0,4.0
+men,d1,341572,6464388,09-02-2025,pre,07:00PM ET,Radford University,Radford,0,(0-1-1),Big South,Elon University,Elon,2,(0-0-1),CAA,4.0,2.0,11.0,4.0
+men,d1,344666,6464889,09-02-2025,pre,07:00PM ET,Fordham University,Fordham,1,(1-0-1),Atlantic 10,Lafayette College,Lafayette,0,(0-1-0),Patriot,15.0,2.0,10.0,0.0
+men,d1,348469,6465378,09-02-2025,pre,07:00PM ET,George Mason University,George Mason,3,(1-1-0),Atlantic 10,Bucknell University,Bucknell,2,(2-0-0),Patriot,19.0,7.0,13.0,7.0
+men,d1,352541,6465964,09-02-2025,pre,07:00PM ET,University of Delaware,Delaware,4,(2-0-0),Summit League,Loyola University Maryland,Loyola Maryland,0,(1-1-0),Patriot,11.0,5.0,10.0,4.0
+men,d1,355799,6466300,09-02-2025,pre,07:00PM ET,Virginia Commonwealth University,VCU,1,(0-1-0),Atlantic 10,Campbell University,Campbell,1,(1-1-0),CAA,16.0,5.0,8.0,2.0
+men,d1,349683,6465618,09-02-2025,pre,07:30PM ET,Belmont University,Belmont,1,(2-0-0),MVC,Bellarmine University,Bellarmine,1,(0-0-1),ASUN,4.0,1.0,6.0,4.0
+men,d1,344114,6464746,09-02-2025,pre,08:00PM ET,University of Southern Indiana,Southern Ind.,0,(1-1-0),OVC,University of Wisconsin-Green Bay,Green Bay,1,(0-2-0),Horizon,10.0,5.0,10.0,3.0
+men,d1,347726,6465177,09-03-2025,pre,04:00PM ET,Le Moyne College,Le Moyne,2,(0-2-0),NEC,St. Bonaventure University,St. Bonaventure,1,(0-2-0),Atlantic 10,15.0,7.0,11.0,3.0
+men,d1,348884,6465455,09-03-2025,pre,05:00PM ET,Siena University,Siena,1,(0-1-0),MAAC,"Fairleigh Dickinson University, Metropolitan Campus",FDU,2,(1-0-1),NEC,8.0,5.0,12.0,5.0
+men,d1,337625,6463378,09-03-2025,pre,06:00PM ET,Western Illinois University,Western Ill.,3,(1-1-0),OVC,Bradley University,Bradley,2,(1-1-1),MVC,19.0,9.0,14.0,6.0
+men,d1,340669,6464205,09-03-2025,pre,07:00PM ET,West Virginia University,West Virginia,0,(1-0-0),Sun Belt,Gardner-Webb University,Gardner-Webb,1,(2-0-0),Big South,8.0,3.0,10.0,5.0
+men,d1,351174,6465795,09-03-2025,pre,07:00PM ET,Mercer University,Mercer,1,(1-0-1),SoCon,Georgia State University,Georgia St.,0,(0-1-1),Sun Belt,9.0,3.0,14.0,4.0
+men,d1,339879,6464033,09-03-2025,pre,08:00PM ET,University of Memphis,Memphis,1,(1-1-1),American,Florida Gulf Coast University,FGCU,3,(1-0-0),ASUN,14.0,3.0,11.0,7.0
+men,d1,356055,6466445,09-03-2025,pre,08:00PM ET,"Indiana University, Bloomington",Indiana,1,(1-0-1),Big Ten,Saint Louis University,Saint Louis,0,(1-0-1),Atlantic 10,8.0,4.0,13.0,6.0
+men,d1,339574,6463911,09-03-2025,pre,08:30PM ET,Drake University,Drake,1,(1-0-0),MVC,University of Nebraska at Omaha,Omaha,1,(0-2-0),Summit League,10.0,5.0,6.0,2.0
+men,d1,345357,6464996,09-03-2025,pre,10:00PM ET,"University of California, Davis",UC Davis,1,(0-1-1),Big West,Saint Mary's College of California,Saint Mary's (CA),1,(0-2-0),WCC,24.0,14.0,7.0,3.0
+men,d2,356760,6471362,09-03-2025,pre,04:00PM ET,"University of Minnesota, Morris",Minn.-Morris,,(0-0-0),UMAC,University of Jamestown,Jamestown,,(0-0-0),DII Independent,,,,
+men,d3,6416339,6477029,09-01-2025,pre,TBA,Russell Sage College,Russell Sage,1,(0-0-0),Empire 8,Pratt Institute,Pratt,0,(0-0-0),Atlantic East,10.0,8.0,8.0,3.0
+men,d3,349659,6476245,09-01-2025,pre,TBA,Mitchell College,Mitchell,1,(0-0-0),Great Northeast,Eastern Connecticut State University,Eastern Conn. St.,5,(0-0-0),Little East,4.0,3.0,21.0,8.0
+men,d3,340483,6473478,09-01-2025,pre,12:00PM ET,University of Massachusetts Boston,UMass Boston,4,(0-0-0),Little East,Occidental College,Occidental,0,(0-0-0),SCIAC,14.0,7.0,15.0,3.0
+men,d3,348208,6475763,09-01-2025,pre,01:00PM ET,Hood College,Hood,3,(0-0-0),MAC Commonwealth,Chatham University,Chatham,1,(0-0-0),PAC,14.0,7.0,14.0,4.0
+men,d3,350875,6476667,09-01-2025,pre,01:00PM ET,Stevens Institute of Technology,Stevens,1,(0-0-0),MAC Freedom,William Paterson University of New Jersey,Wm. Paterson,1,(0-0-0),NJAC,14.0,5.0,11.0,4.0
+men,d3,6424675,6478162,09-01-2025,pre,01:00PM ET,Worcester Polytechnic Institute,WPI,2,(0-0-0),NEWMAC,Anna Maria College,Anna Maria,0,(0-0-0),MASCAC,17.0,6.0,3.0,2.0
+men,d3,356217,6478366,09-01-2025,pre,01:30PM ET,"University of California, Santa Cruz",UC Santa Cruz,1,(0-0-0),C2C,Pacific University (Oregon),Pacific (OR),0,(0-0-0),NWC,12.0,5.0,4.0,4.0
+men,d3,348298,6475811,09-01-2025,pre,02:00PM ET,University of Wisconsin-River Falls,UW-River Falls,2,(0-0-0),WIAC,Wisconsin Lutheran College,Wis. Lutheran,1,(0-0-0),NACC,11.0,5.0,12.0,6.0
+men,d3,349859,6476288,09-01-2025,pre,02:00PM ET,University of La Verne,La Verne,0,(0-0-0),SCIAC,Willamette University,Willamette,0,(0-0-0),NWC,8.0,3.0,4.0,2.0
+men,d3,353618,6477666,09-01-2025,pre,02:30PM ET,Vermont State University Lyndon,VTSU Lyndon,0,(0-0-0),North Atlantic,Paul Smiths,Paul Smiths,5,(0-0-0),IND,9.0,3.0,15.0,10.0
+men,d3,350832,6476637,09-01-2025,pre,04:00PM ET,Carleton College,Carleton,3,(0-0-0),MIAC,Simpson College,Simpson,1,(0-0-0),American Rivers,17.0,8.0,4.0,2.0
+men,d3,351057,6476774,09-01-2025,pre,04:00PM ET,Bethel University (Minnesota),Bethel (MN),1,(0-0-0),MIAC,Wartburg College,Wartburg,1,(0-0-0),American Rivers,6.0,2.0,20.0,6.0
+men,d3,348555,6475871,09-01-2025,pre,04:00PM ET,Greenville University,Greenville,2,(0-0-0),SLIAC,Central College (Iowa),Central (IA),1,(0-0-0),American Rivers,6.0,3.0,10.0,6.0
+men,d3,344916,6474899,09-01-2025,pre,05:00PM ET,State University of New York at Oneonta,SUNY Oneonta,1,(0-0-0),SUNYAC,Skidmore College,Skidmore,1,(0-0-0),Liberty League,9.0,6.0,9.0,6.0
+men,d3,344912,6474897,09-01-2025,pre,06:00PM ET,Hamline University,Hamline,4,(0-0-0),MIAC,North Central University,North Central (MN),1,(0-0-0),UMAC,21.0,12.0,10.0,5.0
+men,d3,359026,6496089,09-01-2025,pre,06:00PM ET,University of Dallas,Dallas,0,(0-0-0),SCAC,Arlington Baptist,Arlington Baptist,3,(0-0-0),IND,5.0,0.0,5.0,3.0
+men,d3,358424,6495931,09-01-2025,pre,06:30PM ET,Concordia University Chicago,Concordia Chicago,6,(0-0-0),NACC,Andrews,Andrews,2,(0-0-0),IND,28.0,15.0,7.0,5.0
+men,d3,342664,6473995,09-01-2025,pre,07:00PM ET,Lancaster Bible College,Lancaster Bible,2,(0-0-0),United East,Wilkes University,Wilkes,1,(0-0-0),Landmark,16.0,8.0,12.0,8.0
+men,d3,349464,6476177,09-01-2025,pre,07:00PM ET,Kalamazoo College,Kalamazoo,1,(0-0-0),Michigan Intercol. Ath. Assn.,Aquinas,Aquinas,0,(0-0-0),IND,12.0,6.0,23.0,5.0
+men,d3,352856,6477405,09-01-2025,pre,07:00PM ET,Lancaster Bible College,Lancaster Bible,0,(0-0-0),United East,Alvernia University,Alvernia,0,(0-0-0),MAC Commonwealth,15.0,3.0,12.0,3.0
+men,d3,350009,6476373,09-01-2025,pre,08:00PM ET,Hendrix College,Hendrix,1,(0-0-0),SCAC,Lyon College,Lyon,1,(0-0-0),SLIAC,7.0,3.0,6.0,2.0
+men,d3,6428048,6478540,09-01-2025,pre,08:00PM ET,Centenary College (Louisiana),Centenary (LA),0,(0-0-0),SCAC,Dallas Christian,Dallas Christian,0,(0-0-0),IND,14.0,5.0,14.0,7.0
+men,d3,337462,6472746,09-01-2025,pre,08:30PM ET,Lawrence University,Lawrence,0,(0-0-0),MWC,Concordia University Wisconsin,Concordia Wisconsin,0,(0-0-0),NACC,2.0,1.0,10.0,6.0
+men,d3,339292,6473092,09-02-2025,pre,12:00PM ET,Randolph-Macon College,Randolph-Macon,0,(0-0-0),ODAC,Ohio Northern University,Ohio Northern,1,(0-0-0),OAC,6.0,3.0,12.0,4.0
+men,d3,351198,6476814,09-02-2025,pre,01:30PM ET,Virginia Wesleyan University,Va. Wesleyan,3,(0-0-0),ODAC,U.S. Merchant Marine Academy,Merchant Marine,0,(0-0-0),Skyline,9.0,5.0,10.0,4.0
+men,d3,347167,6475311,09-02-2025,pre,03:30PM ET,State University of New York at Old Westbury,Old Westbury,0,(0-0-0),Skyline,Albertus Magnus College,Albertus Magnus,2,(0-0-0),Great Northeast,9.0,2.0,19.0,10.0
+men,d3,338199,6472839,09-02-2025,pre,04:00PM ET,Middlebury College,Middlebury,6,(0-0-0),NESCAC,Bridgewater State University,Bridgewater St.,0,(0-0-0),MASCAC,16.0,9.0,8.0,2.0
+men,d3,6389688,6473036,09-02-2025,pre,04:00PM ET,Williams College,Williams,1,(0-0-0),NESCAC,Wheaton College (Massachusetts),Wheaton (MA),1,(0-0-0),NEWMAC,18.0,7.0,14.0,8.0
+men,d3,6393273,6473507,09-02-2025,pre,04:00PM ET,Penn St.-Mont Alto,Penn St.-Mont Alto,0,(0-0-0),IND,Carlow University,Carlow,3,(0-0-0),AMCC,5.0,3.0,25.0,11.0
+men,d3,341396,6473661,09-02-2025,pre,04:00PM ET,Connecticut College,Connecticut Col.,0,(0-0-0),NESCAC,University of Hartford,Hartford,0,(0-0-0),CNE,21.0,6.0,0.0,0.0
+men,d3,341815,6473810,09-02-2025,pre,04:00PM ET,La Roche University,La Roche,9,(0-0-0),AMCC,Penn St.-Beaver,Penn St.-Beaver,1,(0-0-0),IND,31.0,17.0,3.0,3.0
+men,d3,348051,6475675,09-02-2025,pre,04:00PM ET,State University of New York at Morrisville,SUNY Morrisville,5,(0-0-0),SUNYAC,Hartwick College,Hartwick,0,(0-0-0),Empire 8,12.0,8.0,9.0,4.0
+men,d3,352056,6477184,09-02-2025,pre,04:00PM ET,Delaware Valley University,Delaware Valley,8,(0-0-0),MAC Freedom,Penn St.-Scranton,Penn St.-Scranton,0,(0-0-0),IND,21.0,16.0,2.0,1.0
+men,d3,355270,6478092,09-02-2025,pre,04:00PM ET,State University of New York at Oswego,Oswego St.,0,(0-0-0),SUNYAC,Hamilton College,Hamilton,4,(0-0-0),NESCAC,4.0,4.0,28.0,15.0
+men,d3,356382,6478450,09-02-2025,pre,04:00PM ET,"University of Pittsburgh, Greensburg",Pitt.-Greensburg,0,(0-0-0),AMCC,Pennsylvania College of Technology,Penn College,1,(0-0-0),United East,6.0,3.0,7.0,4.0
+men,d3,358416,6495915,09-02-2025,pre,04:00PM ET,The State University of New York at Fredonia,Fredonia,4,(0-0-0),SUNYAC,State University of New York at Geneseo,SUNY Geneseo,3,(0-0-0),Empire 8,11.0,7.0,18.0,11.0
+men,d3,358197,6495792,09-02-2025,pre,05:00PM ET,LaGrange College,LaGrange,5,(0-0-0),CCS,Toccoa Falls,Toccoa Falls,1,(0-0-0),IND,24.0,10.0,9.0,5.0
+men,d3,355594,6478138,09-02-2025,pre,05:00PM ET,Cornell College,Cornell College,1,(0-0-0),MWC,Lakeland University,Lakeland,2,(0-0-0),NACC,18.0,9.0,12.0,4.0
+men,d3,343607,6474284,09-02-2025,pre,05:00PM ET,Anderson University (Indiana),Anderson (IN),1,(0-0-0),HCAC,Wilmington College (Ohio),Wilmington (OH),2,(0-0-0),OAC,14.0,4.0,10.0,6.0
+men,d3,355245,6478076,09-02-2025,pre,05:00PM ET,Monmouth College (Illinois),Monmouth (IL),0,(0-0-0),MWC,Augustana College (Illinois),Augustana (IL),0,(0-0-0),CCIW,15.0,7.0,9.0,5.0
+men,d3,339645,6473204,09-02-2025,pre,05:30PM ET,State University of New York at New Paltz,SUNY New Paltz,0,(0-0-0),SUNYAC,Union College (New York),Union (NY),1,(0-0-0),Liberty League,8.0,5.0,3.0,1.0
+men,d3,340806,6473551,09-02-2025,pre,06:00PM ET,University of Wisconsin-Stout,Wis.-Stout,2,(0-0-0),WIAC,Martin Luther College,Martin Luther,0,(0-0-0),UMAC,24.0,11.0,7.0,1.0
+men,d3,343000,6474050,09-02-2025,pre,06:00PM ET,Roger Williams University,Roger Williams,1,(0-0-0),CNE,Rhode Island College,Rhode Island Col.,1,(0-0-0),Little East,14.0,8.0,4.0,2.0
+men,d3,355018,6477974,09-02-2025,pre,06:30PM ET,Principia College,Principia,1,(0-0-0),SLIAC,Spurgeon,Spurgeon,1,(0-0-0),IND,27.0,12.0,6.0,5.0
+men,d3,344035,6474524,09-02-2025,pre,07:00PM ET,Catholic University,Catholic,4,(0-0-0),Landmark,St. Mary's College of Maryland,St. Mary's (MD),1,(0-0-0),United East,16.0,8.0,5.0,2.0
+men,d3,355939,6478286,09-02-2025,pre,07:00PM ET,Oglethorpe University,Oglethorpe,4,(0-0-0),SAA,Huntingdon College,Huntingdon,1,(0-0-0),CCS,17.0,9.0,2.0,2.0
+men,d3,6422236,6477904,09-02-2025,pre,07:00PM ET,Bowdoin College,Bowdoin,4,(0-0-0),NESCAC,University of New England,U New England,0,(0-0-0),CNE,30.0,22.0,3.0,0.0
+men,d3,350951,6476722,09-02-2025,pre,07:00PM ET,Wittenberg University,Wittenberg,0,(0-0-0),NCAC,Mich.-Dearborn,Mich.-Dearborn,0,(0-0-0),IND,22.0,10.0,0.0,0.0
+men,d3,349792,6476263,09-02-2025,pre,07:00PM ET,Sarah Lawrence College,Sarah Lawrence,4,(0-0-0),Skyline,Brooklyn College,Brooklyn,1,(0-0-0),CUNYAC,11.0,7.0,22.0,9.0
+men,d3,340408,6473447,09-02-2025,pre,07:00PM ET,Covenant College,Covenant,2,(0-0-0),CCS,Berea College,Berea,0,(0-0-0),HCAC,18.0,6.0,4.0,2.0
+men,d3,338754,6472994,09-02-2025,pre,07:00PM ET,State University of New York Maritime College,SUNY Maritime,2,(0-0-0),Skyline,Five Towns,Five Towns,1,(0-0-0),IND,18.0,6.0,14.0,5.0
+men,d3,348043,6475663,09-02-2025,pre,07:30PM ET,Colby College,Colby,4,(0-0-0),NESCAC,Thomas College,Thomas (ME),1,(0-0-0),North Atlantic,26.0,14.0,4.0,3.0
+men,d3,6400961,6474707,09-02-2025,pre,08:00PM ET,Elms College,Elms,0,(0-0-0),Great Northeast,Massachusetts Maritime Academy,Mass. Maritime,2,(0-0-0),MASCAC,14.0,3.0,19.0,10.0
+men,d3,355778,6478202,09-02-2025,pre,08:00PM ET,Illinois Institute of Technology,Illinois Tech,5,(0-0-0),NACC,Hope College,Hope,3,(0-0-0),Michigan Intercol. Ath. Assn.,13.0,9.0,21.0,8.0
+men,d3,351140,6476794,09-02-2025,pre,10:00PM ET,George Fox University,George Fox,5,(0-0-0),NWC,Bushnell,Bushnell,1,(0-0-0),IND,23.0,11.0,6.0,1.0
+men,d3,6408705,6475899,09-03-2025,pre,TBA,Penn St.-Gr Allegheny,Penn St.-Gr Allegheny,,(0-0-0),IND,Hilbert College,Hilbert,,(0-0-0),AMCC,,,,
+men,d3,350389,6476510,09-03-2025,pre,02:00PM ET,New Jersey City University,New Jersey City,1.0,(0-0-0),NJAC,Manhattanville University,Manhattanville,2.0,(0-0-0),Skyline,9.0,2.0,14.0,6.0
+men,d3,6399060,6474182,09-03-2025,pre,03:00PM ET,Bluffton University,Bluffton,7.0,(0-0-0),HCAC,Great Lake Christian,Great Lake Christian,2.0,(0-0-0),IND,28.0,12.0,11.0,10.0
+men,d3,6407691,6475717,09-03-2025,pre,03:00PM ET,Hunter College,Hunter,0.0,(0-0-0),CUNYAC,Saint Elizabeth University,Saint Elizabeth,0.0,(0-0-0),Atlantic East,15.0,8.0,14.0,2.0
+men,d3,355664,6478150,09-03-2025,pre,03:00PM ET,York College (New York),York (NY),0.0,(0-0-0),CUNYAC,"Purchase College, State University of New York",Purchase,4.0,(0-0-0),Skyline,2.0,0.0,25.0,9.0
+men,d3,354848,6477949,09-03-2025,pre,04:00PM ET,Concordia University Chicago,Concordia Chicago,1.0,(0-0-0),NACC,Blackburn College,Blackburn,3.0,(0-0-0),SLIAC,11.0,7.0,25.0,12.0
+men,d3,358711,6496030,09-03-2025,pre,04:00PM ET,Gordon College,Gordon,2.0,(0-0-0),CNE,Lasell University,Lasell,0.0,(0-0-0),Great Northeast,18.0,7.0,1.0,1.0
+men,d3,356584,6478500,09-03-2025,pre,04:00PM ET,Earlham College,Earlham,,(0-0-0),HCAC,Kuyper,Kuyper,,(0-0-0),IND,,,,
+men,d3,355128,6478030,09-03-2025,pre,04:00PM ET,Wilson College,Wilson,0.0,(0-0-0),United East,McDaniel College,McDaniel,2.0,(0-0-0),Centennial,4.0,3.0,13.0,8.0
+men,d3,353211,6477571,09-03-2025,pre,04:00PM ET,Adrian College,Adrian,0.0,(0-0-0),Michigan Intercol. Ath. Assn.,Grace Christian (MI),Grace Christian (MI),2.0,(0-0-0),IND,13.0,10.0,11.0,7.0
+men,d3,352276,6477238,09-03-2025,pre,04:00PM ET,Salisbury University,Salisbury,0.0,(0-0-0),C2C,Dickinson College,Dickinson,2.0,(0-0-0),Centennial,11.0,3.0,9.0,6.0
+men,d3,351707,6476987,09-03-2025,pre,04:00PM ET,Shenandoah University,Shenandoah,5.0,(0-0-0),ODAC,Mary Baldwin University,Mary Baldwin,0.0,(0-0-0),USA South,37.0,17.0,3.0,2.0
+men,d3,349254,6476099,09-03-2025,pre,04:00PM ET,Regis College (Massachusetts),Regis (MA),1.0,(0-0-0),Great Northeast,Salem State University,Salem St.,2.0,(0-0-0),MASCAC,9.0,6.0,23.0,9.0
+men,d3,6399653,6474311,09-03-2025,pre,04:00PM ET,Haverford College,Haverford,3.0,(0-0-0),Centennial,Immaculata University,Immaculata,1.0,(0-0-0),Atlantic East,19.0,9.0,4.0,2.0
+men,d3,343612,6474286,09-03-2025,pre,04:00PM ET,DeSales University,DeSales,0.0,(0-0-0),MAC Freedom,Stockton University,Stockton,3.0,(0-0-0),NJAC,4.0,3.0,22.0,9.0
+men,d3,356760,6471362,09-03-2025,pre,04:00PM ET,"University of Minnesota, Morris",Minn.-Morris,,(0-0-0),UMAC,University of Jamestown,Jamestown,,(0-0-0),DII Independent,,,,
+men,d3,343323,6474199,09-03-2025,pre,04:00PM ET,Guilford College,Guilford,10.0,(0-0-0),ODAC,Bluefield Univ.,Bluefield Univ.,0.0,(0-0-0),IND,37.0,18.0,1.0,0.0
+men,d3,342102,6473872,09-03-2025,pre,04:00PM ET,Farmingdale State College,Farmingdale St.,0.0,(0-0-0),Skyline,Lehman College,Lehman,1.0,(0-0-0),CUNYAC,9.0,2.0,12.0,7.0
+men,d3,6395458,6473785,09-03-2025,pre,04:00PM ET,"University of Maine, Farmington",Me.-Farmington,2.0,(0-0-0),North Atlantic,Me.-Fort Kent,Me.-Fort Kent,2.0,(0-0-0),IND,7.0,4.0,15.0,6.0
+men,d3,350901,6476682,09-03-2025,pre,04:00PM ET,Lebanon Valley College,Lebanon Valley,1.0,(0-0-0),MAC Freedom,Muhlenberg College,Muhlenberg,2.0,(0-0-0),Centennial,12.0,7.0,7.0,4.0
+men,d3,343922,6474471,09-03-2025,pre,05:00PM ET,Saint Mary's University of Minnesota,Saint Mary's (MN),1.0,(0-0-0),MIAC,Ripon College,Ripon,4.0,(0-0-0),MWC,11.0,5.0,8.0,5.0
+men,d3,349544,6476201,09-03-2025,pre,05:00PM ET,Saint John's University (Minnesota),Saint John's (MN),4.0,(0-0-0),MIAC,Crown College (Minnesota),Crown (MN),1.0,(0-0-0),UMAC,28.0,15.0,4.0,4.0
+men,d3,349259,6476101,09-03-2025,pre,05:00PM ET,Ohio Wesleyan University,Ohio Wesleyan,1.0,(0-0-0),NCAC,Otterbein University,Otterbein,1.0,(0-0-0),OAC,10.0,4.0,12.0,2.0
+men,d3,6409888,6476006,09-03-2025,pre,05:00PM ET,Columbia (SC),Columbia (SC),,(0-0-0),IND,Johnson & Wales University Charlotte,JWU Charlotte,,(0-0-0),C2C,,,,
+men,d3,343536,6474242,09-03-2025,pre,05:00PM ET,Wesleyan University (Connecticut),Wesleyan (CT),3.0,(0-0-0),NESCAC,Western New England University,Western New Eng.,0.0,(0-0-0),CNE,18.0,9.0,13.0,6.0
+men,d3,339538,6473145,09-03-2025,pre,05:00PM ET,Beloit College,Beloit,1.0,(0-0-0),MWC,Wisconsin Lutheran College,Wis. Lutheran,3.0,(0-0-0),NACC,19.0,5.0,13.0,8.0
+men,d3,350834,6476638,09-03-2025,pre,05:30PM ET,Grinnell College,Grinnell,0.0,(0-0-0),MWC,Simpson College,Simpson,3.0,(0-0-0),American Rivers,1.0,0.0,8.0,3.0
+men,d3,342149,6473892,09-03-2025,pre,06:00PM ET,Waynesburg University,Waynesburg,7.0,(0-0-0),PAC,"Penn State University, Altoona",Penn St.-Altoona,1.0,(0-0-0),AMCC,20.0,15.0,7.0,4.0
+men,d3,356126,6478328,09-03-2025,pre,06:00PM ET,Mount Saint Mary College (New York),Mt. St. Mary (NY),1.0,(0-0-0),Skyline,State University of New York at Delhi,SUNY Delhi,1.0,(0-0-0),North Atlantic,13.0,7.0,12.0,5.0
+men,d3,355894,6478264,09-03-2025,pre,06:00PM ET,State University of New York at Canton,SUNY Canton,2.0,(0-0-0),SUNYAC,State University of New York Polytechnic Institute,SUNY Poly,1.0,(0-0-0),Empire 8,14.0,7.0,5.0,2.0
+men,d3,6419403,6477504,09-03-2025,pre,06:00PM ET,Wentworth Institute of Technology,Wentworth,0.0,(0-0-0),CNE,Clark University (Massachusetts),Clark (MA),1.0,(0-0-0),NEWMAC,13.0,5.0,12.0,2.0
+men,d3,352874,6477418,09-03-2025,pre,06:00PM ET,U.S. Coast Guard Academy,Coast Guard,5.0,(0-0-0),NEWMAC,Mitchell College,Mitchell,0.0,(0-0-0),Great Northeast,33.0,18.0,5.0,2.0
+men,d3,347234,6475353,09-03-2025,pre,06:00PM ET,Methodist University,Methodist,2.0,(0-0-0),USA South,Montreat,Montreat,0.0,(0-0-0),IND,14.0,8.0,5.0,4.0
+men,d3,6399501,6474260,09-03-2025,pre,06:00PM ET,Bates College,Bates,3.0,(0-0-0),NESCAC,Saint Joseph's College (Maine),St. Joseph's (ME),0.0,(0-0-0),Great Northeast,23.0,8.0,3.0,1.0
+men,d3,349466,6476181,09-03-2025,pre,06:00PM ET,University of Mount Saint Vincent,UMSV,7.0,(0-0-0),Skyline,Medgar Evers College,Medgar Evers,0.0,(0-0-0),CUNYAC,22.0,12.0,2.0,1.0
+men,d3,341891,6473828,09-03-2025,pre,06:00PM ET,"University of Massachusetts, Dartmouth",UMass Dartmouth,0.0,(0-0-0),Little East,Salve Regina University,Salve Regina,2.0,(0-0-0),NEWMAC,9.0,3.0,14.0,9.0
+men,d3,340926,6473607,09-03-2025,pre,06:30PM ET,Greensboro College,Greensboro,2.0,(0-0-0),USA South,Randolph College,Randolph,2.0,(0-0-0),ODAC,17.0,9.0,10.0,5.0
+men,d3,347447,6475455,09-03-2025,pre,06:30PM ET,Ramapo College,Ramapo,2.0,(0-0-0),NJAC,Moravian University,Moravian,0.0,(0-0-0),Landmark,18.0,7.0,18.0,7.0
+men,d3,350563,6476578,09-03-2025,pre,07:00PM ET,Tufts University,Tufts,8.0,(0-0-0),NESCAC,Massachusetts Institute of Technology,MIT,1.0,(0-0-0),NEWMAC,29.0,14.0,6.0,2.0
+men,d3,350919,6476704,09-03-2025,pre,07:00PM ET,Arcadia University,Arcadia,3.0,(0-0-0),MAC Freedom,Cairn University,Cairn,0.0,(0-0-0),United East,21.0,12.0,12.0,8.0
+men,d3,6415417,6476816,09-03-2025,pre,07:00PM ET,U.S. Merchant Marine Academy,Merchant Marine,9.0,(0-0-0),Skyline,John Jay College of Criminal Justice,John Jay,0.0,(0-0-0),CUNYAC,45.0,27.0,3.0,0.0
+men,d3,351616,6476914,09-03-2025,pre,07:00PM ET,Hiram College,Hiram,4.0,(0-0-0),PAC,Heidelberg University,Heidelberg,1.0,(0-0-0),OAC,26.0,10.0,12.0,6.0
+men,d3,6417059,6477185,09-03-2025,pre,07:00PM ET,Gwynedd Mercy University,Gwynedd Mercy,0.0,(0-0-0),Atlantic East,Delaware Valley University,Delaware Valley,4.0,(0-0-0),MAC Freedom,6.0,2.0,19.0,10.0
+men,d3,6418382,6477331,09-03-2025,pre,07:00PM ET,Fisher,Fisher,,(0-0-0),IND,Lesley University,Lesley,,(0-0-0),North Atlantic,,,,
+men,d3,6420148,6477609,09-03-2025,pre,07:00PM ET,Suffolk University,Suffolk,0.0,(0-0-0),CNE,Amherst College,Amherst,0.0,(0-0-0),NESCAC,6.0,3.0,14.0,3.0
+men,d3,354476,6477877,09-03-2025,pre,07:00PM ET,Chapman University,Chapman,5.0,(0-0-0),SCIAC,LIFE Pacific,LIFE Pacific,0.0,(0-0-0),IND,37.0,16.0,4.0,1.0
+men,d3,354746,6477934,09-03-2025,pre,07:00PM ET,Maine Maritime Academy,Maine Maritime,,(0-0-0),North Atlantic,University of Southern Maine,Southern Me.,,(0-0-0),Little East,,,,
+men,d3,6423393,6478011,09-03-2025,pre,07:00PM ET,"Rutgers, The State Univ. of New Jersey, Camden",Rutgers-Camden,6.0,(0-0-0),NJAC,"Penn State University, Abington",Penn St.-Abington,1.0,(0-0-0),United East,12.0,7.0,8.0,6.0
+men,d3,6424645,6478152,09-03-2025,pre,07:00PM ET,Johnson & Wales University (Providence),JWU (Providence),5.0,(0-0-0),CNE,Worcester State University,Worcester St.,0.0,(0-0-0),MASCAC,17.0,8.0,10.0,4.0
+men,d3,6425622,6478306,09-03-2025,pre,07:00PM ET,Framingham State University,Framingham St.,0.0,(0-0-0),MASCAC,Trinity College (Connecticut),Trinity (CT),4.0,(0-0-0),NESCAC,7.0,4.0,23.0,12.0
+men,d3,356240,6478381,09-03-2025,pre,07:00PM ET,Saint Vincent College,Saint Vincent,1.0,(0-0-0),PAC,Muskingum University,Muskingum,2.0,(0-0-0),OAC,19.0,7.0,9.0,3.0
+men,d3,356331,6478423,09-03-2025,pre,07:00PM ET,Rochester Institute of Technology,RIT,3.0,(0-0-0),Liberty League,Houghton University,Houghton,0.0,(0-0-0),Empire 8,20.0,7.0,8.0,3.0
+men,d3,6426776,6478441,09-03-2025,pre,07:00PM ET,Western Connecticut State University,WestConn,1.0,(0-0-0),Little East,Drew University,Drew,2.0,(0-0-0),Landmark,18.0,2.0,15.0,6.0
+men,d3,356483,6478465,09-03-2025,pre,07:00PM ET,Thiel College,Thiel,0.0,(0-0-0),PAC,"University of Pittsburgh, Bradford",Pitt.-Bradford,1.0,(0-0-0),AMCC,20.0,7.0,13.0,5.0
+men,d3,6439279,6495963,09-03-2025,pre,07:00PM ET,Penn St.-Hazleton,Penn St.-Hazleton,,(0-0-0),IND,University of Valley Forge,Valley Forge,,(0-0-0),United East,,,,
+men,d3,341038,6473611,09-03-2025,pre,07:00PM ET,Franciscan University of Steubenville,Franciscan,0.0,(0-0-0),PAC,Capital University,Capital,1.0,(0-0-0),OAC,17.0,5.0,12.0,4.0
+men,d3,347903,6475619,09-03-2025,pre,07:00PM ET,Stevenson University,Stevenson,4.0,(0-0-0),MAC Commonwealth,Goucher College,Goucher,0.0,(0-0-0),Landmark,27.0,13.0,10.0,2.0
+men,d3,338668,6472949,09-03-2025,pre,07:00PM ET,"Fairleigh Dickinson University, Florham",FDU-Florham,5.0,(0-0-0),MAC Freedom,The City College of New York,CCNY,1.0,(0-0-0),CUNYAC,25.0,14.0,17.0,5.0
+men,d3,340345,6473419,09-03-2025,pre,07:00PM ET,Rose-Hulman Institute of Technology,Rose-Hulman,2.0,(0-0-0),HCAC,Wabash College,Wabash,1.0,(0-0-0),NCAC,19.0,11.0,9.0,3.0
+men,d3,340410,6473448,09-03-2025,pre,07:00PM ET,University of the South,Sewanee,4.0,(0-0-0),SAA,Berea College,Berea,0.0,(0-0-0),HCAC,27.0,13.0,8.0,3.0
+men,d3,340715,6473527,09-03-2025,pre,07:00PM ET,Averett University,Averett,0.0,(0-0-0),ODAC,Pfeiffer University,Pfeiffer,3.0,(0-0-0),USA South,11.0,6.0,19.0,9.0
+men,d3,340868,6473580,09-03-2025,pre,07:00PM ET,Plattsburgh State University of New York,Plattsburgh St.,0.0,(0-0-0),SUNYAC,Norwich University,Norwich,0.0,(0-0-0),Great Northeast,29.0,14.0,1.0,0.0
+men,d3,342452,6473941,09-03-2025,pre,07:00PM ET,Alfred State College,Alfred St.,4.0,(0-0-0),AMCC,Allegheny College,Allegheny,2.0,(0-0-0),PAC,9.0,6.0,6.0,3.0
+men,d3,342943,6474030,09-03-2025,pre,07:00PM ET,Rivier University,Rivier,0.0,(0-0-0),Great Northeast,Fitchburg State University,Fitchburg St.,0.0,(0-0-0),MASCAC,11.0,4.0,13.0,4.0
+men,d3,6398598,6474110,09-03-2025,pre,07:00PM ET,Curry College,Curry,4.0,(0-0-0),CNE,Dean College,Dean,4.0,(0-0-0),Great Northeast,17.0,12.0,23.0,14.0
+men,d3,343969,6474487,09-03-2025,pre,07:00PM ET,Washington and Jefferson College,Wash. & Jeff.,1.0,(0-0-0),PAC,Marietta College,Marietta,1.0,(0-0-0),OAC,12.0,3.0,12.0,5.0
+men,d3,344794,6474804,09-03-2025,pre,07:00PM ET,Neumann University,Neumann,1.0,(0-0-0),Atlantic East,York College (Pennsylvania),York (PA),2.0,(0-0-0),MAC Commonwealth,14.0,5.0,15.0,12.0
+men,d3,346687,6475089,09-03-2025,pre,07:00PM ET,Mount St. Joseph University,Mt. St. Joseph,1.0,(0-0-0),HCAC,Asbury University,Asbury,5.0,(0-0-0),CCS,10.0,4.0,13.0,11.0
+men,d3,346760,6475142,09-03-2025,pre,07:00PM ET,State University of New York at Brockport,SUNY Brockport,2.0,(0-0-0),Empire 8,University of Rochester,Rochester (NY),2.0,(0-0-0),UAA,8.0,4.0,14.0,5.0
+men,d3,346993,6475202,09-03-2025,pre,07:00PM ET,Geneva College,Geneva,3.0,(0-0-0),PAC,Baldwin Wallace University,Baldwin Wallace,4.0,(0-0-0),OAC,14.0,9.0,15.0,8.0
+men,d3,347635,6475542,09-03-2025,pre,07:00PM ET,Lycoming College,Lycoming,0.0,(0-0-0),Landmark,Misericordia University,Misericordia,0.0,(0-0-0),MAC Freedom,12.0,5.0,6.0,1.0
+men,d3,349206,6476079,09-03-2025,pre,07:00PM ET,Marywood University,Marywood,2.0,(0-0-0),Atlantic East,Susquehanna University,Susquehanna,0.0,(0-0-0),Landmark,15.0,7.0,13.0,3.0
+men,d3,343630,6474293,09-03-2025,pre,07:00PM ET,Elizabethtown College,Elizabethtown,5.0,(0-0-0),Landmark,Penn State Berks College,Penn St.-Berks,0.0,(0-0-0),United East,35.0,18.0,3.0,1.0
+men,d3,349098,6476010,09-03-2025,pre,07:30PM ET,Manchester University,Manchester,0.0,(0-0-0),HCAC,Alma College,Alma,0.0,(0-0-0),Michigan Intercol. Ath. Assn.,8.0,3.0,11.0,6.0
+men,d3,355774,6478200,09-03-2025,pre,07:30PM ET,Carnegie Mellon University,Carnegie Mellon,1.0,(0-0-0),UAA,Grove City College,Grove City,1.0,(0-0-0),PAC,13.0,7.0,9.0,2.0
+men,d3,6408250,6475832,09-03-2025,pre,07:30PM ET,Gallaudet University,Gallaudet,0.0,(0-0-0),United East,Marymount University (Virginia),Marymount (VA),10.0,(0-0-0),Atlantic East,1.0,1.0,35.0,23.0
+men,d3,348175,6475743,09-03-2025,pre,07:30PM ET,DePauw University,DePauw,6.0,(0-0-0),NCAC,Franklin College,Franklin,0.0,(0-0-0),HCAC,23.0,10.0,4.0,0.0
+men,d3,341472,6473717,09-03-2025,pre,07:30PM ET,Southern Virginia University,Southern Va.,1.0,(0-0-0),USA South,Bridgewater College (Virginia),Bridgewater (VA),2.0,(0-0-0),ODAC,4.0,1.0,23.0,12.0
+men,d3,338986,6473063,09-03-2025,pre,08:00PM ET,Elmhurst University,Elmhurst,2.0,(0-0-0),CCIW,University of Dubuque,Dubuque,0.0,(0-0-0),American Rivers,13.0,4.0,8.0,5.0
+men,d3,339543,6473148,09-03-2025,pre,08:00PM ET,Marian University (Wisconsin),Marian (WI),1.0,(0-0-0),NACC,University of Wisconsin-Platteville,Wis.-Platteville,5.0,(0-0-0),WIAC,6.0,4.0,20.0,9.0
+men,d3,344174,6474580,09-03-2025,pre,08:00PM ET,Aurora University,Aurora,1.0,(0-0-0),NACC,North Park University,North Park,3.0,(0-0-0),CCIW,15.0,7.0,11.0,8.0
+men,d3,352749,6477361,09-03-2025,pre,08:00PM ET,Ithaca College,Ithaca,3.0,(0-0-0),Liberty League,Elmira College,Elmira,0.0,(0-0-0),Empire 8,15.0,4.0,8.0,2.0
+men,d3,353678,6477682,09-03-2025,pre,08:00PM ET,Illinois Wesleyan University,Ill. Wesleyan,,(0-0-0),CCIW,Eureka College,Eureka,,(0-0-0),SLIAC,,,,
+men,d3,354457,6477867,09-03-2025,pre,08:00PM ET,Edgewood University,Edgewood,0.0,(0-0-0),NACC,University of Wisconsin-Stevens Point,Wis.-Stevens Point,1.0,(0-0-0),WIAC,17.0,5.0,2.0,2.0
+men,d3,356017,6478305,09-03-2025,pre,08:00PM ET,Millikin University,Millikin,0.0,(0-0-0),CCIW,Illinois College,Illinois Col.,4.0,(0-0-0),MWC,11.0,8.0,13.0,9.0
+men,d3,356108,6478319,09-03-2025,pre,08:00PM ET,Bethany Lutheran College,Bethany Lutheran,2.0,(0-0-0),UMAC,Carleton College,Carleton,3.0,(0-0-0),MIAC,13.0,7.0,14.0,11.0
+men,d3,345419,6475005,09-03-2025,pre,08:30PM ET,Augsburg University,Augsburg,7.0,(0-0-0),MIAC,University of Northwestern-St. Paul,Northwestern-St. Paul,0.0,(0-0-0),UMAC,19.0,10.0,6.0,2.0
+women,d1,337326,6462448,09-01-2025,pre,11:30AM ET,Harvard University,Harvard,0,(0-1-0),Ivy League,Kansas State University,Kansas St.,0,(4-0-0),Big 12,9.0,6.0,14.0,8.0
+women,d1,338121,6462653,09-01-2025,pre,12:00PM ET,Brown University,Brown,0,(3-0-0),Ivy League,"University of Minnesota, Twin Cities",Minnesota,2,(3-1-0),Big Ten,12.0,8.0,10.0,3.0
+women,d1,346882,6465794,09-01-2025,pre,12:00PM ET,Long Island University,LIU,2,(0-1-2),NEC,Quinnipiac University,Quinnipiac,0,(0-2-1),MAAC,11.0,5.0,17.0,6.0
+women,d1,341329,6463531,09-01-2025,pre,02:00PM ET,Utah Valley University,Utah Valley,0,(1-1-1),WAC,Auburn University,Auburn,2,(2-1-1),SEC,13.0,1.0,16.0,8.0
+women,d1,349472,6466653,09-01-2025,pre,02:00PM ET,University of the Pacific,Pacific,0,(1-3-1),WCC,"University of California, San Diego",UC San Diego,0,(1-1-1),Big West,14.0,4.0,5.0,3.0
+women,d1,346763,6465712,09-02-2025,pre,06:00PM ET,Chicago State University,Chicago St.,1,(1-2-2),NEC,Hampton University,Hampton,0,(1-2-0),CAA,8.0,6.0,31.0,12.0
+women,d1,347864,6466036,09-02-2025,pre,09:00PM ET,Brigham Young University,BYU,0,(2-0-1),Big 12,"University of Arkansas, Fayetteville",Arkansas,1,(1-2-1),SEC,21.0,9.0,16.0,4.0
+women,d1,345092,6465180,09-03-2025,pre,05:00PM ET,The University of Southern Mississippi,Southern Miss.,2.0,(0-4-0),Sun Belt,Jackson State University,Jackson St.,2.0,(1-3-0),SWAC,12.0,7.0,7.0,5.0
+women,d1,337693,6462590,09-03-2025,pre,06:00PM ET,Drake University,Drake,2.0,(1-1-2),MVC,University of Nebraska at Omaha,Omaha,1.0,(2-0-2),Summit League,6.0,5.0,10.0,4.0
+women,d1,354865,6467313,09-03-2025,pre,06:00PM ET,University of New Hampshire,New Hampshire,4.0,(0-1-1),America East,Merrimack College,Merrimack,3.0,(1-2-1),MAAC,24.0,12.0,24.0,13.0
+women,d1,354872,6467319,09-03-2025,pre,06:00PM ET,University of Massachusetts Lowell,UMass Lowell,,(1-2-0),America East,Central Connecticut State University,Central Conn. St.,,(0-3-1),NEC,,,,
+women,d1,349200,6466581,09-03-2025,pre,06:30PM ET,Providence College,Providence,1.0,(1-0-0),Big East,Sacred Heart University,Sacred Heart,0.0,(1-0-1),MAAC,21.0,13.0,1.0,1.0
+women,d1,337387,6462473,09-03-2025,pre,07:00PM ET,Lafayette College,Lafayette,5.0,(1-1-1),Patriot,Iona University,Iona,0.0,(1-3-0),MAAC,28.0,15.0,4.0,2.0
+women,d1,342281,6463980,09-03-2025,pre,07:00PM ET,Rider University,Rider,3.0,(0-1-1),MAAC,Delaware State University,Delaware St.,0.0,(2-1-0),NEC,10.0,6.0,11.0,6.0
+women,d1,349123,6466519,09-03-2025,pre,07:00PM ET,Niagara University,Niagara,0.0,(3-0-0),MAAC,"University at Buffalo, the State University of New York",Buffalo,2.0,(2-1-1),MAC,5.0,2.0,11.0,7.0
+women,d1,353593,6467143,09-03-2025,pre,07:00PM ET,Purdue University Fort Wayne,Purdue Fort Wayne,6.0,(0-3-1),Horizon,Indiana Tech,Indiana Tech,0.0,(0-0-0),IND,43.0,18.0,2.0,1.0
+women,d2,6411026,6469359,09-02-2025,pre,07:00PM ET,Faulkner,Faulkner,,(0-0-0),IND,Shorter University,Shorter,,(0-0-0),Conference Carolinas,,,,
+women,d3,349360,6474234,09-01-2025,postponed,TBA,Wellesley College,Wellesley,,(0-0-0),NEWMAC,TBA,TBA,,(0-0-0),IND,,,,
+women,d3,337765,6471400,09-01-2025,pre,12:00PM ET,University of Wisconsin-Whitewater,Wis.-Whitewater,1.0,(0-0-0),WIAC,Bethel University (Minnesota),Bethel (MN),0.0,(0-0-0),MIAC,24.0,10.0,9.0,5.0
+women,d3,341007,6471834,09-01-2025,pre,12:00PM ET,Capital University,Capital,0.0,(0-0-0),OAC,Trine University,Trine,3.0,(0-0-0),Michigan Intercol. Ath. Assn.,14.0,7.0,14.0,11.0
+women,d3,352694,6476204,09-01-2025,pre,12:00PM ET,Vermont State University Lyndon,VTSU Lyndon,0.0,(0-0-0),North Atlantic,Paul Smiths,Paul Smiths,8.0,(0-0-0),IND,2.0,1.0,50.0,27.0
+women,d3,342005,6471979,09-01-2025,pre,01:00PM ET,Keene State College,Keene St.,1.0,(0-0-0),Little East,Roger Williams University,Roger Williams,6.0,(0-0-0),CNE,11.0,3.0,27.0,12.0
+women,d3,346718,6473097,09-01-2025,pre,01:00PM ET,North Carolina Wesleyan University,N.C. Wesleyan,0.0,(0-0-0),USA South,Piedmont University,Piedmont,1.0,(0-0-0),CCS,6.0,4.0,5.0,4.0
+women,d3,351059,6475342,09-01-2025,pre,01:00PM ET,University of La Verne,La Verne,0.0,(0-0-0),SCIAC,George Fox University,George Fox,0.0,(0-0-0),NWC,12.0,4.0,3.0,2.0
+women,d3,351891,6475720,09-01-2025,pre,01:00PM ET,DePauw University,DePauw,2.0,(0-0-0),NCAC,Greenville University,Greenville,1.0,(0-0-0),SLIAC,12.0,7.0,7.0,2.0
+women,d3,6406358,6473403,09-01-2025,pre,02:00PM ET,Oberlin College,Oberlin,0.0,(0-0-0),NCAC,"University of Pittsburgh, Greensburg",Pitt.-Greensburg,4.0,(0-0-0),AMCC,7.0,4.0,12.0,7.0
+women,d3,340078,6471706,09-01-2025,pre,02:00PM ET,Webster University,Webster,2.0,(0-0-0),SLIAC,Knox College,Knox,0.0,(0-0-0),MWC,26.0,11.0,3.0,0.0
+women,d3,349724,6474465,09-01-2025,pre,04:00PM ET,University of Dallas,Dallas,8.0,(0-0-0),SCAC,Arlington Baptist,Arlington Baptist,0.0,(0-0-0),IND,14.0,8.0,0.0,0.0
+women,d3,6421735,6476888,09-01-2025,pre,04:30PM ET,Mary Baldwin University,Mary Baldwin,1.0,(0-0-0),USA South,Randolph College,Randolph,0.0,(0-0-0),ODAC,4.0,2.0,10.0,6.0
+women,d3,341273,6471848,09-01-2025,pre,05:00PM ET,Averett University,Averett,3.0,(0-0-0),ODAC,Salem College (North Carolina),Salem (NC),3.0,(0-0-0),USA South,19.0,9.0,6.0,6.0
+women,d3,351949,6475762,09-01-2025,pre,05:00PM ET,Wilson College,Wilson,1.0,(0-0-0),United East,Gwynedd Mercy University,Gwynedd Mercy,0.0,(0-0-0),Atlantic East,10.0,4.0,17.0,10.0
+women,d3,350617,6475000,09-01-2025,pre,06:00PM ET,Concordia University Texas,Concordia (TX),1.0,(0-0-0),SCAC,Southwestern University (Texas),Southwestern (TX),2.0,(0-0-0),SAA,7.0,2.0,17.0,7.0
+women,d3,356157,6477645,09-01-2025,pre,06:00PM ET,"University of Minnesota, Morris",Minn.-Morris,0.0,(0-0-0),UMAC,"Concordia College, Moorhead",Concordia-M'head,0.0,(0-0-0),MIAC,9.0,3.0,21.0,11.0
+women,d3,6396235,6472008,09-01-2025,pre,07:00PM ET,Bluffton University,Bluffton,5.0,(0-0-0),HCAC,Defiance,Defiance,0.0,(0-0-0),IND,33.0,21.0,3.0,1.0
+women,d3,343344,6472333,09-01-2025,pre,07:00PM ET,Saint Mary's University of Minnesota,Saint Mary's (MN),2.0,(0-0-0),MIAC,University of Wisconsin-Platteville,Wis.-Platteville,1.0,(0-0-0),WIAC,12.0,8.0,10.0,6.0
+women,d3,348723,6473980,09-02-2025,pre,TBA,Lehman College,Lehman,,(0-0-0),CUNYAC,"Purchase College, State University of New York",Purchase,,(0-0-0),Skyline,,,,
+women,d3,355176,6477259,09-02-2025,pre,08:30AM ET,Millikin University,Millikin,6.0,(0-0-0),CCIW,Monmouth College (Illinois),Monmouth (IL),0.0,(0-0-0),MWC,16.0,10.0,4.0,3.0
+women,d3,6393324,6471773,09-02-2025,pre,02:00PM ET,Penn St.-Mont Alto,Penn St.-Mont Alto,1.0,(0-0-0),IND,Carlow University,Carlow,0.0,(0-0-0),AMCC,13.0,6.0,11.0,9.0
+women,d3,338225,6471454,09-02-2025,pre,03:00PM ET,Plymouth State University,Plymouth St.,0.0,(0-0-0),Little East,Middlebury College,Middlebury,7.0,(0-0-0),NESCAC,1.0,0.0,26.0,15.0
+women,d3,338415,6471469,09-02-2025,pre,03:00PM ET,York College (New York),York (NY),,(0-0-0),CUNYAC,State University of New York Maritime College,SUNY Maritime,,(0-0-0),Skyline,,,,
+women,d3,356821,6477824,09-02-2025,pre,03:00PM ET,Anderson University (Indiana),Anderson (IN),2.0,(0-0-0),HCAC,St. Mary-Woods,St. Mary-Woods,0.0,(0-0-0),IND,30.0,12.0,9.0,5.0
+women,d3,359027,6496090,09-02-2025,pre,03:00PM ET,Brevard College,Brevard,20.0,(0-0-0),USA South,Alice Lloyd,Alice Lloyd,0.0,(0-0-0),IND,76.0,38.0,0.0,0.0
+women,d3,338527,6471500,09-02-2025,pre,04:00PM ET,Geneva College,Geneva,0.0,(0-0-0),PAC,Alfred University,Alfred,1.0,(0-0-0),Empire 8,6.0,4.0,18.0,8.0
+women,d3,6397583,6472138,09-02-2025,pre,04:00PM ET,Dean College,Dean,1.0,(0-0-0),Great Northeast,Curry College,Curry,6.0,(0-0-0),CNE,6.0,4.0,29.0,21.0
+women,d3,348670,6473942,09-02-2025,pre,04:00PM ET,Hilbert College,Hilbert,0.0,(0-0-0),AMCC,Houghton University,Houghton,4.0,(0-0-0),Empire 8,11.0,5.0,40.0,22.0
+women,d3,350327,6474865,09-02-2025,pre,04:00PM ET,New Jersey City University,New Jersey City,4.0,(0-0-0),NJAC,Manhattanville University,Manhattanville,2.0,(0-0-0),Skyline,31.0,11.0,3.0,2.0
+women,d3,6419326,6476418,09-02-2025,pre,04:00PM ET,Babson College,Babson,0.0,(0-0-0),NEWMAC,Brandeis University,Brandeis,0.0,(0-0-0),UAA,11.0,4.0,13.0,4.0
+women,d3,354362,6476855,09-02-2025,pre,04:00PM ET,State University of New York at Canton,SUNY Canton,0.0,(0-0-0),SUNYAC,Utica University,Utica,7.0,(0-0-0),Empire 8,0.0,0.0,23.0,16.0
+women,d3,355755,6477420,09-02-2025,pre,04:00PM ET,State University of New York at Geneseo,SUNY Geneseo,1.0,(0-0-0),Empire 8,State University of New York at Oswego,Oswego St.,1.0,(0-0-0),SUNYAC,11.0,3.0,8.0,6.0
+women,d3,338876,6471564,09-02-2025,pre,04:30PM ET,Hamilton College,Hamilton,0.0,(0-0-0),NESCAC,Williams College,Williams,2.0,(0-0-0),NESCAC,10.0,4.0,11.0,5.0
+women,d3,354352,6476850,09-02-2025,pre,04:30PM ET,Pratt Institute,Pratt,0.0,(0-0-0),Atlantic East,John Jay College of Criminal Justice,John Jay,2.0,(0-0-0),CUNYAC,8.0,6.0,7.0,3.0
+women,d3,6415826,6475489,09-02-2025,pre,05:00PM ET,Faith Bapt. Bible,Faith Bapt. Bible,0.0,(0-0-0),IND,North Central University,North Central (MN),1.0,(0-0-0),UMAC,16.0,8.0,9.0,4.0
+women,d3,347306,6473376,09-02-2025,pre,05:00PM ET,Oglethorpe University,Oglethorpe,3.0,(0-0-0),SAA,Covenant College,Covenant,1.0,(0-0-0),CCS,13.0,5.0,7.0,2.0
+women,d3,343282,6472314,09-02-2025,pre,05:00PM ET,University of Wisconsin-La Crosse,Wis.-La Crosse,6.0,(0-0-0),WIAC,University of Wisconsin-Superior,Wis.-Superior,0.0,(0-0-0),UMAC,32.0,14.0,1.0,1.0
+women,d3,343424,6472371,09-02-2025,pre,05:00PM ET,Union College (New York),Union (NY),1.0,(0-0-0),Liberty League,Smith College,Smith,0.0,(0-0-0),NEWMAC,18.0,8.0,4.0,3.0
+women,d3,6395073,6471894,09-02-2025,pre,06:00PM ET,Wentworth Institute of Technology,Wentworth,4.0,(0-0-0),CNE,Massachusetts College of Liberal Arts,MCLA,0.0,(0-0-0),MASCAC,38.0,23.0,4.0,2.0
+women,d3,344513,6472600,09-02-2025,pre,06:00PM ET,Illinois Wesleyan University,Ill. Wesleyan,0.0,(0-0-0),CCIW,Washington University in St. Louis,WashU,6.0,(0-0-0),UAA,7.0,2.0,41.0,19.0
+women,d3,348097,6473777,09-02-2025,pre,06:00PM ET,Hartwick College,Hartwick,3.0,(0-0-0),Empire 8,State University of New York at Morrisville,SUNY Morrisville,0.0,(0-0-0),SUNYAC,17.0,10.0,1.0,1.0
+women,d3,354393,6476881,09-02-2025,pre,06:00PM ET,Rivier University,Rivier,2.0,(0-0-0),Great Northeast,Western Connecticut State University,WestConn,2.0,(0-0-0),Little East,18.0,8.0,15.0,10.0
+women,d3,6400401,6472542,09-02-2025,pre,07:00PM ET,Franklin & Marshall College,Franklin & Marshall,5.0,(0-0-0),Centennial,Elizabethtown College,Elizabethtown,1.0,(0-0-0),Landmark,21.0,12.0,3.0,1.0
+women,d3,356070,6477583,09-02-2025,pre,07:00PM ET,Mount Saint Mary College (New York),Mt. St. Mary (NY),20.0,(0-0-0),Skyline,Yeshiva University,Yeshiva,0.0,(0-0-0),Skyline,56.0,32.0,0.0,0.0
+women,d3,352107,6475903,09-02-2025,pre,07:00PM ET,Ramapo College,Ramapo,2.0,(0-0-0),NJAC,"St. Joseph's University, New York L.I.",St. Joseph's (L.I.),1.0,(0-0-0),Skyline,12.0,8.0,14.0,8.0
+women,d3,6413557,6474940,09-02-2025,pre,07:00PM ET,Lesley University,Lesley,0.0,(0-0-0),North Atlantic,Massachusetts Institute of Technology,MIT,6.0,(0-0-0),NEWMAC,1.0,0.0,25.0,16.0
+women,d3,350012,6474682,09-02-2025,pre,07:00PM ET,Westminster College (Missouri),Westminster (MO),1.0,(0-0-0),SLIAC,William Woods,William Woods,0.0,(0-0-0),IND,9.0,6.0,14.0,10.0
+women,d3,6403816,6472893,09-02-2025,pre,07:00PM ET,Amherst College,Amherst,1.0,(0-0-0),NESCAC,Worcester Polytechnic Institute,WPI,0.0,(0-0-0),NEWMAC,10.0,3.0,4.0,2.0
+women,d3,343874,6472491,09-02-2025,pre,07:00PM ET,Washington and Jefferson College,Wash. & Jeff.,0.0,(0-0-0),PAC,Marietta College,Marietta,1.0,(0-0-0),OAC,4.0,2.0,23.0,10.0
+women,d3,342845,6472188,09-02-2025,pre,07:00PM ET,Connecticut College,Connecticut Col.,2.0,(0-0-0),NESCAC,Emmanuel College (Massachusetts),Emmanuel (MA),1.0,(0-0-0),Great Northeast,9.0,3.0,14.0,7.0
+women,d3,342027,6471987,09-02-2025,pre,07:00PM ET,"University of Massachusetts, Dartmouth",UMass Dartmouth,0.0,(0-0-0),Little East,Suffolk University,Suffolk,1.0,(0-0-0),CNE,10.0,7.0,11.0,5.0
+women,d3,338952,6471578,09-02-2025,pre,08:00PM ET,Carroll University (Wisconsin),Carroll (WI),1.0,(0-0-0),CCIW,University of Dubuque,Dubuque,1.0,(0-0-0),American Rivers,2.0,2.0,20.0,9.0
+women,d3,350746,6475068,09-02-2025,pre,08:00PM ET,Buena Vista University,Buena Vista,0.0,(0-0-0),American Rivers,Dakota Wesleyan,Dakota Wesleyan,0.0,(0-0-0),IND,4.0,2.0,21.0,17.0
+women,d3,6422964,6477123,09-02-2025,pre,08:30PM ET,UHSP,UHSP,8.0,(0-0-0),IND,Blackburn College,Blackburn,1.0,(0-0-0),SLIAC,37.0,20.0,6.0,2.0
+women,d3,355012,6477174,09-02-2025,pre,08:30PM ET,Principia College,Principia,,(0-0-0),SLIAC,Spurgeon,Spurgeon,,(0-0-0),IND,,,,
+women,d3,6416245,6475586,09-03-2025,pre,TBA,Russell Sage College,Russell Sage,1.0,(0-0-0),Empire 8,Nichols College,Nichols,0.0,(0-0-0),CNE,24.0,12.0,9.0,5.0
+women,d3,6415975,6475549,09-03-2025,pre,12:00AM ET,Bowdoin College,Bowdoin,9.0,(0-0-0),NESCAC,Thomas College,Thomas (ME),1.0,(0-0-0),North Atlantic,30.0,22.0,1.0,1.0
+women,d3,354811,6477061,09-03-2025,pre,02:00PM ET,Concordia University Chicago,Concordia Chicago,0.0,(0-0-0),NACC,Carthage College,Carthage,2.0,(0-0-0),CCIW,7.0,4.0,24.0,11.0
+women,d3,6409076,6474034,09-03-2025,pre,03:00PM ET,Penn St.-Beaver,Penn St.-Beaver,,(0-0-0),IND,Trinity Washington University,Trinity Washington,,(0-0-0),DIII Independent,,,,
+women,d3,357051,6477870,09-03-2025,pre,03:00PM ET,Dominican University (Illinois),Dominican (IL),2.0,(0-0-0),NACC,North Park University,North Park,1.0,(0-0-0),CCIW,16.0,10.0,6.0,5.0
+women,d3,6415000,6475301,09-03-2025,pre,04:00PM ET,Framingham State University,Framingham St.,0.0,(0-0-0),MASCAC,Clark University (Massachusetts),Clark (MA),10.0,(0-0-0),NEWMAC,4.0,4.0,28.0,21.0
+women,d3,358475,6495961,09-03-2025,pre,04:00PM ET,University of Valley Forge,Valley Forge,3.0,(0-0-0),United East,Penn St.-Schuylkill,Penn St.-Schuylkill,1.0,(0-0-0),IND,7.0,5.0,33.0,22.0
+women,d3,355883,6477509,09-03-2025,pre,04:00PM ET,Rhode Island College,Rhode Island Col.,2.0,(0-0-0),Little East,Salve Regina University,Salve Regina,0.0,(0-0-0),NEWMAC,8.0,4.0,15.0,7.0
+women,d3,6422482,6477049,09-03-2025,pre,04:00PM ET,University of Southern Maine,Southern Me.,5.0,(0-0-0),Little East,Me.-Fort Kent,Me.-Fort Kent,0.0,(0-0-0),IND,31.0,20.0,4.0,2.0
+women,d3,352256,6475985,09-03-2025,pre,04:00PM ET,Salisbury University,Salisbury,1.0,(0-0-0),C2C,Washington College (Maryland),Washington Col.,1.0,(0-0-0),Centennial,6.0,3.0,10.0,4.0
+women,d3,6416541,6475658,09-03-2025,pre,04:00PM ET,Goucher College,Goucher,0.0,(0-0-0),Landmark,Marymount University (Virginia),Marymount (VA),5.0,(0-0-0),Atlantic East,3.0,2.0,22.0,10.0
+women,d3,351768,6475579,09-03-2025,pre,04:00PM ET,Bridgewater College (Virginia),Bridgewater (VA),2.0,(0-0-0),ODAC,Catholic University,Catholic,0.0,(0-0-0),Landmark,14.0,7.0,16.0,7.0
+women,d3,6413707,6474976,09-03-2025,pre,04:00PM ET,The University of Olivet,Olivet,0.0,(0-0-0),Michigan Intercol. Ath. Assn.,Earlham College,Earlham,5.0,(0-0-0),HCAC,6.0,3.0,21.0,16.0
+women,d3,349621,6474372,09-03-2025,pre,04:00PM ET,Greensboro College,Greensboro,0.0,(0-0-0),USA South,Bob Jones,Bob Jones,0.0,(0-0-0),IND,8.0,2.0,6.0,4.0
+women,d3,340002,6471676,09-03-2025,pre,04:00PM ET,Clarkson University,Clarkson,1.0,(0-0-0),Liberty League,Plattsburgh State University of New York,Plattsburgh St.,0.0,(0-0-0),SUNYAC,11.0,8.0,8.0,4.0
+women,d3,349382,6474238,09-03-2025,pre,04:00PM ET,Wellesley College,Wellesley,1.0,(0-0-0),NEWMAC,Endicott College,Endicott,0.0,(0-0-0),CNE,7.0,1.0,16.0,8.0
+women,d3,345103,6472869,09-03-2025,pre,04:00PM ET,Marywood University,Marywood,0.0,(0-0-0),Atlantic East,Lancaster Bible College,Lancaster Bible,2.0,(0-0-0),United East,16.0,6.0,10.0,4.0
+women,d3,6397462,6472123,09-03-2025,pre,04:00PM ET,Westfield State University,Westfield St.,0.0,(0-0-0),MASCAC,University of New England,U New England,1.0,(0-0-0),CNE,16.0,10.0,17.0,11.0
+women,d3,342347,6472057,09-03-2025,pre,04:00PM ET,Albright College,Albright,0.0,(0-0-0),MAC Commonwealth,Rowan University,Rowan,3.0,(0-0-0),NJAC,5.0,3.0,29.0,18.0
+women,d3,6395365,6471911,09-03-2025,pre,04:00PM ET,Me.-Augusta,Me.-Augusta,,(0-0-0),IND,"University of Maine, Farmington",Me.-Farmington,,(0-0-0),North Atlantic,,,,
+women,d3,340644,6471787,09-03-2025,pre,04:00PM ET,Brooklyn College,Brooklyn,2.0,(0-0-0),CUNYAC,Saint Elizabeth University,Saint Elizabeth,0.0,(0-0-0),Atlantic East,14.0,6.0,0.0,0.0
+women,d3,350374,6474900,09-03-2025,pre,04:00PM ET,Western New England University,Western New Eng.,2.0,(0-0-0),CNE,Springfield College,Springfield,0.0,(0-0-0),NEWMAC,16.0,10.0,14.0,4.0
+women,d3,6404847,6473126,09-03-2025,pre,04:30PM ET,Bryn Mawr College,Bryn Mawr,3.0,(0-0-0),Centennial,Cedar Crest College,Cedar Crest,0.0,(0-0-0),United East,22.0,13.0,3.0,3.0
+women,d3,353279,6476534,09-03-2025,pre,04:30PM ET,"Penn State University, Abington",Penn St.-Abington,1.0,(0-0-0),United East,Gwynedd Mercy University,Gwynedd Mercy,0.0,(0-0-0),Atlantic East,16.0,7.0,5.0,3.0
+women,d3,352547,6476145,09-03-2025,pre,04:30PM ET,William Peace University,William Peace,0.0,(0-0-0),USA South,Columbia (SC),Columbia (SC),4.0,(0-0-0),IND,3.0,1.0,18.0,12.0
+women,d3,347629,6473510,09-03-2025,pre,04:30PM ET,Kenyon College,Kenyon,9.0,(0-0-0),NCAC,Thiel College,Thiel,0.0,(0-0-0),PAC,37.0,21.0,0.0,0.0
+women,d3,348058,6473762,09-03-2025,pre,05:00PM ET,DePauw University,DePauw,2.0,(0-0-0),NCAC,Franklin College,Franklin,0.0,(0-0-0),HCAC,19.0,14.0,2.0,2.0
+women,d3,6417124,6475869,09-03-2025,pre,05:00PM ET,Ind.-South Bend,Ind.-South Bend,,(0-0-0),IND,Alma College,Alma,,(0-0-0),Michigan Intercol. Ath. Assn.,,,,
+women,d3,6404224,6472989,09-03-2025,pre,05:00PM ET,Oberlin College,Oberlin,0.0,(0-0-0),NCAC,Kalamazoo College,Kalamazoo,2.0,(0-0-0),Michigan Intercol. Ath. Assn.,8.0,4.0,15.0,7.0
+women,d3,344866,6472833,09-03-2025,pre,05:00PM ET,Hamline University,Hamline,2.0,(0-0-0),MIAC,Central College (Iowa),Central (IA),2.0,(0-0-0),American Rivers,6.0,4.0,13.0,7.0
+women,d3,343530,6472429,09-03-2025,pre,05:00PM ET,Hood College,Hood,0.0,(0-0-0),MAC Commonwealth,St. Mary's College of Maryland,St. Mary's (MD),1.0,(0-0-0),United East,13.0,3.0,7.0,2.0
+women,d3,339943,6471659,09-03-2025,pre,05:00PM ET,The College of Wooster,Wooster,3.0,(0-0-0),NCAC,Bluffton University,Bluffton,0.0,(0-0-0),HCAC,31.0,15.0,2.0,1.0
+women,d3,337605,6471399,09-03-2025,pre,05:00PM ET,Southern Virginia University,Southern Va.,1.0,(0-0-0),USA South,University of Mary Washington,Mary Washington,3.0,(0-0-0),C2C,7.0,3.0,11.0,7.0
+women,d3,339296,6471594,09-03-2025,pre,05:00PM ET,Randolph-Macon College,Randolph-Macon,1.0,(0-0-0),ODAC,McDaniel College,McDaniel,3.0,(0-0-0),Centennial,10.0,4.0,18.0,10.0
+women,d3,339510,6471612,09-03-2025,pre,05:00PM ET,Marian University (Wisconsin),Marian (WI),1.0,(0-0-0),NACC,Beloit College,Beloit,0.0,(0-0-0),MWC,27.0,12.0,4.0,3.0
+women,d3,341008,6471835,09-03-2025,pre,05:00PM ET,Albion College,Albion,0.0,(0-0-0),Michigan Intercol. Ath. Assn.,Capital University,Capital,1.0,(0-0-0),OAC,7.0,3.0,17.0,8.0
+women,d3,343711,6472451,09-03-2025,pre,05:30PM ET,Lake Forest College,Lake Forest,4.0,(0-0-0),MWC,Aurora University,Aurora,1.0,(0-0-0),NACC,18.0,9.0,5.0,2.0
+women,d3,350436,6474927,09-03-2025,pre,05:30PM ET,"University of Minnesota, Morris",Minn.-Morris,3.0,(0-0-0),UMAC,Martin Luther College,Martin Luther,5.0,(0-0-0),UMAC,20.0,11.0,22.0,14.0
+women,d3,354403,6476897,09-03-2025,pre,05:30PM ET,Edgewood University,Edgewood,2.0,(0-0-0),NACC,Cornell College,Cornell College,0.0,(0-0-0),MWC,34.0,17.0,2.0,2.0
+women,d3,356117,6477627,09-03-2025,pre,05:30PM ET,Bethany Lutheran College,Bethany Lutheran,0.0,(0-0-0),UMAC,Gustavus Adolphus College,Gustavus Adolphus,3.0,(0-0-0),MIAC,6.0,3.0,35.0,21.0
+women,d3,351939,6475742,09-03-2025,pre,06:00PM ET,Belhaven University,Belhaven,0.0,(0-0-0),CCS,LeTourneau University,LeTourneau,0.0,(0-0-0),SCAC,4.0,4.0,2.0,2.0
+women,d3,348923,6474122,09-03-2025,pre,06:00PM ET,State University of New York Polytechnic Institute,SUNY Poly,0.0,(0-0-0),Empire 8,State University of New York at Potsdam,SUNY Potsdam,1.0,(0-0-0),SUNYAC,3.0,0.0,26.0,8.0
+women,d3,347995,6473729,09-03-2025,pre,06:00PM ET,Trinity College (Connecticut),Trinity (CT),7.0,(0-0-0),NESCAC,Anna Maria College,Anna Maria,0.0,(0-0-0),MASCAC,28.0,15.0,0.0,0.0
+women,d3,343532,6472430,09-03-2025,pre,06:00PM ET,Stockton University,Stockton,1.0,(0-0-0),NJAC,Drew University,Drew,1.0,(0-0-0),Landmark,13.0,4.0,9.0,5.0
+women,d3,341641,6471917,09-03-2025,pre,06:00PM ET,Waynesburg University,Waynesburg,8.0,(0-0-0),PAC,La Roche University,La Roche,0.0,(0-0-0),AMCC,35.0,20.0,0.0,0.0
+women,d3,341361,6471862,09-03-2025,pre,06:00PM ET,Sweet Briar College,Sweet Briar,3.0,(0-0-0),ODAC,Regent University,Regent,1.0,(0-0-0),C2C,23.0,16.0,24.0,15.0
+women,d3,337942,6471421,09-03-2025,pre,06:00PM ET,Elmira College,Elmira,0.0,(0-0-0),Empire 8,King's College (Pennsylvania),King's (PA),1.0,(0-0-0),MAC Freedom,8.0,3.0,15.0,7.0
+women,d3,349067,6474174,09-03-2025,pre,06:30PM ET,Mississippi University for Women,MUW,0.0,(0-0-0),SLIAC,Rhodes College,Rhodes,1.0,(0-0-0),SAA,3.0,1.0,37.0,10.0
+women,d3,349777,6474499,09-03-2025,pre,07:00PM ET,Sarah Lawrence College,Sarah Lawrence,5.0,(0-0-0),Skyline,The City College of New York,CCNY,1.0,(0-0-0),CUNYAC,36.0,25.0,4.0,2.0
+women,d3,341610,6471912,09-03-2025,pre,07:00PM ET,Guilford College,Guilford,1.0,(0-0-0),ODAC,Methodist University,Methodist,1.0,(0-0-0),USA South,14.0,5.0,7.0,3.0
+women,d3,349997,6474653,09-03-2025,pre,07:00PM ET,Regis College (Massachusetts),Regis (MA),0.0,(0-0-0),Great Northeast,Gordon College,Gordon,5.0,(0-0-0),CNE,7.0,4.0,20.0,14.0
+women,d3,350218,6474758,09-03-2025,pre,07:00PM ET,Albertus Magnus College,Albertus Magnus,1.0,(0-0-0),Great Northeast,Mount Holyoke College,Mount Holyoke,0.0,(0-0-0),NEWMAC,18.0,10.0,6.0,2.0
+women,d3,350281,6474812,09-03-2025,pre,07:00PM ET,Johns Hopkins University,Johns Hopkins,0.0,(0-0-0),Centennial,Messiah University,Messiah,1.0,(0-0-0),MAC Commonwealth,9.0,5.0,11.0,4.0
+women,d3,350808,6475127,09-03-2025,pre,07:00PM ET,Shenandoah University,Shenandoah,1.0,(0-0-0),ODAC,Stevenson University,Stevenson,1.0,(0-0-0),MAC Commonwealth,34.0,19.0,4.0,1.0
+women,d3,350895,6475236,09-03-2025,pre,07:00PM ET,Ohio Northern University,Ohio Northern,2.0,(0-0-0),OAC,Wittenberg University,Wittenberg,2.0,(0-0-0),NCAC,7.0,4.0,12.0,3.0
+women,d3,6415856,6475512,09-03-2025,pre,07:00PM ET,Muskingum University,Muskingum,1.0,(0-0-0),OAC,Hiram College,Hiram,0.0,(0-0-0),PAC,26.0,9.0,4.0,2.0
+women,d3,351843,6475647,09-03-2025,pre,07:00PM ET,University of Massachusetts Boston,UMass Boston,4.0,(0-0-0),Little East,U.S. Coast Guard Academy,Coast Guard,1.0,(0-0-0),NEWMAC,10.0,7.0,10.0,5.0
+women,d3,352018,6475831,09-03-2025,pre,07:00PM ET,Swarthmore College,Swarthmore,0.0,(0-0-0),Centennial,"Rutgers, The State Univ. of New Jersey, Camden",Rutgers-Camden,0.0,(0-0-0),NJAC,33.0,13.0,5.0,1.0
+women,d3,352216,6475969,09-03-2025,pre,07:00PM ET,Widener University,Widener,,(0-0-0),MAC Commonwealth,Notre Dame of Maryland University,Notre Dame (MD),,(0-0-0),United East,,,,
+women,d3,352727,6476225,09-03-2025,pre,07:00PM ET,Ohio Wesleyan University,Ohio Wesleyan,2.0,(0-0-0),NCAC,Franciscan University of Steubenville,Franciscan,1.0,(0-0-0),PAC,32.0,13.0,12.0,4.0
+women,d3,353348,6476574,09-03-2025,pre,07:00PM ET,Cairn University,Cairn,2.0,(0-0-0),United East,Centenary University (New Jersey),Centenary (NJ),2.0,(0-0-0),Atlantic East,11.0,6.0,25.0,9.0
+women,d3,6420379,6476600,09-03-2025,pre,07:00PM ET,Muhlenberg College,Muhlenberg,2.0,(0-0-0),Centennial,DeSales University,DeSales,1.0,(0-0-0),MAC Freedom,12.0,9.0,26.0,10.0
+women,d3,6422152,6477002,09-03-2025,pre,07:00PM ET,Massachusetts Maritime Academy,Mass. Maritime,0.0,(0-0-0),MASCAC,Simmons University,Simmons,3.0,(0-0-0),Great Northeast,6.0,5.0,29.0,19.0
+women,d3,6424642,6477368,09-03-2025,pre,07:00PM ET,Worcester State University,Worcester St.,2.0,(0-0-0),MASCAC,Wheaton College (Massachusetts),Wheaton (MA),0.0,(0-0-0),NEWMAC,11.0,10.0,11.0,6.0
+women,d3,355702,6477384,09-03-2025,pre,07:00PM ET,Augustana College (Illinois),Augustana (IL),0.0,(0-0-0),CCIW,Illinois College,Illinois Col.,0.0,(0-0-0),MWC,8.0,5.0,10.0,3.0
+women,d3,6425663,6477572,09-03-2025,pre,07:00PM ET,Bridgewater State University,Bridgewater St.,2.0,(0-0-0),MASCAC,Johnson & Wales University (Providence),JWU (Providence),5.0,(0-0-0),CNE,8.0,5.0,16.0,10.0
+women,d3,356326,6477717,09-03-2025,pre,07:00PM ET,William Paterson University of New Jersey,Wm. Paterson,0.0,(0-0-0),NJAC,Wilkes University,Wilkes,1.0,(0-0-0),Landmark,4.0,3.0,8.0,6.0
+women,d3,6427797,6477801,09-03-2025,pre,07:00PM ET,Andrews,Andrews,,(0-0-0),IND,Eureka College,Eureka,,(0-0-0),SLIAC,,,,
+women,d3,6429915,6495693,09-03-2025,pre,07:00PM ET,Point U.,Point U.,7.0,(0-0-0),IND,LaGrange College,LaGrange,1.0,(0-0-0),CCS,18.0,13.0,7.0,6.0
+women,d3,349468,6474297,09-03-2025,pre,07:00PM ET,Alvernia University,Alvernia,0.0,(0-0-0),MAC Commonwealth,Lebanon Valley College,Lebanon Valley,1.0,(0-0-0),MAC Freedom,6.0,4.0,17.0,7.0
+women,d3,337354,6471366,09-03-2025,pre,07:00PM ET,Mount Aloysius College,Mount Aloysius,0.0,(0-0-0),AMCC,Pennsylvania College of Technology,Penn College,0.0,(0-0-0),United East,3.0,2.0,17.0,12.0
+women,d3,340031,6471690,09-03-2025,pre,07:00PM ET,Huntingdon College,Huntingdon,1.0,(0-0-0),CCS,Millsaps College,Millsaps,3.0,(0-0-0),SAA,12.0,4.0,15.0,12.0
+women,d3,6396157,6471990,09-03-2025,pre,07:00PM ET,Salem State University,Salem St.,1.0,(0-0-0),MASCAC,Keene State College,Keene St.,0.0,(0-0-0),Little East,5.0,3.0,23.0,8.0
+women,d3,342250,6472035,09-03-2025,pre,07:00PM ET,Baldwin Wallace University,Baldwin Wallace,,(0-0-0),OAC,Allegheny College,Allegheny,,(0-0-0),PAC,,,,
+women,d3,342872,6472197,09-03-2025,pre,07:00PM ET,Asbury University,Asbury,6.0,(0-0-0),CCS,Ky. Christian,Ky. Christian,0.0,(0-0-0),IND,24.0,17.0,2.0,1.0
+women,d3,6398125,6472210,09-03-2025,pre,07:00PM ET,St. John Fisher University,St. John Fisher,3.0,(0-0-0),Empire 8,"Buffalo State, State University of New York",Buffalo St.,0.0,(0-0-0),SUNYAC,17.0,6.0,7.0,3.0
+women,d3,342914,6472216,09-03-2025,pre,07:00PM ET,Husson University,Husson,1.0,(0-0-0),North Atlantic,Bates College,Bates,2.0,(0-0-0),NESCAC,7.0,3.0,15.0,7.0
+women,d3,343758,6472460,09-03-2025,pre,07:00PM ET,Adrian College,Adrian,3.0,(0-0-0),Michigan Intercol. Ath. Assn.,Manchester University,Manchester,0.0,(0-0-0),HCAC,29.0,17.0,0.0,0.0
+women,d3,343953,6472514,09-03-2025,pre,07:00PM ET,Norwich University,Norwich,2.0,(0-0-0),Great Northeast,Vermont State University Castleton,VTSU Castleton,1.0,(0-0-0),Little East,13.0,8.0,4.0,4.0
+women,d3,6400283,6472523,09-03-2025,pre,07:00PM ET,Elms College,Elms,2.0,(0-0-0),Great Northeast,Fitchburg State University,Fitchburg St.,1.0,(0-0-0),MASCAC,15.0,8.0,16.0,8.0
+women,d3,344530,6472609,09-03-2025,pre,07:00PM ET,Delaware Valley University,Delaware Valley,1.0,(0-0-0),MAC Freedom,Neumann University,Neumann,1.0,(0-0-0),Atlantic East,5.0,4.0,9.0,5.0
+women,d3,6401600,6472646,09-03-2025,pre,07:00PM ET,York College (Pennsylvania),York (PA),1.0,(0-0-0),MAC Commonwealth,Gettysburg College,Gettysburg,0.0,(0-0-0),Centennial,7.0,2.0,11.0,7.0
+women,d3,344699,6472711,09-03-2025,pre,07:00PM ET,Emory University,Emory,2.0,(0-0-0),UAA,Berry College,Berry,1.0,(0-0-0),SAA,28.0,16.0,2.0,2.0
+women,d3,347067,6473261,09-03-2025,pre,07:00PM ET,Wartburg College,Wartburg,0.0,(0-0-0),American Rivers,St. Olaf College,St. Olaf,3.0,(0-0-0),MIAC,7.0,4.0,32.0,14.0
+women,d3,6406685,6473519,09-03-2025,pre,07:00PM ET,Penn State Harrisburg,Penn St. Harrisburg,4.0,(0-0-0),United East,Susquehanna University,Susquehanna,1.0,(0-0-0),Landmark,15.0,10.0,3.0,2.0
+women,d3,347819,6473664,09-03-2025,pre,07:00PM ET,John Carroll University,John Carroll,0.0,(0-0-0),NCAC,Case Western Reserve University,CWRU,6.0,(0-0-0),UAA,5.0,3.0,31.0,15.0
+women,d3,348757,6474011,09-03-2025,pre,07:00PM ET,University of Mount Union,Mount Union,2.0,(0-0-0),OAC,Chatham University,Chatham,0.0,(0-0-0),PAC,12.0,9.0,8.0,3.0
+women,d3,348811,6474084,09-03-2025,pre,07:00PM ET,Wilmington College (Ohio),Wilmington (OH),2.0,(0-0-0),OAC,Spalding University,Spalding,0.0,(0-0-0),SLIAC,15.0,8.0,10.0,5.0
+women,d3,349605,6474368,09-03-2025,pre,07:00PM ET,Eastern Connecticut State University,Eastern Conn. St.,4.0,(0-0-0),Little East,University of Saint Joseph (Connecticut),Saint Joseph (CT),0.0,(0-0-0),Great Northeast,22.0,12.0,2.0,0.0
+women,d3,344324,6472578,09-03-2025,pre,07:00PM ET,University of Rochester,Rochester (NY),0.0,(0-0-0),UAA,St. Lawrence University,St. Lawrence,0.0,(0-0-0),Liberty League,15.0,4.0,7.0,2.0
+women,d3,338619,6471531,09-03-2025,pre,07:30PM ET,Kean University,Kean,2.0,(0-0-0),NJAC,"Fairleigh Dickinson University, Florham",FDU-Florham,1.0,(0-0-0),MAC Freedom,11.0,4.0,12.0,4.0
+women,d3,6424854,6477460,09-03-2025,pre,07:30PM ET,Juniata College,Juniata,0.0,(0-0-0),Landmark,Dickinson College,Dickinson,4.0,(0-0-0),Centennial,1.0,0.0,25.0,12.0
+women,d3,347395,6473430,09-03-2025,pre,07:30PM ET,Misericordia University,Misericordia,4.0,(0-0-0),MAC Freedom,Moravian University,Moravian,0.0,(0-0-0),Landmark,28.0,15.0,1.0,0.0
+women,d3,337766,6471401,09-03-2025,pre,08:00PM ET,Luther College,Luther,1.0,(0-0-0),American Rivers,University of Wisconsin-Whitewater,Wis.-Whitewater,1.0,(0-0-0),WIAC,8.0,3.0,8.0,5.0
+women,d3,340780,6471817,09-03-2025,pre,08:00PM ET,University of Wisconsin-Stout,Wis.-Stout,1.0,(0-0-0),WIAC,St. Catherine University,St. Catherine,5.0,(0-0-0),MIAC,10.0,5.0,14.0,10.0
+women,d3,342022,6471986,09-03-2025,pre,08:00PM ET,St. Norbert College,St. Norbert,0.0,(0-0-0),NACC,University of Wisconsin-Stevens Point,Wis.-Stevens Point,2.0,(0-0-0),WIAC,4.0,3.0,19.0,10.0
+women,d3,354920,6477074,09-03-2025,pre,08:00PM ET,Illinois Institute of Technology,Illinois Tech,1.0,(0-0-0),NACC,North Central College,North Central (IL),0.0,(0-0-0),CCIW,8.0,5.0,13.0,5.0
+women,d3,355589,6477342,09-03-2025,pre,08:00PM ET,Ripon College,Ripon,1.0,(0-0-0),MWC,Lakeland University,Lakeland,1.0,(0-0-0),NACC,19.0,14.0,3.0,2.0
+women,d3,356156,6477643,09-03-2025,pre,08:00PM ET,Benedictine University (Illinois),Benedictine (IL),0.0,(0-0-0),NACC,Elmhurst University,Elmhurst,1.0,(0-0-0),CCIW,1.0,1.0,26.0,19.0
+women,d3,351289,6475426,09-03-2025,pre,08:15PM ET,Crown College (Minnesota),Crown (MN),0.0,(0-0-0),UMAC,Macalester College,Macalester,8.0,(0-0-0),MIAC,0.0,0.0,30.0,18.0
