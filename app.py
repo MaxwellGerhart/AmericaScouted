@@ -165,6 +165,7 @@ def players():
     position = request.args.get('position', 'all')
     team = request.args.get('team', 'all')
     division = request.args.get('division', 'all')
+    conference = request.args.get('conference', 'all')
     search = request.args.get('search', '').strip()
     sort_by = request.args.get('sort', 'Points')
     sort_order = request.args.get('order', 'desc')
@@ -181,11 +182,92 @@ def players():
     if df.empty:
         return render_template('players.html', players=[], weeks=america_scouted_app.available_weeks,
                              current_week=week, gender=gender, total_pages=0, current_page=1)
+
+    # Known division corrections (manual overrides)
+    division_corrections = {
+        'Westmont': 'd2',
+    }
+    if 'Team' in df.columns and 'Division' in df.columns:
+        df['Division'] = df.apply(
+            lambda r: division_corrections.get(r['Team'], r['Division']), axis=1
+        )
+
+    # Derive conference info if missing by mapping from match data
+    if 'Conference' not in df.columns or df['Conference'].isna().all():
+        matches_df = america_scouted_app.load_match_data(gender)
+        if not matches_df.empty:
+            # Build mapping from team short/full names to conference (prefer home/away conference columns)
+            team_to_conf = {}
+            def add_mapping(team_name, conf):
+                if pd.isna(team_name) or pd.isna(conf) or conf == '':
+                    return
+                key = str(team_name).strip()
+                # Preserve first seen mapping; if different mappings occur we keep the first
+                if key not in team_to_conf:
+                    team_to_conf[key] = conf
+            for _, m in matches_df.iterrows():
+                add_mapping(m.get('home_team_short'), m.get('home_conference'))
+                add_mapping(m.get('home_team_full'), m.get('home_conference'))
+                add_mapping(m.get('away_team_short'), m.get('away_conference'))
+                add_mapping(m.get('away_team_full'), m.get('away_conference'))
+            # Assign conference to players DataFrame
+            df['Conference'] = df['Team'].map(team_to_conf)
+        else:
+            df['Conference'] = None
+
+    # Conference to division authoritative mapping (D1 & D2 provided so far)
+    conference_division_map = {
+        # D1
+        'acc': 'd1', 'america east': 'd1', 'american': 'd1', 'asun': 'd1', 'atlantic 10': 'd1',
+        'big east': 'd1', 'big south': 'd1', 'big ten': 'd1', 'big west': 'd1', 'caa': 'd1',
+        'cusa': 'd1', 'di independent': 'd1', 'horizon': 'd1', 'ivy league': 'd1', 'maac': 'd1',
+        'mvc': 'd1', 'nec': 'd1', 'ovc': 'd1', 'patriot': 'd1', 'socon': 'd1', 'summit league': 'd1',
+        'sun belt': 'd1', 'wac': 'd1', 'wcc': 'd1',
+        # D2
+        'cacc': 'd2', 'ccaa': 'd2', 'conference carolinas': 'd2', 'dii independent': 'd2', 'ecc': 'd2',
+        'g-mac': 'd2', 'gac': 'd2', 'gliac': 'd2', 'glvc': 'd2', 'great northwest': 'd2', 'gulf south': 'd2',
+        'ind': 'd2', 'lone star': 'd2', 'mec': 'd2', 'ne10': 'd2', 'pacwest': 'd2', 'peach belt': 'd2',
+        'psac': 'd2', 'rmac': 'd2', 'sac': 'd2', 'sunshine state': 'd2',
+        # D3
+        'amcc': 'd3', 'american rivers': 'd3', 'asc': 'd3', 'atlantic east': 'd3', 'c2c': 'd3',
+        'cciw': 'd3', 'ccs': 'd3', 'centennial': 'd3', 'cne': 'd3', 'cunyac': 'd3',
+        'diii independent': 'd3', 'empire 8': 'd3', 'great northeast': 'd3', 'hcac': 'd3', 'ind': 'd3',
+        'landmark': 'd3', 'liberty league': 'd3', 'little east': 'd3', 'mac commonwealth': 'd3',
+        'mac freedom': 'd3', 'mascac': 'd3', 'miac': 'd3', 'michigan intercol. ath. assn.': 'd3',
+        'mwc': 'd3', 'nacc': 'd3', 'ncac': 'd3', 'necc': 'd3', 'nescac': 'd3', 'newmac': 'd3',
+        'njac': 'd3', 'non-ncaa org': 'd3', 'north atlantic': 'd3', 'nwc': 'd3', 'oac': 'd3',
+        'odac': 'd3', 'pac': 'd3', 'saa': 'd3', 'scac': 'd3', 'sciac': 'd3', 'skyline': 'd3',
+        'sliac': 'd3', 'sunyac': 'd3', 'uaa': 'd3', 'umac': 'd3', 'united east': 'd3',
+        'usa south': 'd3', 'wiac': 'd3'
+    }
+    if 'Conference' in df.columns:
+        norm_conf = df['Conference'].astype(str).str.strip().str.lower()
+        mapped_div = norm_conf.map(conference_division_map)
+        # Only overwrite when mapping exists (avoid nuking original if unknown)
+        if 'Division' in df.columns:
+            df.loc[mapped_div.notna(), 'Division'] = mapped_div[mapped_div.notna()]
+        # NAIA fallback for unknown conferences
+        valid_confs = set(conference_division_map.keys())
+        unknown_mask = ~norm_conf.isin(valid_confs) | df['Conference'].isna() | (df['Conference'].astype(str).str.strip() == '')
+        if 'Division' not in df.columns:
+            df['Division'] = None
+        df.loc[unknown_mask, 'Division'] = df.loc[unknown_mask, 'Division'].fillna('naia')
+        # Normalize to lowercase for consistency
+        df['Division'] = df['Division'].str.lower()
     
-    # Get unique values for filters from unfiltered data
-    teams = sorted(df['Team'].unique()) if 'Team' in df.columns else []
-    positions = sorted(df['Dominant Position'].unique()) if 'Dominant Position' in df.columns else []
-    divisions = sorted(df['Division'].unique()) if 'Division' in df.columns else []
+    # Preserve unfiltered for dropdown sources
+    base_df = df.copy()
+    teams = sorted(base_df['Team'].dropna().unique()) if 'Team' in base_df.columns else []
+    positions = sorted(base_df['Dominant Position'].dropna().unique()) if 'Dominant Position' in base_df.columns else []
+    divisions = sorted(base_df['Division'].dropna().unique()) if 'Division' in base_df.columns else []
+    if 'Conference' in base_df.columns:
+        if division != 'all' and 'Division' in base_df.columns:
+            conferences_source = base_df[base_df['Division'] == division]
+        else:
+            conferences_source = base_df
+        conferences = sorted(conferences_source['Conference'].dropna().unique())
+    else:
+        conferences = []
     
     # Apply filters after getting dropdown options
     if position != 'all' and 'Dominant Position' in df.columns:
@@ -196,6 +278,9 @@ def players():
     
     if division != 'all' and 'Division' in df.columns:
         df = df[df['Division'] == division]
+
+    if conference != 'all' and 'Conference' in df.columns:
+        df = df[df['Conference'] == conference]
     
     # Apply search filter
     if search and 'Name' in df.columns:
@@ -232,12 +317,14 @@ def players():
                          position=position,
                          team=team,
                          division=division,
+                         conference=conference,
                          search=search,
                          sort_by=sort_by,
                          sort_order=sort_order,
                          teams=teams,
                          positions=positions,
                          divisions=divisions,
+                         conferences=conferences,
                          total_pages=total_pages,
                          current_page=page,
                          total_players=total_players)

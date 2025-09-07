@@ -10,6 +10,7 @@ body {
     background-color: #1F1F1F;
     color: #FFFFFF;
     line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -26,6 +27,7 @@ body {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid #333;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .header-content {
@@ -41,10 +43,156 @@ body {
     margin: 0;
 }
 
+/* Logo group layout */
+.logo { display: flex; align-items: center; gap: 0.75rem; }
+.site-title { color: #ffffff; font-size: 1.6rem; font-weight: 700; letter-spacing: .5px; }
+body.light-theme .site-title { color: #003FA3; }
+
+/* Image logo */
+.logo-link { display: inline-block; line-height: 0; }
+.site-logo {
+    height: 44px;
+    width: auto;
+    display: block;
+    /* Recolor white source image to #003FA3 (America Scouted blue) */
+    filter: brightness(0) saturate(100%) invert(17%) sepia(87%) saturate(3434%) hue-rotate(205deg) brightness(93%) contrast(102%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.site-logo:hover { transform: scale(1.03); }
+body.light-theme .site-logo {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(87%) saturate(3434%) hue-rotate(205deg) brightness(93%) contrast(102%);
+}
+
 .nav {
     display: flex;
     gap: 2rem;
 }
+
+/* Theme toggle icon-only button */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.theme-toggle:focus { outline: none; }
+.theme-toggle:hover .theme-icon { transform: scale(1.1); }
+
+.theme-icon {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    transition: transform 0.25s ease;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.35));
+    user-select: none;
+}
+
+/* Force sun (dark mode) to appear white even if source is dark */
+.theme-icon[data-icon='sun'] {
+    filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.4));
+    width: 20px; /* smaller */
+    height: 20px;
+}
+
+/* Moon in light mode keeps subtle shadow */
+body.light-theme .theme-icon[data-icon='moon'] {
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.35));
+    width: 32px; /* larger */
+    height: 32px;
+}
+
+/* Keep icon white in any theme variant */
+body.light-theme .theme-toggle, body.light-theme .theme-icon { color: #ffffff; }
+
+/* ================= Light Theme Overrides ================= */
+body.light-theme {
+    background-color: #ffffff;
+    color: #1a1d21;
+}
+
+body.light-theme .header {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-theme .logo h1 { color: #003FA3; }
+body.light-theme .nav-link { color: #1a1d21; }
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active { background-color: #e6eef8; color: #003FA3; }
+
+/* Panels / cards */
+body.light-theme .players-table-wrapper,
+body.light-theme .filters-section,
+body.light-theme .filters,
+body.light-theme .match-card,
+body.light-theme .info-panel,
+body.light-theme .coverage-info,
+body.light-theme .season-info {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+body.light-theme .match-card { border: 1px solid #e2e8f0; }
+body.light-theme .match-card:hover { box-shadow: 0 4px 14px rgba(0,63,163,0.18); }
+
+/* Tables */
+body.light-theme .players-table th { background-color: #ffffff; border-bottom-color: #e2e8f0; }
+body.light-theme .players-table td { border-bottom-color: #e2e8f0; }
+body.light-theme .player-row:hover { background-color: #f0f7ff; }
+
+/* Filters */
+body.light-theme .filter-select,
+body.light-theme .filter-input { background-color: #ffffff; border-color: #cbd5e1; color: #1a1d21; }
+body.light-theme .filter-select:focus,
+body.light-theme .filter-input:focus { border-color: #003FA3; }
+body.light-theme .filter-group label { color: #374151; }
+
+/* Text accents */
+body.light-theme .page-title,
+body.light-theme .rank-cell,
+body.light-theme .score,
+body.light-theme .team-score,
+body.light-theme .match-date-header { color: #003FA3; }
+
+body.light-theme .team-info .team-name { color: #1a1d21; }
+body.light-theme .team-conference { color: #64748b; }
+body.light-theme .results-info,
+body.light-theme .subtitle { color: #4b5563; }
+
+/* Pagination */
+body.light-theme .page-btn { background-color: #ffffff; color: #1a1d21; border: 1px solid #d1d9e2; }
+body.light-theme .page-btn:hover { background-color: #e6eef8; }
+body.light-theme .page-btn.active { background-color: #003FA3; color: #ffffff; }
+
+/* Gender toggle */
+body.light-theme .gender-toggle { background-color: #f1f5f9; }
+body.light-theme .gender-btn { color: #1a1d21; }
+body.light-theme .gender-btn:hover,
+body.light-theme .gender-btn.active { background-color: #003FA3; color: #ffffff; }
+
+/* Live / status tags */
+body.light-theme .match-time { background-color: #e2e8f0; color: #475569; }
+body.light-theme .live-indicator { background-color: #dc2626; }
+
+/* Inputs placeholder */
+body.light-theme .filter-input::placeholder { color: #94a3b8; }
+
+/* Hover states nav spacing fix */
+body.light-theme .nav-link { transition: background-color 0.25s; }
+
+/* Remove dark-specific hover override conflict */
+body.light-theme .players-table th.sortable:hover { background-color: #e6eef8; }
+
+/* Ensure icon stands out if background white */
+body.light-theme .theme-icon { filter: drop-shadow(0 0 3px rgba(0,0,0,0.25)); }
 
 .nav-link {
     color: #FFFFFF;
@@ -58,8 +206,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    background-color: #003FA3;
-    color: white;
+        background-color: var(--color-bg);
+        color: var(--color-text);
 }
 
 /* Main content */
@@ -304,7 +452,7 @@ body {
 }
 
 .players-table th {
-    background-color: #161616;
+    background-color: #ffffff;
     padding: 1rem 0.75rem;
     text-align: left;
     font-weight: 600;

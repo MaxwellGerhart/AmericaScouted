@@ -11,12 +11,25 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>America Scouted</h1>
+                    <a href="{{ url_for('index') }}" class="logo-link" aria-label="America Scouted Home">
+                        <img src="{{ url_for('static', filename='AmericaScoutedLogo.png') }}" alt="America Scouted" class="site-logo" />
+                    </a>
+                    <h1 class="site-title">America Scouted</h1>
                 </div>
                 <nav class="nav">
                     <a href="{{ url_for('index') }}" class="nav-link">Home</a>
                     <a href="{{ url_for('players') }}" class="nav-link">Players</a>
                     <a href="{{ url_for('matches') }}" class="nav-link">Matches</a>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+                        <img
+                            class="theme-icon"
+                            id="themeIcon"
+                            src="{{ url_for('static', filename='sun.png') }}"
+                            data-sun="{{ url_for('static', filename='sun.png') }}"
+                            data-moon="{{ url_for('static', filename='moon.png') }}"
+                            data-icon="sun"
+                            alt="Toggle theme" />
+                    </button>
                 </nav>
             </div>
         </div>

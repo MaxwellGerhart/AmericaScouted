@@ -1,5 +1,34 @@
 // Auto-submit form when filters change
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle
+    const body = document.body;
+    const toggleBtn = document.getElementById('themeToggle');
+    const iconEl = document.getElementById('themeIcon');
+    const sunSrc = iconEl ? iconEl.dataset.sun : null;
+    const moonSrc = iconEl ? iconEl.dataset.moon : null;
+    // Icon-only now, no text label
+    const storedTheme = localStorage.getItem('site-theme');
+    if (storedTheme === 'light') {
+        body.classList.add('light-theme');
+        if (iconEl && moonSrc) { iconEl.src = moonSrc; iconEl.setAttribute('data-icon','moon'); }
+    } else {
+        // default dark theme -> show sun
+        if (iconEl && sunSrc) { iconEl.src = sunSrc; iconEl.setAttribute('data-icon','sun'); }
+    }
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isLight = body.classList.toggle('light-theme');
+            if (isLight) {
+                // Light theme active -> show moon icon
+                localStorage.setItem('site-theme', 'light');
+                if (iconEl && moonSrc) { iconEl.src = moonSrc; iconEl.setAttribute('data-icon','moon'); }
+            } else {
+                // Dark theme -> show sun
+                localStorage.setItem('site-theme', 'dark');
+                if (iconEl && sunSrc) { iconEl.src = sunSrc; iconEl.setAttribute('data-icon','sun'); }
+            }
+        });
+    }
     const filterForm = document.querySelector('.filters-form');
     const filterSelects = document.querySelectorAll('.filter-select');
     

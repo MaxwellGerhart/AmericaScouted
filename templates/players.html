@@ -13,9 +13,9 @@
         </div>
         
         <div class="gender-toggle">
-            <a href="{{ url_for('players', gender='men', week=current_week, position=position, team=team, division=division, search=search, sort=sort_by) }}" 
+            <a href="{{ url_for('players', gender='men', week=current_week, position=position, team=team, division=division, conference=conference, search=search, sort=sort_by) }}" 
                class="gender-btn {% if gender == 'men' %}active{% endif %}">Men</a>
-            <a href="{{ url_for('players', gender='women', week=current_week, position=position, team=team, division=division, search=search, sort=sort_by) }}" 
+            <a href="{{ url_for('players', gender='women', week=current_week, position=position, team=team, division=division, conference=conference, search=search, sort=sort_by) }}" 
                class="gender-btn {% if gender == 'women' %}active{% endif %}">Women</a>
         </div>
     </div>
@@ -67,6 +67,16 @@
                     <option value="all" {% if division == 'all' %}selected{% endif %}>All Divisions</option>
                     {% for div in divisions %}
                     <option value="{{ div }}" {% if div == division %}selected{% endif %}>{{ div.upper() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="conference">Conference:</label>
+                <select name="conference" id="conference" class="filter-select">
+                    <option value="all" {% if conference == 'all' %}selected{% endif %}>All Conferences</option>
+                    {% for conf in conferences %}
+                    <option value="{{ conf }}" {% if conf == conference %}selected{% endif %}>{{ conf }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -192,21 +202,21 @@
     {% if total_pages > 1 %}
     <div class="pagination">
         {% if current_page > 1 %}
-        <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=current_page-1) }}" class="page-btn">Previous</a>
+    <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, conference=conference, search=search, sort=sort_by, page=current_page-1) }}" class="page-btn">Previous</a>
         {% endif %}
         
         {% for page_num in range(1, total_pages + 1) %}
             {% if page_num == current_page %}
             <span class="page-btn active">{{ page_num }}</span>
             {% elif page_num <= 3 or page_num > total_pages - 3 or (page_num >= current_page - 1 and page_num <= current_page + 1) %}
-            <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=page_num) }}" class="page-btn">{{ page_num }}</a>
+            <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, conference=conference, search=search, sort=sort_by, page=page_num) }}" class="page-btn">{{ page_num }}</a>
             {% elif page_num == 4 or page_num == total_pages - 3 %}
             <span class="page-btn dots">...</span>
             {% endif %}
         {% endfor %}
         
         {% if current_page < total_pages %}
-        <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, search=search, sort=sort_by, page=current_page+1) }}" class="page-btn">Next</a>
+    <a href="{{ url_for('players', gender=gender, week=current_week, position=position, team=team, division=division, conference=conference, search=search, sort=sort_by, page=current_page+1) }}" class="page-btn">Next</a>
         {% endif %}
     </div>
     {% endif %}
