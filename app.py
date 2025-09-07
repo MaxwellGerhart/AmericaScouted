@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for
 import pandas as pd
 import os
 import glob
@@ -10,6 +10,49 @@ MATCH_DIR = os.path.join(BASE_DIR, 'data', 'Matches')
 PLAYER_DIR = os.path.join(BASE_DIR, 'data', 'Players')
 
 app = Flask(__name__)
+
+# ===== Logo Support =====
+import re
+from functools import lru_cache
+
+LOGO_DIR = os.path.join(BASE_DIR, 'static', 'logos')
+
+def _slugify(name: str) -> str:
+    """Mimic scraper slugify so we can map team names to saved logo files."""
+    if not name:
+        return ''
+    name = re.sub(r"\s+", " ", str(name)).strip()
+    name = name.replace('/', '-')
+    name = re.sub(r"[^A-Za-z0-9.\- _()&']", "", name)
+    name = name.replace(' ', '_')
+    return name
+
+@lru_cache(maxsize=1)
+def _logo_index():
+    """Return mapping of slug (without extension) -> actual filename (with ext if present)."""
+    index = {}
+    if os.path.isdir(LOGO_DIR):
+        for fname in os.listdir(LOGO_DIR):
+            path = os.path.join(LOGO_DIR, fname)
+            if os.path.isfile(path):
+                stem, ext = os.path.splitext(fname)
+                # Store both stem and full filename without ext for quick lookup
+                index[stem.lower()] = fname
+    return index
+
+def get_logo_path(team_name: str):
+    """Return relative static path (logos/filename.ext) if a logo exists for given team name."""
+    slug = _slugify(team_name)
+    if not slug:
+        return None
+    idx = _logo_index()
+    # Try direct slug, then variations removing periods or parentheses
+    candidates = [slug, slug.replace('.', '_'), slug.replace('.', ''), re.sub(r'[()]', '', slug)]
+    for cand in candidates:
+        key = os.path.splitext(cand)[0].lower()
+        if key in idx:
+            return f"logos/{idx[key]}"  # relative to /static
+    return None
 
 class AmericaScoutedApp:
     def __init__(self):
@@ -304,6 +347,11 @@ def players():
     for _, player in players_page.iterrows():
         player_dict = player.to_dict()
         player_dict['position_color'] = america_scouted_app.get_position_color(player.get('Dominant Position', ''))
+        # Attach logo path if available
+        team_name = player.get('Team')
+        logo_rel = get_logo_path(team_name) if team_name else None
+        if logo_rel:
+            player_dict['logo_url'] = url_for('static', filename=logo_rel)
         players.append(player_dict)
     
     current_week_display = next((w['display'] for w in america_scouted_app.available_weeks if w['code'] == week), week)
@@ -386,6 +434,13 @@ def matches():
             'status': match.get('status', '') if pd.notna(match.get('status')) else '',
             'start_time': match.get('start_time', '') if pd.notna(match.get('start_time')) else ''
         }
+        # Add logos for short name first, fallback to full if available
+        h_logo = get_logo_path(match.get('home_team_short') or match.get('home_team_full'))
+        a_logo = get_logo_path(match.get('away_team_short') or match.get('away_team_full'))
+        if h_logo:
+            match_obj['home_logo_url'] = url_for('static', filename=h_logo)
+        if a_logo:
+            match_obj['away_logo_url'] = url_for('static', filename=a_logo)
         
         # Debug output for scores
         print(f"DEBUG: Original scores - home: '{match.get('home_team_score')}' (type: {type(match.get('home_team_score'))}), away: '{match.get('away_team_score')}' (type: {type(match.get('away_team_score'))})")

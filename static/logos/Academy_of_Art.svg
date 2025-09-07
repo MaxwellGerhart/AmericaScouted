@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>academy-of-art</title>
+    <desc>Created with Sketch.</desc>
+    <g id="academy-of-art" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="academy-of-art_BGL">
+            <g id="academy-of-art">
+                <g id="g10" transform="translate(99.951193, 99.951193) scale(-1, 1) rotate(-180.000000) translate(-99.951193, -99.951193) translate(0.000000, -0.000000)" fill-rule="nonzero">
+                    <g id="g12">
+                        <path d="M199.813758,99.9086359 C199.813758,44.7305016 155.083647,0 99.9086359,0 C44.7301111,0 0,44.7305016 0,99.9086359 C0,155.085989 44.7301111,199.8161 99.9086359,199.8161 C155.083647,199.8161 199.813758,155.085989 199.813758,99.9086359" id="path14" fill="#ED192D"></path>
+                        <polyline id="path16" fill="#FFFFFF" points="159.094188 58.2325022 40.6203992 58.2325022 40.6203992 43.1051234 159.094188 43.1051234 159.094188 58.2325022"></polyline>
+                        <polyline id="path18" fill="#FFFFFF" points="159.094188 68.2779876 101.127962 172.778912 40.7359677 68.162419 58.1715944 68.162419 100.318982 141.370031 107.823911 127.745434 73.5301104 68.2779876 91.4291827 68.2779876 116.602047 112.156952 141.080719 68.2779876 159.094188 68.2779876"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

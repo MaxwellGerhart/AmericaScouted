@@ -93,7 +93,10 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Apply Filters</button>
+            <div class="filter-actions">
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+                <a href="{{ url_for('players', gender=gender) }}" class="btn btn-danger">Reset</a>
+            </div>
         </form>
     </div>
 
@@ -177,7 +180,14 @@
                             {{ player.get('Dominant Position', 'Unknown') }}
                         </span>
                     </td>
-                    <td class="team">{{ player.Team }}</td>
+                    <td class="team">
+                        <div class="team-cell">
+                            {% if player.logo_url %}
+                            <img src="{{ player.logo_url }}" alt="{{ player.Team }}" class="team-logo" loading="lazy">
+                            {% endif %}
+                            <span>{{ player.Team }}</span>
+                        </div>
+                    </td>
                     <td class="division">
                         <span class="division-badge">{{ player.Division.upper() }}</span>
                     </td>
