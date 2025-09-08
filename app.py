@@ -4,7 +4,6 @@ import os
 import glob
 from datetime import datetime
 import pandas as pd
-import psutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MATCH_DIR = os.path.join(BASE_DIR, 'data', 'Matches')
@@ -17,8 +16,8 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['ASSET_VERSION'] = '20250907a'
 # Verbose template load diagnostics to console
-app.config['EXPLAIN_TEMPLATE_LOADING'] = True
-app.jinja_env.auto_reload = True
+# Disable verbose template loading in production
+app.jinja_env.auto_reload = True  # still allow auto reload in dev
 
 @app.route('/_clear_template_cache')
 def clear_template_cache():
@@ -352,17 +351,6 @@ def index():
                            men_top_scorers=men_top, women_top_scorers=women_top,
                            men_top_assisters=men_assist, women_top_assisters=women_assist)
 
-@app.route('/_whoami')
-def whoami():
-    proc = psutil.Process()
-    info = {
-        'pid': proc.pid,
-        'cwd': os.getcwd(),
-        'template_folder': app.template_folder,
-        'asset_version': app.config.get('ASSET_VERSION'),
-        'files_in_templates': sorted(os.listdir(app.template_folder)) if app.template_folder and os.path.isdir(app.template_folder) else []
-    }
-    return jsonify(info)
 
 @app.route('/players')
 def players():
