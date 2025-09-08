@@ -522,7 +522,7 @@ def collect_player_data_for_period(start_date, end_date):
 # ====================
 def main():
     # Create Data directories if they don't exist
-    os.makedirs('Data/Players', exist_ok=True)
+    os.makedirs('C:\Users\maxwe\OneDrive - The Pennsylvania State University\AmericaScouted\data\Players', exist_ok=True)
     
     # Generate weekly periods
     weekly_periods = get_week_periods(START_DATE, END_DATE)

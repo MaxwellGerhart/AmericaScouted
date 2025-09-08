@@ -280,11 +280,11 @@ def collect_match_data_for_period(start_date, end_date):
 # ====================
 def main():
     # Configuration
-    start_date = '2025-08-14'
-    end_date = '2025-09-03'
+    start_date = '2025-09-01'
+    end_date = '2025-09-07'
     
     # Create Data directories if they don't exist
-    os.makedirs('Data/Matches', exist_ok=True)
+    os.makedirs('C:\Users\maxwe\OneDrive - The Pennsylvania State University\AmericaScouted\data\Matches', exist_ok=True)
     
     # Generate weekly periods
     weekly_periods = get_week_periods(start_date, end_date)

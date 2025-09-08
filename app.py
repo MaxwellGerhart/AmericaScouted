@@ -4,12 +4,30 @@ import os
 import glob
 from datetime import datetime
 import pandas as pd
+import psutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MATCH_DIR = os.path.join(BASE_DIR, 'data', 'Matches')
 PLAYER_DIR = os.path.join(BASE_DIR, 'data', 'Players')
 
 app = Flask(__name__)
+# Enable template auto reload so changes (like new social buttons) appear without manual restart during development
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+# Reduce static file cache during active development
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['ASSET_VERSION'] = '20250907a'
+# Verbose template load diagnostics to console
+app.config['EXPLAIN_TEMPLATE_LOADING'] = True
+app.jinja_env.auto_reload = True
+
+@app.route('/_clear_template_cache')
+def clear_template_cache():
+    try:
+        app.jinja_env.cache.clear()
+        _logo_index.cache_clear()
+        return jsonify({'status': 'cleared'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 # ===== Logo Support =====
 import re
@@ -41,18 +59,86 @@ def _logo_index():
     return index
 
 def get_logo_path(team_name: str):
-    """Return relative static path (logos/filename.ext) if a logo exists for given team name."""
-    slug = _slugify(team_name)
+    """Return relative static path (logos/filename.ext) if a logo exists for given team name.
+
+    We try many variants to cope with NCAA short names using 'St.' vs stored 'Saint' or 'St._'.
+    """
+    if not team_name:
+        return None
+    original = team_name
+    slug = _slugify(original)  # e.g. "St._Bonaventure" OR "Mount_St._Mary's"
     if not slug:
         return None
     idx = _logo_index()
-    # Try direct slug, then variations removing periods or parentheses
-    candidates = [slug, slug.replace('.', '_'), slug.replace('.', ''), re.sub(r'[()]', '', slug)]
-    for cand in candidates:
-        key = os.path.splitext(cand)[0].lower()
-        if key in idx:
-            return f"logos/{idx[key]}"  # relative to /static
+
+    candidates = [slug]
+
+    # Insert missing period after a leading St if file uses St._X
+    if re.match(r'^St_', slug, flags=re.IGNORECASE):
+        candidates.append(slug.replace('St_', 'St._', 1))
+
+    # Leading St. -> Saint
+    if re.match(r'^St\.?_', slug, flags=re.IGNORECASE):
+        candidates.append(re.sub(r'^St\.?_', 'Saint_', slug, flags=re.IGNORECASE))
+
+    # Internal tokens St./St between words -> Saint
+    if re.search(r'(?i)\bSt\.?_', slug):
+        candidates.append(re.sub(r'(?i)\bSt\.?_', 'Saint_', slug))
+    if re.search(r'(?i)_St_', slug):
+        candidates.append(re.sub(r'(?i)_St_', '_Saint_', slug))
+
+    # Generic punctuation variants
+    candidates.extend([
+        slug.replace('.', '_'),
+        slug.replace('.', ''),
+        re.sub(r'[()]', '', slug)
+    ])
+
+    # Space-based re-slug with Saint expansion
+    if 'St_' in slug:
+        space_form = slug.replace('_', ' ')
+        saint_space = re.sub(r'(?i)\bSt\.? ', 'Saint ', space_form)
+        saint_space_slug = _slugify(saint_space)
+        candidates.append(saint_space_slug)
+
+    # Deduplicate preserving order
+    seen = set()
+    deduped = []
+    for c in candidates:
+        if c and c not in seen:
+            seen.add(c)
+            deduped.append(c)
+
+    def try_candidates(index):
+        for cand in deduped:
+            key = os.path.splitext(cand)[0].lower()
+            if key in index:
+                return f"logos/{index[key]}"
+        return None
+
+    # First pass
+    found = try_candidates(idx)
+    if found:
+        return found
+    # If not found, clear cache and rebuild once (handles newly added files after server start)
+    _logo_index.cache_clear()
+    refreshed = _logo_index()
+    found = try_candidates(refreshed)
+    if found:
+        return found
+    # Fuzzy fallback: strip non-alphanumerics and compare
+    def norm(s: str):
+        return re.sub(r'[^a-z0-9]', '', s.lower())
+    candidate_norms = {norm(c): c for c in candidates}
+    try:
+        for fname in os.listdir(LOGO_DIR):
+            stem, _ = os.path.splitext(fname)
+            if norm(stem) in candidate_norms:
+                return f"logos/{fname}"
+    except Exception:
+        pass
     return None
+
 
 class AmericaScoutedApp:
     def __init__(self):
@@ -88,8 +174,7 @@ class AmericaScoutedApp:
     def load_cumulative_data(self, end_week_code, gender='men'):
         """Load and combine data from start through specified week"""
         all_data = []
-        print(f"Loading data for {gender}, data_dir: {self.data_dir}")
-        print(f"Available weeks: {self.available_weeks}")
+    # Removed verbose debug prints for cleaner production output
         
         for week in self.available_weeks:
             if week['code'] <= end_week_code:
@@ -97,17 +182,17 @@ class AmericaScoutedApp:
                 file_gender = gender + 's' if gender in ['men', 'women'] else gender
                 filename = f"{file_gender}_players_{week['code']}.csv"
                 filepath = os.path.join(self.data_dir, filename)
-                print(f"Checking file: {filepath}")
+                # Silent check for file existence
                 
                 if os.path.exists(filepath):
                     try:
                         df = pd.read_csv(filepath)
-                        print(f"Loaded {filepath} with shape: {df.shape}")
                         all_data.append(df)
                     except Exception as e:
-                        print(f"Error loading {filepath}: {e}")
+                        # Swallow errors but could be logged with a logging framework
+                        pass
                 else:
-                    print(f"File does not exist: {filepath}")
+                    pass
         
         if all_data:
             # Combine all data and aggregate by player
@@ -197,14 +282,92 @@ america_scouted_app = AmericaScoutedApp()
 
 @app.route('/')
 def index():
-    return render_template('index.html', weeks=america_scouted_app.available_weeks)
+    # Determine latest week code
+    weeks = america_scouted_app.available_weeks
+    men_top = []
+    women_top = []
+    men_assist = []
+    women_assist = []
+    if weeks:
+        latest_code = weeks[-1]['code']
+        # Helper to extract top scorers
+        def top_scorers(gender):
+            try:
+                df = america_scouted_app.load_cumulative_data(latest_code, gender)
+                if df is not None and not df.empty and 'Goals' in df.columns:
+                    # Ensure numeric
+                    df['Goals'] = pd.to_numeric(df['Goals'], errors='coerce').fillna(0)
+                    # Secondary sort by Points if available, else Assists
+                    sort_cols = ['Goals']
+                    if 'Points' in df.columns:
+                        sort_cols.append('Points')
+                    elif 'Assists' in df.columns:
+                        sort_cols.append('Assists')
+                    df_sorted = df.sort_values(by=sort_cols, ascending=False)
+                    top = []
+                    for _, r in df_sorted.head(3).iterrows():
+                        top.append({
+                            'name': r.get('Name'),
+                            'team': r.get('Team'),
+                            'goals': int(r.get('Goals', 0)),
+                            'assists': int(r.get('Assists', 0)) if 'Assists' in df.columns and pd.notna(r.get('Assists')) else 0,
+                            'points': int(r.get('Points', 0)) if 'Points' in df.columns and pd.notna(r.get('Points')) else None
+                        })
+                    return top
+            except Exception:
+                return []
+            return []
+        def top_assisters(gender):
+            try:
+                df = america_scouted_app.load_cumulative_data(latest_code, gender)
+                if df is not None and not df.empty and 'Assists' in df.columns:
+                    df['Assists'] = pd.to_numeric(df['Assists'], errors='coerce').fillna(0)
+                    if 'Goals' in df.columns:
+                        df['Goals'] = pd.to_numeric(df['Goals'], errors='coerce').fillna(0)
+                    sort_cols = ['Assists']
+                    # Tie-break by Goals then Points
+                    if 'Goals' in df.columns:
+                        sort_cols.append('Goals')
+                    if 'Points' in df.columns:
+                        sort_cols.append('Points')
+                    df_sorted = df.sort_values(by=sort_cols, ascending=False)
+                    top = []
+                    for _, r in df_sorted.head(3).iterrows():
+                        top.append({
+                            'name': r.get('Name'),
+                            'team': r.get('Team'),
+                            'assists': int(r.get('Assists', 0)),
+                            'goals': int(r.get('Goals', 0)) if 'Goals' in df.columns and pd.notna(r.get('Goals')) else 0,
+                            'points': int(r.get('Points', 0)) if 'Points' in df.columns and pd.notna(r.get('Points')) else None
+                        })
+                    return top
+            except Exception:
+                return []
+            return []
+        men_top = top_scorers('men')
+        women_top = top_scorers('women')
+        men_assist = top_assisters('men')
+        women_assist = top_assisters('women')
+    return render_template('index.html', weeks=weeks,
+                           men_top_scorers=men_top, women_top_scorers=women_top,
+                           men_top_assisters=men_assist, women_top_assisters=women_assist)
+
+@app.route('/_whoami')
+def whoami():
+    proc = psutil.Process()
+    info = {
+        'pid': proc.pid,
+        'cwd': os.getcwd(),
+        'template_folder': app.template_folder,
+        'asset_version': app.config.get('ASSET_VERSION'),
+        'files_in_templates': sorted(os.listdir(app.template_folder)) if app.template_folder and os.path.isdir(app.template_folder) else []
+    }
+    return jsonify(info)
 
 @app.route('/players')
 def players():
-    print("=== PLAYERS ROUTE CALLED ===")
     week = request.args.get('week', america_scouted_app.available_weeks[-1]['code'] if america_scouted_app.available_weeks else None)
     gender = request.args.get('gender', 'men')
-    print(f"Parameters: week={week}, gender={gender}")
     position = request.args.get('position', 'all')
     team = request.args.get('team', 'all')
     division = request.args.get('division', 'all')
@@ -352,6 +515,9 @@ def players():
         logo_rel = get_logo_path(team_name) if team_name else None
         if logo_rel:
             player_dict['logo_url'] = url_for('static', filename=logo_rel)
+        # slug for team link
+        if team_name:
+            player_dict['team_slug'] = _slugify(team_name)
         players.append(player_dict)
     
     current_week_display = next((w['display'] for w in america_scouted_app.available_weeks if w['code'] == week), week)
@@ -379,12 +545,9 @@ def players():
 
 @app.route('/matches')
 def matches():
-    print("=== MATCHES ROUTE CALLED ===")
     gender = request.args.get('gender', 'men')
     division = request.args.get('division', 'all')
     conference = request.args.get('conference', 'all')
-    
-    print(f"Parameters: gender={gender}, division={division}, conference={conference}")
     
     # Load match data
     df = america_scouted_app.load_match_data(gender)
@@ -441,10 +604,11 @@ def matches():
             match_obj['home_logo_url'] = url_for('static', filename=h_logo)
         if a_logo:
             match_obj['away_logo_url'] = url_for('static', filename=a_logo)
+        # Add slugs for linking to team page
+        match_obj['home_team_slug'] = _slugify(match.get('home_team_short') or match.get('home_team_full') or '')
+        match_obj['away_team_slug'] = _slugify(match.get('away_team_short') or match.get('away_team_full') or '')
         
         # Debug output for scores
-        print(f"DEBUG: Original scores - home: '{match.get('home_team_score')}' (type: {type(match.get('home_team_score'))}), away: '{match.get('away_team_score')}' (type: {type(match.get('away_team_score'))})")
-        print(f"DEBUG: Processed scores - home: '{match_obj['home_team_score']}', away: '{match_obj['away_team_score']}'")
         
         matches_by_date[date].append(match_obj)
     
@@ -460,6 +624,166 @@ def matches():
                          conferences=conferences,
                          total_matches=total_matches,
                          current_week_display=current_week_display)
+
+@app.route('/team/<team_slug>')
+def team_page(team_slug):
+    """Team detail page: record, goals, shots, TSR, etc."""
+    gender = request.args.get('gender', 'men')
+    # Load all matches for this gender
+    matches_df = america_scouted_app.load_match_data(gender)
+    if matches_df.empty:
+        return render_template('team.html', team_name=team_slug.replace('_', ' '), gender=gender, stats=None, matches=[], error='No match data available.')
+
+    # Helper to coerce numeric values
+    def num(val):
+        try:
+            if val in [None, '', 'nan']:
+                return 0
+            v = float(val)
+            # treat ints
+            if v.is_integer():
+                return int(v)
+            return v
+        except Exception:
+            return 0
+
+    # Build slugs for matching
+    slugged_rows = []
+    for _, row in matches_df.iterrows():
+        home_short = row.get('home_team_short')
+        home_full = row.get('home_team_full')
+        away_short = row.get('away_team_short')
+        away_full = row.get('away_team_full')
+        slug_home = _slugify(home_short or home_full or '')
+        slug_away = _slugify(away_short or away_full or '')
+        if slug_home == team_slug or slug_away == team_slug:
+            slugged_rows.append(row)
+
+    if not slugged_rows:
+        return render_template('team.html', team_name=team_slug.replace('_', ' '), gender=gender, stats=None, matches=[], error='Team not found in matches.')
+
+    # Aggregate stats
+    wins = draws = losses = 0
+    gf = ga = 0
+    shots_for = shots_against = 0
+    sot_for = sot_against = 0
+    division = conference = None
+    team_display_name = None
+
+    match_items = []
+    for row in slugged_rows:
+        home_short = row.get('home_team_short')
+        home_full = row.get('home_team_full')
+        away_short = row.get('away_team_short')
+        away_full = row.get('away_team_full')
+        slug_home = _slugify(home_short or home_full or '')
+        slug_away = _slugify(away_short or away_full or '')
+        is_home = slug_home == team_slug
+
+        # Scores
+        h_sc = num(row.get('home_team_score'))
+        a_sc = num(row.get('away_team_score'))
+        # Shots
+        h_sh = num(row.get('home_shots'))
+        a_sh = num(row.get('away_shots'))
+        h_sot = num(row.get('home_sot'))
+        a_sot = num(row.get('away_sot'))
+
+        if is_home:
+            goals_for = h_sc
+            goals_against = a_sc
+            sh_for = h_sh
+            sh_against = a_sh
+            sotf = h_sot
+            sota = a_sot
+            opponent_name = away_short or away_full
+            opponent_slug = slug_away
+        else:
+            goals_for = a_sc
+            goals_against = h_sc
+            sh_for = a_sh
+            sh_against = h_sh
+            sotf = a_sot
+            sota = h_sot
+            opponent_name = home_short or home_full
+            opponent_slug = slug_home
+
+        # Only count result if both scores present (avoid future or incomplete games)
+        if isinstance(goals_for, (int, float)) and isinstance(goals_against, (int, float)):
+            if goals_for > goals_against:
+                wins += 1
+            elif goals_for == goals_against:
+                draws += 1
+            else:
+                losses += 1
+
+        gf += goals_for
+        ga += goals_against
+        shots_for += sh_for
+        shots_against += sh_against
+        sot_for += sotf
+        sot_against += sota
+
+        if not division:
+            division = row.get('division')
+        if not conference:
+            # prefer home conference when home else away
+            conference = row.get('home_conference') if is_home else row.get('away_conference')
+        if not team_display_name:
+            team_display_name = (home_short or home_full) if is_home else (away_short or away_full)
+
+        match_items.append({
+            'date': row.get('date'),
+            'is_home': is_home,
+            'opponent': opponent_name,
+            'opponent_slug': opponent_slug,
+            'score_for': goals_for,
+            'score_against': goals_against,
+            'shots_for': sh_for,
+            'shots_against': sh_against,
+            'sot_for': sotf,
+            'sot_against': sota,
+            'result': 'W' if goals_for > goals_against else ('D' if goals_for == goals_against else 'L')
+        })
+
+    # Sort matches by date (assuming MM-DD-YYYY as in data) convert to datetime safely
+    try:
+        match_items.sort(key=lambda m: datetime.strptime(m['date'], '%m-%d-%Y'))
+    except Exception:
+        pass
+
+    tsr = round(shots_for / (shots_for + shots_against), 3) if (shots_for + shots_against) > 0 else 0
+    sotr = round(sot_for / (sot_for + sot_against), 3) if (sot_for + sot_against) > 0 else 0
+
+    stats = {
+        'record': f"{wins}-{losses}-{draws}",
+        'wins': wins,
+        'losses': losses,
+        'draws': draws,
+        'gf': gf,
+        'ga': ga,
+        'gd': gf - ga,
+        'shots_for': shots_for,
+        'shots_against': shots_against,
+        'tsr': tsr,
+        'sot_for': sot_for,
+        'sot_against': sot_against,
+        'sotr': sotr,
+        'division': division,
+        'conference': conference
+    }
+
+    # Logo
+    logo_rel = get_logo_path(team_display_name)
+    logo_url = url_for('static', filename=logo_rel) if logo_rel else None
+
+    return render_template('team.html',
+                           team_name=team_display_name or team_slug.replace('_', ' '),
+                           gender=gender,
+                           stats=stats,
+                           matches=match_items,
+                           logo_url=logo_url,
+                           team_slug=team_slug)
 
 @app.route('/api/player/<player_name>')
 def player_detail(player_name):
@@ -481,19 +805,6 @@ def player_detail(player_name):
     
     return jsonify(player_data.iloc[0].to_dict())
 
-
-def _startup_diagnostics():
-    try:
-        match_files = glob.glob(os.path.join(MATCH_DIR, 'matches_*.csv'))
-        print(f"[STARTUP] Base dir: {BASE_DIR}")
-        print(f"[STARTUP] Matches dir exists: {os.path.exists(MATCH_DIR)} files={len(match_files)}")
-        if match_files:
-            print('[STARTUP] Sample file:', os.path.basename(sorted(match_files)[-1]))
-        print(f"[STARTUP] Players dir exists: {os.path.exists(PLAYER_DIR)}")
-    except Exception as e:
-        print('[STARTUP] Diagnostic error', e)
-
 if __name__ == '__main__':
-    if os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
-        _startup_diagnostics()
+    # Turn debug back on for development so template / asset changes show immediately
     app.run(debug=True, host='0.0.0.0', port=5000)

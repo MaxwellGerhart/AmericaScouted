@@ -72,7 +72,7 @@
                 
                 <div class="match-teams">
                     <div class="team-row">
-                        <div class="team-info with-logo">
+                        <a class="team-info with-logo" href="{{ url_for('team_page', team_slug=match.home_team_slug) }}?gender={{ gender }}">
                             {% if match.home_logo_url %}
                             <img src="{{ match.home_logo_url }}" alt="{{ match.home_team_short }}" class="team-logo" loading="lazy">
                             {% endif %}
@@ -80,12 +80,12 @@
                                 <span class="team-name">{{ match.home_team_short or 'TBD' }}</span>
                                 <span class="team-conference">{{ match.home_conference or '' }}</span>
                             </div>
-                        </div>
+                        </a>
                         <div class="team-score">{{ match.home_team_score }}</div>
                     </div>
                     
                     <div class="team-row">
-                        <div class="team-info with-logo">
+                        <a class="team-info with-logo" href="{{ url_for('team_page', team_slug=match.away_team_slug) }}?gender={{ gender }}">
                             {% if match.away_logo_url %}
                             <img src="{{ match.away_logo_url }}" alt="{{ match.away_team_short }}" class="team-logo" loading="lazy">
                             {% endif %}
@@ -93,7 +93,7 @@
                                 <span class="team-name">{{ match.away_team_short or 'TBD' }}</span>
                                 <span class="team-conference">{{ match.away_conference or '' }}</span>
                             </div>
-                        </div>
+                        </a>
                         <div class="team-score">{{ match.away_team_score }}</div>
                     </div>
                 </div>

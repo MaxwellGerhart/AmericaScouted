@@ -3,7 +3,47 @@
 {% block title %}America Scouted - Home{% endblock %}
 
 {% block content %}
-<div class="container">
+<!-- TEMPLATE_VERSION: 2025-09-07-01 -->
+<div class="container home-layout">
+    {% if men_top_scorers or women_top_scorers %}
+        <aside class="home-sidebar left">
+            <div class="top-scorers-card">
+                <h3>Top Goal Scorers</h3>
+                <div class="ts-section">
+                    <h4>Men</h4>
+                    {% if men_top_scorers %}
+                        <ol class="ts-list">
+                            {% for p in men_top_scorers %}
+                            <li>
+                                <span class="ts-name">{{ p.name }}</span>
+                                <span class="ts-team">{{ p.team }}</span>
+                                <span class="ts-stats">G: {{ p.goals }}{% if p.assists is not none %} A: {{ p.assists }}{% endif %}</span>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="ts-empty">No data</p>
+                    {% endif %}
+                </div>
+                <div class="ts-section">
+                    <h4>Women</h4>
+                    {% if women_top_scorers %}
+                        <ol class="ts-list">
+                            {% for p in women_top_scorers %}
+                            <li>
+                                <span class="ts-name">{{ p.name }}</span>
+                                <span class="ts-team">{{ p.team }}</span>
+                                <span class="ts-stats">G: {{ p.goals }}{% if p.assists is not none %} A: {{ p.assists }}{% endif %}</span>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="ts-empty">No data</p>
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+    {% endif %}
     <div class="hero-section">
         <p>Your premier destination for NCAA soccer statistics and player analytics</p>
         
@@ -23,5 +63,44 @@
         </div>
         {% endif %}
     </div>
+        {% if men_top_assisters or women_top_assisters %}
+        <aside class="home-sidebar right">
+            <div class="top-scorers-card">
+                <h3>Top Assisters</h3>
+                <div class="ts-section">
+                    <h4>Men</h4>
+                    {% if men_top_assisters %}
+                        <ol class="ts-list">
+                            {% for p in men_top_assisters %}
+                            <li>
+                                <span class="ts-name">{{ p.name }}</span>
+                                <span class="ts-team">{{ p.team }}</span>
+                                <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="ts-empty">No data</p>
+                    {% endif %}
+                </div>
+                <div class="ts-section">
+                    <h4>Women</h4>
+                    {% if women_top_assisters %}
+                        <ol class="ts-list">
+                            {% for p in women_top_assisters %}
+                            <li>
+                                <span class="ts-name">{{ p.name }}</span>
+                                <span class="ts-team">{{ p.team }}</span>
+                                <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="ts-empty">No data</p>
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+        {% endif %}
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}America Scouted{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ config['ASSET_VERSION'] }}">
 </head>
 <body>
     <header class="header">
@@ -39,6 +39,18 @@
         {% block content %}{% endblock %}
     </main>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">America Scouted</div>
+            <div class="footer-socials">
+                <a href="https://x.com/" target="_blank" rel="noopener" class="footer-social link-x" aria-label="X / Twitter">X</a>
+                <a href="https://instagram.com/americascouted/" target="_blank" rel="noopener" class="footer-social link-instagram" aria-label="Instagram">Instagram</a>
+                <a href="https://www.linkedin.com/in/maxwell-gerhart-855644223/" target="_blank" rel="noopener" class="footer-social link-linkedin" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/MaxwellGerhart/" target="_blank" rel="noopener" class="footer-social link-github" aria-label="GitHub">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}?v={{ config['ASSET_VERSION'] }}"></script>
 </body>
 </html>

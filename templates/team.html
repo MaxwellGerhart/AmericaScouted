@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Team {{ team_name }} - America Scouted{% endblock %}
+{% block content %}
+<div class="container team-page">
+  <div class="team-header">
+    <div class="team-identity">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ team_name }}" class="team-logo large" loading="lazy">
+      {% endif %}
+      <div>
+        <h1>{{ team_name }}</h1>
+        <p class="subtitle">{{ gender.title() }} | {{ stats.division.upper() if stats and stats.division }} {% if stats and stats.conference %} | {{ stats.conference }}{% endif %}</p>
+      </div>
+    </div>
+  </div>
+
+  {% if error %}
+  <div class="no-data">
+    <p>{{ error }}</p>
+  </div>
+  {% else %}
+  <div class="team-stats-grid">
+    <div class="stat-card">
+      <h3>Record</h3>
+      <p class="stat-value">{{ stats.record }}</p>
+      <p class="stat-sub">W-L-D</p>
+    </div>
+    <div class="stat-card">
+      <h3>Goals</h3>
+      <p class="stat-value">{{ stats.gf }} <span class="thin">GF</span> / {{ stats.ga }} <span class="thin">GA</span></p>
+      <p class="stat-sub">GD {{ stats.gd }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Shots</h3>
+      <p class="stat-value">{{ stats.shots_for }} / {{ stats.shots_against }}</p>
+      <p class="stat-sub">For / Against</p>
+    </div>
+    <div class="stat-card">
+      <h3>TSR</h3>
+      <p class="stat-value">{{ '%.3f'|format(stats.tsr) }}</p>
+      <p class="stat-sub">Shot Share</p>
+    </div>
+    <div class="stat-card">
+      <h3>SOT Share</h3>
+      <p class="stat-value">{{ '%.3f'|format(stats.sotr) }}</p>
+      <p class="stat-sub">On Target</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Matches</h2>
+  <div class="team-matches-table-wrapper">
+    <table class="team-matches-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Opponent</th>
+          <th>Result</th>
+          <th>Score</th>
+          <th>Shots (For/Ag)</th>
+          <th>SOT (For/Ag)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in matches %}
+        <tr>
+          <td>{{ m.date }}</td>
+          <td><a href="{{ url_for('team_page', team_slug=m.opponent_slug) }}?gender={{ gender }}" class="opponent-link">{% if m.is_home %}vs{% else %}@{% endif %} {{ m.opponent }}</a></td>
+          <td class="result {{ m.result }}">{{ m.result }}</td>
+          <td>{{ m.score_for }} - {{ m.score_against }}</td>
+          <td>{{ m.shots_for }} / {{ m.shots_against }}</td>
+          <td>{{ m.sot_for }} / {{ m.sot_against }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

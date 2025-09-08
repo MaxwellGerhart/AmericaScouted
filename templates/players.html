@@ -182,10 +182,12 @@
                     </td>
                     <td class="team">
                         <div class="team-cell">
-                            {% if player.logo_url %}
-                            <img src="{{ player.logo_url }}" alt="{{ player.Team }}" class="team-logo" loading="lazy">
-                            {% endif %}
-                            <span>{{ player.Team }}</span>
+                            <a href="{{ url_for('team_page', team_slug=player.team_slug if player.team_slug else (player.Team|replace(' ', '_'))) }}?gender={{ gender }}" class="team-link">
+                                {% if player.logo_url %}
+                                <img src="{{ player.logo_url }}" alt="{{ player.Team }}" class="team-logo" loading="lazy">
+                                {% endif %}
+                                <span>{{ player.Team }}</span>
+                            </a>
                         </div>
                     </td>
                     <td class="division">
