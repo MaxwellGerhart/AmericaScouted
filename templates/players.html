@@ -126,9 +126,13 @@
                         Division
                         <span class="sort-indicator">{{ '↓' if sort_by == 'Division' and sort_order == 'desc' else '↑' if sort_by == 'Division' else '' }}</span>
                     </th>
-                    <th class="sortable" data-column="Points">
-                        Points
-                        <span class="sort-indicator">{{ '↓' if sort_by == 'Points' and sort_order == 'desc' else '↑' if sort_by == 'Points' else '' }}</span>
+                    <th class="sortable" data-column="Matches Played">
+                        Matches
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Matches Played' and sort_order == 'desc' else '↑' if sort_by == 'Matches Played' else '' }}</span>
+                    </th>
+                    <th class="sortable" data-column="Minutes Played">
+                        Minutes
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Minutes Played' and sort_order == 'desc' else '↑' if sort_by == 'Minutes Played' else '' }}</span>
                     </th>
                     <th class="sortable" data-column="Goals">
                         Goals
@@ -146,13 +150,9 @@
                         SOT
                         <span class="sort-indicator">{{ '↓' if sort_by == 'Shots On Target' and sort_order == 'desc' else '↑' if sort_by == 'Shots On Target' else '' }}</span>
                     </th>
-                    <th class="sortable" data-column="Minutes Played">
-                        Minutes
-                        <span class="sort-indicator">{{ '↓' if sort_by == 'Minutes Played' and sort_order == 'desc' else '↑' if sort_by == 'Minutes Played' else '' }}</span>
-                    </th>
-                    <th class="sortable" data-column="Matches Played">
-                        Matches
-                        <span class="sort-indicator">{{ '↓' if sort_by == 'Matches Played' and sort_order == 'desc' else '↑' if sort_by == 'Matches Played' else '' }}</span>
+                    <th class="sortable" data-column="Points">
+                        Points
+                        <span class="sort-indicator">{{ '↓' if sort_by == 'Points' and sort_order == 'desc' else '↑' if sort_by == 'Points' else '' }}</span>
                     </th>
                     {% if sort_by == 'Saves' %}
                     <th class="sortable" data-column="Saves">
@@ -193,13 +193,13 @@
                     <td class="division">
                         <span class="division-badge">{{ player.Division.upper() }}</span>
                     </td>
-                    <td class="points">{{ player.Points|int }}</td>
+                    <td class="matches">{{ player.get('Matches Played', 0)|int }}</td>
+                    <td class="minutes">{{ player.get('Minutes Played', 0)|int }}</td>
                     <td class="goals">{{ player.Goals|int }}</td>
                     <td class="assists">{{ player.Assists|int }}</td>
                     <td class="shots">{{ player.Shots|int }}</td>
                     <td class="sot">{{ player.get('Shots On Target', 0)|int }}</td>
-                    <td class="minutes">{{ player.get('Minutes Played', 0)|int }}</td>
-                    <td class="matches">{{ player.get('Matches Played', 0)|int }}</td>
+                    <td class="points">{{ player.Points|int }}</td>
                     {% if sort_by == 'Saves' %}
                     <td class="saves">{{ player.get('Saves', 0)|int }}</td>
                     <td class="ga">{{ player.get('Goals Against', 0)|int }}</td>

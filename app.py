@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify, url_for
 import pandas as pd
 import os
+import random
 import glob
 from datetime import datetime
 import pandas as pd
@@ -305,13 +306,17 @@ def index():
                     df_sorted = df.sort_values(by=sort_cols, ascending=False)
                     top = []
                     for _, r in df_sorted.head(3).iterrows():
-                        top.append({
+                        entry = {
                             'name': r.get('Name'),
                             'team': r.get('Team'),
                             'goals': int(r.get('Goals', 0)),
                             'assists': int(r.get('Assists', 0)) if 'Assists' in df.columns and pd.notna(r.get('Assists')) else 0,
                             'points': int(r.get('Points', 0)) if 'Points' in df.columns and pd.notna(r.get('Points')) else None
-                        })
+                        }
+                        logo_rel = get_logo_path(r.get('Team'))
+                        if logo_rel:
+                            entry['logo_url'] = url_for('static', filename=logo_rel)
+                        top.append(entry)
                     return top
             except Exception:
                 return []
@@ -332,13 +337,17 @@ def index():
                     df_sorted = df.sort_values(by=sort_cols, ascending=False)
                     top = []
                     for _, r in df_sorted.head(3).iterrows():
-                        top.append({
+                        entry = {
                             'name': r.get('Name'),
                             'team': r.get('Team'),
                             'assists': int(r.get('Assists', 0)),
                             'goals': int(r.get('Goals', 0)) if 'Goals' in df.columns and pd.notna(r.get('Goals')) else 0,
                             'points': int(r.get('Points', 0)) if 'Points' in df.columns and pd.notna(r.get('Points')) else None
-                        })
+                        }
+                        logo_rel = get_logo_path(r.get('Team'))
+                        if logo_rel:
+                            entry['logo_url'] = url_for('static', filename=logo_rel)
+                        top.append(entry)
                     return top
             except Exception:
                 return []

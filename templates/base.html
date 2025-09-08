@@ -43,10 +43,18 @@
         <div class="container footer-inner">
             <div class="footer-brand">America Scouted</div>
             <div class="footer-socials">
-                <a href="https://x.com/" target="_blank" rel="noopener" class="footer-social link-x" aria-label="X / Twitter">X</a>
-                <a href="https://instagram.com/americascouted/" target="_blank" rel="noopener" class="footer-social link-instagram" aria-label="Instagram">Instagram</a>
-                <a href="https://www.linkedin.com/in/maxwell-gerhart-855644223/" target="_blank" rel="noopener" class="footer-social link-linkedin" aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://github.com/MaxwellGerhart/" target="_blank" rel="noopener" class="footer-social link-github" aria-label="GitHub">GitHub</a>
+                <a href="https://x.com/americascouted" target="_blank" rel="noopener" class="footer-social icon-btn" aria-label="X / Twitter">
+                    <img src="{{ url_for('static', filename='socials/x-icon.png') }}" alt="X" class="social-icon" />
+                </a>
+                <a href="https://instagram.com/americascouted/" target="_blank" rel="noopener" class="footer-social icon-btn" aria-label="Instagram">
+                    <img src="{{ url_for('static', filename='socials/instagram-icon.png') }}" alt="Instagram" class="social-icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/maxwell-gerhart-855644223/" target="_blank" rel="noopener" class="footer-social icon-btn" aria-label="LinkedIn">
+                    <img src="{{ url_for('static', filename='socials/linkedin-icon.png') }}" alt="LinkedIn" class="social-icon" />
+                </a>
+                <a href="https://github.com/MaxwellGerhart/" target="_blank" rel="noopener" class="footer-social icon-btn" aria-label="GitHub">
+                    <img src="{{ url_for('static', filename='socials/github-icon.png') }}" alt="GitHub" class="social-icon" />
+                </a>
             </div>
         </div>
     </footer>

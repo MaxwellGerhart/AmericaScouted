@@ -262,7 +262,17 @@ body.light-theme .top-scorers-card { background:#ffffff; border-color:#e2e8f0; }
 .ts-group h4 { margin:0 0 .5rem; font-size:.85rem; letter-spacing:.5px; font-weight:600; color:#888; text-transform:uppercase; }
 body.light-theme .ts-group h4 { color:#64748b; }
 .ts-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.4rem; }
-.ts-list li { background:#262626; border:1px solid #333; padding:.42rem .5rem; border-radius:6px; display:flex; flex-direction:column; gap:.12rem; }
+.ts-list li { background:#262626; border:1px solid #333; padding:.42rem .5rem; border-radius:10px; display:flex; align-items:center; gap:.55rem; }
+.ts-item { position:relative; }
+.ts-avatar { width:28px; height:28px; flex:0 0 28px; border-radius:50%; background:#1b1b1b; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid #333; }
+.ts-avatar img { width:100%; height:100%; object-fit:contain; padding:2px; }
+body.light-theme .ts-avatar { background:#f1f5f9; border-color:#e2e8f0; }
+.ts-avatar-fallback { font-size:.6rem; font-weight:600; letter-spacing:.5px; color:#888; }
+.ts-info { flex:1; display:flex; flex-direction:column; line-height:1.05; }
+.ts-info .ts-name { font-size:.78rem; }
+.ts-info .ts-team { font-size:.62rem; color:#999; }
+body.light-theme .ts-info .ts-team { color:#64748b; }
+.ts-list li .ts-stats { margin-left:auto; font-size:.65rem; font-weight:600; color:#003FA3; }
 body.light-theme .ts-list li { background:#f8fafc; border-color:#e2e8f0; }
 .ts-name { font-weight:600; font-size:.78rem; color:#ffffff; }
 body.light-theme .ts-name { color:#1a1d21; }
@@ -953,6 +963,9 @@ body.light-theme .footer-brand { color:#64748b; }
 body.light-theme .footer-social { background:#f1f5f9; color:#1a1d21; }
 .footer-social:hover { transform:translateY(-2px); background:#003FA3; color:#ffffff; }
 body.light-theme .footer-social:hover { background:#003FA3; color:#ffffff; }
+.footer-social.icon-btn { padding:0.4rem 0.55rem; display:flex; align-items:center; justify-content:center; }
+.footer-social.icon-btn img.social-icon { width:20px; height:20px; display:block; filter:brightness(1) contrast(1.05); }
+body.light-theme .footer-social.icon-btn img.social-icon { filter:none; }
 .link-x { background:#000; }
 .link-instagram { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
 .link-linkedin { background:#0a66c2; }

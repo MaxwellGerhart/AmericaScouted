@@ -14,9 +14,12 @@
                     {% if men_top_scorers %}
                         <ol class="ts-list">
                             {% for p in men_top_scorers %}
-                            <li>
-                                <span class="ts-name">{{ p.name }}</span>
-                                <span class="ts-team">{{ p.team }}</span>
+                            <li class="ts-item">
+                                <div class="ts-avatar">{% if p.logo_url %}<img src="{{ p.logo_url }}" alt="{{ p.team }} logo">{% else %}<div class="ts-avatar-fallback">{{ p.team[:2] }}</div>{% endif %}</div>
+                                <div class="ts-info">
+                                    <span class="ts-name">{{ p.name }}</span>
+                                    <span class="ts-team">{{ p.team }}</span>
+                                </div>
                                 <span class="ts-stats">G: {{ p.goals }}{% if p.assists is not none %} A: {{ p.assists }}{% endif %}</span>
                             </li>
                             {% endfor %}
@@ -30,9 +33,12 @@
                     {% if women_top_scorers %}
                         <ol class="ts-list">
                             {% for p in women_top_scorers %}
-                            <li>
-                                <span class="ts-name">{{ p.name }}</span>
-                                <span class="ts-team">{{ p.team }}</span>
+                            <li class="ts-item">
+                                <div class="ts-avatar">{% if p.logo_url %}<img src="{{ p.logo_url }}" alt="{{ p.team }} logo">{% else %}<div class="ts-avatar-fallback">{{ p.team[:2] }}</div>{% endif %}</div>
+                                <div class="ts-info">
+                                    <span class="ts-name">{{ p.name }}</span>
+                                    <span class="ts-team">{{ p.team }}</span>
+                                </div>
                                 <span class="ts-stats">G: {{ p.goals }}{% if p.assists is not none %} A: {{ p.assists }}{% endif %}</span>
                             </li>
                             {% endfor %}
@@ -72,10 +78,13 @@
                     {% if men_top_assisters %}
                         <ol class="ts-list">
                             {% for p in men_top_assisters %}
-                            <li>
-                                <span class="ts-name">{{ p.name }}</span>
-                                <span class="ts-team">{{ p.team }}</span>
-                                <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
+                            <li class="ts-item">
+                                <div class="ts-avatar">{% if p.logo_url %}<img src="{{ p.logo_url }}" alt="{{ p.team }} logo">{% else %}<div class="ts-avatar-fallback">{{ p.team[:2] }}</div>{% endif %}</div>
+                                <div class="ts-info">
+                                    <span class="ts-name">{{ p.name }}</span>
+                                    <span class="ts-team">{{ p.team }}</span>
+                                </div>
+                                    <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
                             </li>
                             {% endfor %}
                         </ol>
@@ -88,10 +97,13 @@
                     {% if women_top_assisters %}
                         <ol class="ts-list">
                             {% for p in women_top_assisters %}
-                            <li>
-                                <span class="ts-name">{{ p.name }}</span>
-                                <span class="ts-team">{{ p.team }}</span>
-                                <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
+                            <li class="ts-item">
+                                <div class="ts-avatar">{% if p.logo_url %}<img src="{{ p.logo_url }}" alt="{{ p.team }} logo">{% else %}<div class="ts-avatar-fallback">{{ p.team[:2] }}</div>{% endif %}</div>
+                                <div class="ts-info">
+                                    <span class="ts-name">{{ p.name }}</span>
+                                    <span class="ts-team">{{ p.team }}</span>
+                                </div>
+                                    <span class="ts-stats">A: {{ p.assists }}{% if p.goals is not none %} G: {{ p.goals }}{% endif %}</span>
                             </li>
                             {% endfor %}
                         </ol>
