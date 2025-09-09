@@ -876,5 +876,7 @@ def player_detail(player_name):
     return jsonify(player_data.iloc[0].to_dict())
 
 if __name__ == '__main__':
-    # Turn debug back on for development so template / asset changes show immediately
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Bind to $PORT if provided (Render/Heroku-style), else default to 5000 for local dev
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', '1') == '1'
+    app.run(debug=debug, host='0.0.0.0', port=port)
