@@ -8,6 +8,8 @@ import time
 import json
 import os
 import re
+import urllib.parse
+from pathlib import Path
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta
 
@@ -20,8 +22,8 @@ from rapidfuzz import process, fuzz
 # ====================
 # Config
 # ====================
-START_DATE = '2025-08-14'
-END_DATE = '2025-09-03'
+START_DATE = '2025-09-01'
+END_DATE = '2025-09-07'
 GENDERS = ['men', 'women']
 DIVISIONS = ['d1', 'd2', 'd3']
 
@@ -276,11 +278,211 @@ def collect_players_from_games(game_ids):
                 data = None
 
         if not data or 'meta' not in data or 'teams' not in data:
-            continue
+            # Fallback: try sdataprod GraphQL endpoint
+            try:
+                sdata_url = _sdataprod_url(gid)
+                r2 = SESSION.get(sdata_url, timeout=15)
+                if r2.status_code == 200:
+                    sdata = r2.json()
+                    data = _sdataprod_to_casablanca_like(sdata, gid)
+            except Exception:
+                data = None
+            if not data or 'meta' not in data or 'teams' not in data:
+                continue
 
         players_all.extend(clean_data_from_boxscore_payload(data, gid))
         time.sleep(0.1)
     return players_all
+
+
+# ====================
+# SDATAPROD Fallback Helpers
+# ====================
+def _sdataprod_url(contest_id: str) -> str:
+    meta = {"persistedQuery": {"version": 1, "sha256Hash": "c9070c4e5a76468a4025896df89f8a7b22be8275c54a22ff79619cbb27d63d7d"}}
+    variables = {"contestId": str(contest_id), "staticTestEnv": None}
+    return (
+        "https://sdataprod.ncaa.com/?meta=NCAA_GetGamecenterBoxscoreSoccerById_web"
+        + "&extensions=" + urllib.parse.quote(json.dumps(meta), safe="")
+        + "&variables=" + urllib.parse.quote(json.dumps(variables), safe="")
+    )
+
+def _sdataprod_to_casablanca_like(sdata: dict, gid: str):
+    """Map sdataprod GraphQL payload to the Casablanca-like shape expected by cleaners.
+    Primary path: data.boxscore.{teams, teamBoxscore}. Fallback to heuristic if unseen shape.
+    """
+
+    def to_int(v, default=0):
+        try:
+            if v in (None, "", "unset"):
+                return default
+            return int(float(str(v)))
+        except Exception:
+            return default
+
+    def pick(d, keys, default=None):
+        for k in keys:
+            if isinstance(d, dict) and k in d and d[k] not in (None, ""):
+                return d[k]
+        return default
+
+    # Preferred explicit mapping based on provided sample
+    box = None
+    if isinstance(sdata, dict):
+        box = pick(sdata, ['data'], {})
+        box = pick(box or {}, ['boxscore'], None)
+
+    if isinstance(box, dict) and 'teams' in box and 'teamBoxscore' in box:
+        teams_meta = []
+        for t in box.get('teams', []) or []:
+            teams_meta.append({
+                'id': str(pick(t, ['teamId','id','tid'], '')),
+                'shortName': str(pick(t, ['nameShort','shortName','shortDisplayName','teamName'], '')),
+            })
+
+        # Build team entries aligned to teamBoxscore
+        teams_payload = []
+        for tb in box.get('teamBoxscore', []) or []:
+            tid = str(pick(tb, ['teamId','id','tid'], ''))
+            # Player stats
+            pstats = []
+            gkstats = []
+            for p in tb.get('playerStats', []) or []:
+                p_row = {
+                    'firstName': str(pick(p, ['firstName'], '') or '').strip(),
+                    'lastName': str(pick(p, ['lastName'], '') or '').strip(),
+                    'position': str(pick(p, ['position','pos','positionAbbreviation'], '') or '').strip(),
+                    'minutesPlayed': to_int(pick(p, ['minutesPlayed','minutes','mins'], 0)),
+                    'goals': to_int(pick(p, ['goals','goal','g'], 0)),
+                    'assists': to_int(pick(p, ['assists','ast','a'], 0)),
+                    'shots': to_int(pick(p, ['shots','shotAttempts','totalShots'], 0)),
+                    'shotsOnGoal': to_int(pick(p, ['shotsOnGoal','shotsOnTarget','sog'], 0)),
+                    'jerseyNum': str(pick(p, ['number','jerseyNum'], '') or '').strip(),
+                }
+                # Map penalties if present
+                pens = p.get('penalties') if isinstance(p.get('penalties'), dict) else {}
+                p_row['yellowCards'] = to_int(pick(pens, ['yellowCards','yellow','yc'], 0))
+                p_row['redCards'] = to_int(pick(pens, ['redCards','red','rc'], 0))
+                pstats.append(p_row)
+                if (p_row['position'] or '').upper() in ('G', 'GK', 'GOALKEEPER'):
+                    # create a goalieStats entry so GK saves are captured
+                    gkstats.append({
+                        'name': clean_name(f"{p_row['firstName']} {p_row['lastName']}").strip(),
+                        'saves': to_int(pick(p, ['saves'], 0)),
+                        'goalsAllowed': to_int(pick(p, ['goalsAllowed','goalsAgainst','ga'], 0)),
+                        'minutesAtGoalie': p_row['minutesPlayed'],
+                        'jerseyNum': p_row['jerseyNum'],
+                    })
+
+            # Goalie totals from teamStats.goalie, if present
+            gtot = {}
+            tstats = tb.get('teamStats') or {}
+            gstats_tot = tstats.get('goalie') or {}
+            if isinstance(gstats_tot, dict):
+                gtot = {
+                    'saves': to_int(pick(gstats_tot, ['saves'], 0)),
+                    'goalsAllowed': to_int(pick(gstats_tot, ['goalsAllowed','goalsAgainst','ga'], 0)),
+                }
+
+            # Player totals summary (e.g., goals) if present
+            ptot = tb.get('playerTotals') or {}
+            if isinstance(ptot, dict):
+                ptot = {'goals': to_int(pick(ptot, ['goals'], 0))}
+            else:
+                ptot = {}
+
+            entry = {'teamId': tid, 'playerStats': pstats}
+            if gkstats:
+                entry['goalieStats'] = gkstats
+            if gtot:
+                entry['goalieTotals'] = gtot
+            if ptot:
+                entry['playerTotals'] = ptot
+            teams_payload.append(entry)
+
+        return {'meta': {'teams': teams_meta}, 'teams': teams_payload}
+
+    # Fallback heuristic for unknown shapes
+    def iter_nodes(obj):
+        if isinstance(obj, dict):
+            yield obj
+            for v in obj.values():
+                yield from iter_nodes(v)
+        elif isinstance(obj, list):
+            for v in obj:
+                yield from iter_nodes(v)
+
+    home = away = None
+    for node in iter_nodes(sdata):
+        if not isinstance(node, dict):
+            continue
+        if 'home' in node and 'away' in node and isinstance(node['home'], dict) and isinstance(node['away'], dict):
+            home, away = node['home'], node['away']
+            break
+        if 'homeTeam' in node and 'awayTeam' in node and isinstance(node['homeTeam'], dict) and isinstance(node['awayTeam'], dict):
+            home, away = node['homeTeam'], node['awayTeam']
+            break
+    if not home or not away:
+        return None
+
+    def team_id(d):
+        team = d.get('team') if isinstance(d.get('team'), dict) else d
+        return str(pick(team or {}, ['id','teamId','tid'], '') or '')
+
+    def team_short(d):
+        team = d.get('team') if isinstance(d.get('team'), dict) else d
+        return str(pick(team or {}, ['shortName','shortDisplayName','seoName','nickName'], '') or '')
+
+    # Heuristic: find a players list inside team node
+    def find_players_list(team_node):
+        for node in iter_nodes(team_node):
+            if isinstance(node, list) and node and all(isinstance(x, dict) for x in node):
+                sample = node[0]
+                if any(k in sample for k in ['firstName','lastName','position','minutes','minutesPlayed','goals','assists','shots']):
+                    return node
+                if isinstance(sample.get('athlete'), dict):
+                    return node
+        return []
+
+    def extract_player(p_raw):
+        first = pick(p_raw, ['firstName'], '')
+        last = pick(p_raw, ['lastName'], '')
+        if not first and not last and isinstance(p_raw.get('athlete'), dict):
+            first = pick(p_raw['athlete'], ['firstName'], '')
+            last = pick(p_raw['athlete'], ['lastName'], '')
+        pos = pick(p_raw, ['position','pos','positionShort','positionAbbreviation'], '')
+        minutes = pick(p_raw, ['minutesPlayed','minutes','mins'], 0)
+        goals   = pick(p_raw, ['goals','goal','g'], 0)
+        assists = pick(p_raw, ['assists','ast','a'], 0)
+        shots   = pick(p_raw, ['shots','shotAttempts','totalShots'], 0)
+        sog     = pick(p_raw, ['shotsOnGoal','shotsOnTarget','sog'], 0)
+        return {
+            'firstName': str(first or '').strip(),
+            'lastName': str(last or '').strip(),
+            'position': str(pos or '').strip(),
+            'minutesPlayed': to_int(minutes),
+            'goals': to_int(goals),
+            'assists': to_int(assists),
+            'shots': to_int(shots),
+            'shotsOnGoal': to_int(sog),
+        }
+
+    home_players_raw = find_players_list(home)
+    away_players_raw = find_players_list(away)
+    home_players = [extract_player(p) for p in home_players_raw]
+    away_players = [extract_player(p) for p in away_players_raw]
+
+    meta = {
+        'teams': [
+            {'id': team_id(home), 'shortName': team_short(home)},
+            {'id': team_id(away), 'shortName': team_short(away)},
+        ]
+    }
+    teams = [
+        {'teamId': team_id(home), 'playerStats': home_players},
+        {'teamId': team_id(away), 'playerStats': away_players},
+    ]
+    return {'meta': meta, 'teams': teams}
 
 
 # ====================
@@ -521,8 +723,10 @@ def collect_player_data_for_period(start_date, end_date):
 # Main execution
 # ====================
 def main():
-    # Create Data directories if they don't exist
-    os.makedirs('C:\Users\maxwe\OneDrive - The Pennsylvania State University\AmericaScouted\data\Players', exist_ok=True)
+    # Create data/Players directory relative to repo root (parent of scripts)
+    root_dir = Path(__file__).resolve().parent.parent
+    players_dir = root_dir / 'data' / 'Players'
+    players_dir.mkdir(parents=True, exist_ok=True)
     
     # Generate weekly periods
     weekly_periods = get_week_periods(START_DATE, END_DATE)
@@ -536,22 +740,20 @@ def main():
         week_start = week['start']
         week_end = week['end']
         filename_suffix = week['filename']
-        
-        print(f"\nProcessing week: {week_start} to {week_end}")
-        
-        # Collect data for this week
-        mens_df, womens_df, mens_gk_df, womens_gk_df = collect_player_data_for_period(week_start, week_end)
-        
-        # Save the data
-        mens_filename = f"Data/Players/mens_players_{filename_suffix}.csv"
-        womens_filename = f"Data/Players/womens_players_{filename_suffix}.csv"
 
-        
+        print(f"\nProcessing week: {week_start} to {week_end}")
+
+        # Collect data for this week
+        mens_df, womens_df = collect_player_data_for_period(week_start, week_end)
+
+        # Save the data
+        mens_filename = players_dir / f"mens_players_{filename_suffix}.csv"
+        womens_filename = players_dir / f"womens_players_{filename_suffix}.csv"
+
         mens_df.to_csv(mens_filename, index=False)
         womens_df.to_csv(womens_filename, index=False)
 
-        
-        print(f"Saved files:")
+        print("Saved files:")
         print(f"  - {mens_filename} ({len(mens_df)} players)")
         print(f"  - {womens_filename} ({len(womens_df)} players)")
 

@@ -4,11 +4,24 @@
 import time
 import json
 import os
+import subprocess
+import urllib.parse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
 
 # --- helpers ---
+
+# Verbose progress output controls
+VERBOSE = True
+PROGRESS_EVERY = 10  # print progress every N boxscores
+
+# Performance toggles
+ENRICH_WITH_BOXSCORES = True  # Set False to skip fetching boxscore.json (faster)
+MAX_WORKERS = 8               # Parallel requests for boxscore fetches
+REQUEST_TIMEOUT = 12          # Seconds per request
 
 def _extract_boxscore_id(url_path: str) -> str:
     if not url_path:
@@ -21,6 +34,15 @@ def _safe_int(x):
         return int(float(str(x)))
     except Exception:
         return 0
+
+def _clean_score(val):
+    s = "" if val is None else str(val).strip()
+    if s in ("", "-", "—", "NA", "null", "None"):
+        return None
+    try:
+        return int(float(s))
+    except Exception:
+        return None
 
 # ====================
 # Weekly Period Functions
@@ -73,6 +95,9 @@ def get_scores(gender, division, month, day):
         home = game.get("home", {})
         away = game.get("away", {})
         boxscore_id = _extract_boxscore_id(game.get("url", ""))
+        # Clean scores: some feeds return '-' or '' when in-progress or missing
+        h_score = _clean_score(home.get("score", ""))
+        a_score = _clean_score(away.get("score", ""))
 
         out.append({
             "gender": gender,
@@ -84,12 +109,12 @@ def get_scores(gender, division, month, day):
             "start_time": game.get("startTime", ""),
             "home_team_full": home.get("names", {}).get("full", ""),
             "home_team_short": home.get("names", {}).get("short", ""),
-            "home_team_score": home.get("score", ""),
+            "home_team_score": h_score,
             "home_record": home.get("description", ""),
             "home_conference": (home.get("conferences", [{}])[0] or {}).get("conferenceName", ""),
             "away_team_full": away.get("names", {}).get("full", ""),
             "away_team_short": away.get("names", {}).get("short", ""),
-            "away_team_score": away.get("score", ""),
+            "away_team_score": a_score,
             "away_record": away.get("description", ""),
             "away_conference": (away.get("conferences", [{}])[0] or {}).get("conferenceName", ""),
         })
@@ -105,21 +130,159 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
         "Connection": "keep-alive",
     }
 
-    rows = []
-    for bid in boxscore_ids:
+    def _sdataprod_url(contest_id: str):
+        meta = {"persistedQuery": {"version": 1, "sha256Hash": "c9070c4e5a76468a4025896df89f8a7b22be8275c54a22ff79619cbb27d63d7d"}}
+        variables = {"contestId": str(contest_id), "staticTestEnv": None}
+        return (
+            "https://sdataprod.ncaa.com/?meta=NCAA_GetGamecenterBoxscoreSoccerById_web"
+            + "&extensions=" + urllib.parse.quote(json.dumps(meta), safe="")
+            + "&variables=" + urllib.parse.quote(json.dumps(variables), safe="")
+        )
+
+    def _extract_from_sdataprod(data):
+        """Extract shots, SOG, and goals from sdataprod GraphQL payload.
+        Primary shape: data.boxscore.{teams, teamBoxscore}.
+        Falls back to legacy generic scan if not present.
+        """
+        def pick(d, keys, default=None):
+            for k in keys:
+                if isinstance(d, dict) and k in d and d[k] not in (None, ""):
+                    return d[k]
+            return default
+
+        # Preferred parsing path
+        box = pick(data or {}, ['data'], {})
+        box = pick(box or {}, ['boxscore'], None)
+        if isinstance(box, dict) and 'teams' in box and 'teamBoxscore' in box:
+            # Build teamId -> (is_home, shortName)
+            id_to_side = {}
+            for t in box.get('teams', []) or []:
+                tid = str(pick(t, ['teamId','id','tid'], '') or '')
+                is_home = bool(t.get('isHome'))
+                short = pick(t, ['nameShort','shortName','shortDisplayName','teamName'], '') or ''
+                id_to_side[tid] = (is_home, short)
+
+            home_shots = home_sot = away_shots = away_sot = 0
+            home_short = away_short = ''
+            home_goals = away_goals = None
+
+            for tb in box.get('teamBoxscore', []) or []:
+                tid = str(pick(tb, ['teamId','id','tid'], '') or '')
+                side = id_to_side.get(tid)
+                if side is None:
+                    continue
+                is_home, short = side
+
+                # Prefer teamStats for totals, fallback to summing players
+                tstats = tb.get('teamStats') or {}
+                shots = pick(tstats, ['shots','totalShots','shotAttempts'], None)
+                sog   = pick(tstats, ['shotsOnGoal','shotsOnTarget','sog'], None)
+                goals = pick(tstats, ['goals','score','teamScore','points'], None)
+
+                if shots is None or sog is None:
+                    # sum from players
+                    pshots = psog = 0
+                    for p in tb.get('playerStats', []) or []:
+                        pshots += _safe_int(p.get('shots'))
+                        psog   += _safe_int(p.get('shotsOnGoal'))
+                    shots = pshots if shots is None else shots
+                    sog   = psog if sog is None else sog
+
+                if is_home:
+                    home_shots += _safe_int(shots)
+                    home_sot   += _safe_int(sog)
+                    home_short   = short
+                    home_goals   = _safe_int(goals) if goals is not None else home_goals
+                else:
+                    away_shots += _safe_int(shots)
+                    away_sot   += _safe_int(sog)
+                    away_short   = short
+                    away_goals   = _safe_int(goals) if goals is not None else away_goals
+
+            return {
+                'home_short': home_short,
+                'away_short': away_short,
+                'home_shots': home_shots,
+                'home_sot': home_sot,
+                'away_shots': away_shots,
+                'away_sot': away_sot,
+                'home_goals_boxscore': home_goals,
+                'away_goals_boxscore': away_goals,
+            }
+
+        # Fallback: legacy generic scan for 'home'/'away' shaped nodes
+        def iter_nodes(obj):
+            if isinstance(obj, dict):
+                yield obj
+                for v in obj.values():
+                    yield from iter_nodes(v)
+            elif isinstance(obj, list):
+                for v in obj:
+                    yield from iter_nodes(v)
+
+        home = away = None
+        for node in iter_nodes(data):
+            if isinstance(node, dict):
+                if 'home' in node and 'away' in node and isinstance(node['home'], dict) and isinstance(node['away'], dict):
+                    home, away = node['home'], node['away']
+                    break
+                if 'homeTeam' in node and 'awayTeam' in node and isinstance(node['homeTeam'], dict) and isinstance(node['awayTeam'], dict):
+                    home, away = node['homeTeam'], node['awayTeam']
+                    break
+        if not home or not away:
+            return None
+
+        def team_short(d):
+            team = d.get('team') if isinstance(d.get('team'), dict) else d
+            return pick(team or {}, ['shortName','shortDisplayName','seoName','nickName'], '') or ''
+
+        def totals(d):
+            src = d.get('totals') if isinstance(d.get('totals'), dict) else d
+            shots = pick(src, ['shots','totalShots','shotAttempts'], 0)
+            sog   = pick(src, ['shotsOnGoal','shotsOnTarget','sog'], 0)
+            goals = pick(src, ['goals','score','teamScore','points'], None)
+            return shots, sog, goals
+
+        h_shots, h_sog, h_goals = totals(home)
+        a_shots, a_sog, a_goals = totals(away)
+        return {
+            'home_short': team_short(home),
+            'away_short': team_short(away),
+            'home_shots': _safe_int(h_shots),
+            'home_sot': _safe_int(h_sog),
+            'away_shots': _safe_int(a_shots),
+            'away_sot': _safe_int(a_sog),
+            'home_goals_boxscore': None if h_goals is None else _safe_int(h_goals),
+            'away_goals_boxscore': None if a_goals is None else _safe_int(a_goals),
+        }
+
+    def fetch_one(bid: str):
         bid = str(bid).strip()
         if not bid.isdigit():
-            continue
+            return None
 
+        # 1) Try SDATA GraphQL endpoint first
+        data = None
+        try:
+            sdata_url = _sdataprod_url(bid)
+            resp = requests.get(sdata_url, timeout=REQUEST_TIMEOUT, headers={"User-Agent": headers["User-Agent"]})
+            if resp.status_code == 200:
+                sdata = resp.json()
+                parsed = _extract_from_sdataprod(sdata)
+                if parsed:
+                    parsed['boxscore_id'] = bid
+                    return parsed
+        except Exception:
+            pass
+
+        # 2) Fallback to casablanca boxscore.json
         url = f"https://data.ncaa.com/casablanca/game/{bid}/boxscore.json"
         data = None
-
-        # Try requests with Referer header to look more like a browser hit on that game page
         req_headers = headers | {"Referer": f"https://www.ncaa.com/game/{bid}"}
 
         for attempt in range(max_retries + 1):
             try:
-                resp = requests.get(url, headers=req_headers, timeout=20)
+                resp = requests.get(url, headers=req_headers, timeout=REQUEST_TIMEOUT)
                 if resp.status_code == 200:
                     data = resp.json()
                     break
@@ -132,20 +295,24 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
                 time.sleep(backoff * (attempt + 1))
                 continue
 
-        # last resort: curl
+        # last resort: curl with timeout to avoid hanging
         if data is None:
             try:
-                result = os.popen(
-                    f'curl -s -H "User-Agent: {headers["User-Agent"]}" '
-                    f'-H "Referer: https://www.ncaa.com/game/{bid}" {url}'
-                ).read()
-                data = json.loads(result)
+                cmd = [
+                    'curl','-s',
+                    '-H', f'User-Agent: {headers["User-Agent"]}',
+                    '-H', f'Referer: https://www.ncaa.com/game/{bid}',
+                    url
+                ]
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=REQUEST_TIMEOUT)
+                if result.returncode == 0 and result.stdout:
+                    data = json.loads(result.stdout)
             except Exception:
                 data = None
 
-        # If still no valid data, skip cleanly
+    # If still no valid data, skip cleanly
         if not data or "meta" not in data or "teams" not in data:
-            continue
+            return None
 
         # map teamId -> (is_home, shortName)
         id_to_side = {}
@@ -157,7 +324,7 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
 
         home_shots = home_sot = away_shots = away_sot = 0
         home_short = away_short = ""
-        # NEW: Initialize scores from boxscore data
+        # Initialize scores from boxscore data
         home_goals_boxscore = away_goals_boxscore = None
 
         for team_block in data.get("teams", []):
@@ -169,7 +336,6 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
                 t_shots += _safe_int(p.get("shots"))
                 t_sot   += _safe_int(p.get("shotsOnGoal"))
 
-            # NEW: Extract goals from playerTotals if available
             player_totals = team_block.get("playerTotals", {})
             team_goals = _safe_int(player_totals.get("goals", 0))
 
@@ -185,8 +351,7 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
                 away_goals_boxscore = team_goals
 
         row_data = {
-            "boxscore_id": bid,                 # <-- merge key
-            # We COULD return team_short here, but we'll drop them at merge time to avoid duplicates
+            "boxscore_id": bid,
             "home_team_short": home_short,
             "away_team_short": away_short,
             "home_shots": home_shots,
@@ -194,14 +359,27 @@ def get_match_shots_sot_by_boxscore(boxscore_ids, max_retries=2, backoff=1.0):
             "away_shots": away_shots,
             "away_sot": away_sot,
         }
-        
-        # NEW: Add boxscore goals if available
         if home_goals_boxscore is not None:
             row_data["home_goals_boxscore"] = home_goals_boxscore
         if away_goals_boxscore is not None:
             row_data["away_goals_boxscore"] = away_goals_boxscore
-            
-        rows.append(row_data)
+        return row_data
+
+    rows = []
+    total = len(boxscore_ids)
+    if total == 0:
+        return rows
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+        futures = {ex.submit(fetch_one, bid): bid for bid in boxscore_ids}
+        done = 0
+        for fut in as_completed(futures):
+            res = fut.result()
+            if res:
+                rows.append(res)
+            done += 1
+            if VERBOSE and (done % PROGRESS_EVERY == 0 or done == total):
+                print(f"  [boxscore] processed {done}/{total}", flush=True)
 
     return rows
 
@@ -223,9 +401,13 @@ def collect_match_data_for_period(start_date, end_date):
 
                 scores = get_scores(gender, division, month, day)
                 if not scores:
+                    if VERBOSE:
+                        print(f"[{gender}/{division} {month}/{day}] no games", flush=True)
                     continue
 
                 scores_df = pd.DataFrame(scores)
+                if VERBOSE:
+                    print(f"[{gender}/{division} {month}/{day}] games: {len(scores_df)}", flush=True)
 
                 # Use the correct IDs
                 box_ids = scores_df.get('boxscore_id')
@@ -233,7 +415,9 @@ def collect_match_data_for_period(start_date, end_date):
                     merged = scores_df
                 else:
                     box_ids = box_ids.dropna().astype(str).unique().tolist()
-                    shots_rows = get_match_shots_sot_by_boxscore(box_ids)
+                    if VERBOSE:
+                        print(f"  fetching boxscores: {len(box_ids)} ids", flush=True)
+                    shots_rows = get_match_shots_sot_by_boxscore(box_ids) if ENRICH_WITH_BOXSCORES and box_ids else []
                     if shots_rows:
                         shots_df = pd.DataFrame(shots_rows)
 
@@ -244,17 +428,13 @@ def collect_match_data_for_period(start_date, end_date):
 
                         merged = scores_df.merge(shots_df, on='boxscore_id', how='left')
                         
-                        # NEW: Use boxscore goals if original scores are empty/null (but not if they're legitimate 0s)
+                        # NEW: Use boxscore goals if original scores missing/None
                         if 'home_goals_boxscore' in merged.columns:
-                            # Fill empty home_team_score with boxscore goals
-                            # Only replace if the score is truly missing (null or empty string), not if it's a legitimate 0
-                            mask = (merged['home_team_score'].isna()) | (merged['home_team_score'] == '')
+                            mask = merged['home_team_score'].isna()
                             merged.loc[mask, 'home_team_score'] = merged.loc[mask, 'home_goals_boxscore']
-                            
+
                         if 'away_goals_boxscore' in merged.columns:
-                            # Fill empty away_team_score with boxscore goals
-                            # Only replace if the score is truly missing (null or empty string), not if it's a legitimate 0
-                            mask = (merged['away_team_score'].isna()) | (merged['away_team_score'] == '')
+                            mask = merged['away_team_score'].isna()
                             merged.loc[mask, 'away_team_score'] = merged.loc[mask, 'away_goals_boxscore']
                     else:
                         merged = scores_df
@@ -282,9 +462,11 @@ def main():
     # Configuration
     start_date = '2025-09-01'
     end_date = '2025-09-07'
-    
-    # Create Data directories if they don't exist
-    os.makedirs('C:\Users\maxwe\OneDrive - The Pennsylvania State University\AmericaScouted\data\Matches', exist_ok=True)
+
+    # Create data/Matches directory relative to repo root
+    root_dir = Path(__file__).resolve().parent.parent
+    matches_dir = root_dir / 'data' / 'Matches'
+    matches_dir.mkdir(parents=True, exist_ok=True)
     
     # Generate weekly periods
     weekly_periods = get_week_periods(start_date, end_date)
@@ -314,11 +496,16 @@ def main():
         if all_matches:
             combined_df = pd.concat(all_matches, ignore_index=True)
             
+            # Coerce scores to numeric and fill remaining NaNs sensibly
+            for col in ['home_team_score','away_team_score']:
+                if col in combined_df.columns:
+                    combined_df[col] = pd.to_numeric(combined_df[col], errors='coerce')
+
             # Clean up temporary boxscore columns before saving
             combined_df = combined_df.drop(columns=['home_goals_boxscore', 'away_goals_boxscore'], errors='ignore')
             
             # Save the data
-            matches_filename = f"Data/Matches/matches_{filename_suffix}.csv"
+            matches_filename = matches_dir / f"matches_{filename_suffix}.csv"
             combined_df.to_csv(matches_filename, index=False)
             
             print(f"Saved: {matches_filename}")
