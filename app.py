@@ -20,6 +20,10 @@ app.config['ASSET_VERSION'] = '20250907a'
 # Disable verbose template loading in production
 app.jinja_env.auto_reload = True  # still allow auto reload in dev
 
+@app.route('/health')
+def health():
+    return 'ok', 200
+
 @app.route('/_clear_template_cache')
 def clear_template_cache():
     try:
@@ -878,5 +882,6 @@ def player_detail(player_name):
 if __name__ == '__main__':
     # Bind to $PORT if provided (Render/Heroku-style), else default to 5000 for local dev
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('FLASK_DEBUG', '1') == '1'
+    # Default debug OFF in production unless explicitly enabled
+    debug = os.environ.get('FLASK_DEBUG', '0') == '1'
     app.run(debug=debug, host='0.0.0.0', port=port)
