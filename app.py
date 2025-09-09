@@ -274,6 +274,46 @@ class AmericaScoutedApp:
         
         if all_data:
             combined_df = pd.concat(all_data, ignore_index=True)
+            # Drop duplicate games caused by cross-division listings
+            if 'boxscore_id' in combined_df.columns:
+                combined_df = combined_df.drop_duplicates(subset=['boxscore_id'], keep='first')
+
+            # Recompute division from conferences to avoid mislabeling cross-division games
+            if 'home_conference' in combined_df.columns and 'away_conference' in combined_df.columns:
+                conf_map = {
+                    # D1
+                    'acc': 'd1', 'america east': 'd1', 'american': 'd1', 'asun': 'd1', 'atlantic 10': 'd1',
+                    'big east': 'd1', 'big south': 'd1', 'big ten': 'd1', 'big west': 'd1', 'caa': 'd1',
+                    'cusa': 'd1', 'di independent': 'd1', 'horizon': 'd1', 'ivy league': 'd1', 'maac': 'd1',
+                    'mvc': 'd1', 'nec': 'd1', 'ovc': 'd1', 'patriot': 'd1', 'socon': 'd1', 'summit league': 'd1',
+                    'sun belt': 'd1', 'wac': 'd1', 'wcc': 'd1',
+                    # D2
+                    'cacc': 'd2', 'ccaa': 'd2', 'conference carolinas': 'd2', 'dii independent': 'd2', 'ecc': 'd2',
+                    'g-mac': 'd2', 'gac': 'd2', 'gliac': 'd2', 'glvc': 'd2', 'great northwest': 'd2', 'gulf south': 'd2',
+                    'ind': 'd2', 'lone star': 'd2', 'mec': 'd2', 'ne10': 'd2', 'pacwest': 'd2', 'peach belt': 'd2',
+                    'psac': 'd2', 'rmac': 'd2', 'sac': 'd2', 'sunshine state': 'd2',
+                    # D3
+                    'amcc': 'd3', 'american rivers': 'd3', 'asc': 'd3', 'atlantic east': 'd3', 'c2c': 'd3',
+                    'cciw': 'd3', 'ccs': 'd3', 'centennial': 'd3', 'cne': 'd3', 'cunyac': 'd3',
+                    'diii independent': 'd3', 'empire 8': 'd3', 'great northeast': 'd3', 'hcac': 'd3', 'ind': 'd3',
+                    'landmark': 'd3', 'liberty league': 'd3', 'little east': 'd3', 'mac commonwealth': 'd3',
+                    'mac freedom': 'd3', 'mascac': 'd3', 'miac': 'd3', 'michigan intercol. ath. assn.': 'd3',
+                    'mwc': 'd3', 'nacc': 'd3', 'ncac': 'd3', 'necc': 'd3', 'nescac': 'd3', 'newmac': 'd3',
+                    'njac': 'd3', 'non-ncaa org': 'd3', 'north atlantic': 'd3', 'nwc': 'd3', 'oac': 'd3',
+                    'odac': 'd3', 'pac': 'd3', 'saa': 'd3', 'scac': 'd3', 'sciac': 'd3', 'skyline': 'd3',
+                    'sliac': 'd3', 'sunyac': 'd3', 'uaa': 'd3', 'umac': 'd3', 'united east': 'd3',
+                    'usa south': 'd3', 'wiac': 'd3'
+                }
+                hc = combined_df['home_conference'].astype(str).str.strip().str.lower()
+                ac = combined_df['away_conference'].astype(str).str.strip().str.lower()
+                home_div = hc.map(conf_map)
+                away_div = ac.map(conf_map)
+                # Default to blank to avoid mislabeling cross-division as a specific division
+                new_div = pd.Series([''] * len(combined_df), index=combined_df.index)
+                same_mask = home_div.notna() & away_div.notna() & (home_div == away_div)
+                new_div.loc[same_mask] = home_div.loc[same_mask]
+                combined_df['division'] = new_div
+
             return combined_df
         
         return pd.DataFrame()
@@ -295,6 +335,11 @@ def index():
             try:
                 df = america_scouted_app.load_cumulative_data(latest_code, gender)
                 if df is not None and not df.empty and 'Goals' in df.columns:
+                    # Restrict to Division I only if available
+                    if 'Division' in df.columns:
+                        df = df[df['Division'].astype(str).str.lower() == 'd1']
+                        if df.empty:
+                            return []
                     # Ensure numeric
                     df['Goals'] = pd.to_numeric(df['Goals'], errors='coerce').fillna(0)
                     # Secondary sort by Points if available, else Assists
@@ -325,6 +370,11 @@ def index():
             try:
                 df = america_scouted_app.load_cumulative_data(latest_code, gender)
                 if df is not None and not df.empty and 'Assists' in df.columns:
+                    # Restrict to Division I only if available
+                    if 'Division' in df.columns:
+                        df = df[df['Division'].astype(str).str.lower() == 'd1']
+                        if df.empty:
+                            return []
                     df['Assists'] = pd.to_numeric(df['Assists'], errors='coerce').fillna(0)
                     if 'Goals' in df.columns:
                         df['Goals'] = pd.to_numeric(df['Goals'], errors='coerce').fillna(0)
@@ -545,6 +595,7 @@ def matches():
     gender = request.args.get('gender', 'men')
     division = request.args.get('division', 'all')
     conference = request.args.get('conference', 'all')
+    day_param = request.args.get('day', '').strip()
     
     # Load match data
     df = america_scouted_app.load_match_data(gender)
@@ -555,7 +606,28 @@ def matches():
                              total_matches=0,
                              current_week_display=america_scouted_app.available_weeks[-1]['display'] if america_scouted_app.available_weeks else None)
     
-    # Get unique values for filter dropdowns
+    # Normalize and apply day filter if provided
+    selected_day_iso = ''
+    if day_param:
+        # Accept ISO (YYYY-MM-DD) or MM-DD-YYYY / MM/DD/YYYY
+        parsed = None
+        for fmt in ('%Y-%m-%d', '%m-%d-%Y', '%m/%d/%Y'):
+            try:
+                parsed = datetime.strptime(day_param, fmt)
+                break
+            except Exception:
+                continue
+        if parsed:
+            # CSV uses MM-DD-YYYY
+            day_key = parsed.strftime('%m-%d-%Y')
+            selected_day_iso = parsed.strftime('%Y-%m-%d')
+            if 'date' in df.columns:
+                df = df[df['date'] == day_key]
+        else:
+            # If unparsable, leave unfiltered
+            selected_day_iso = ''
+    
+    # Get unique values for filter dropdowns (post day filter)
     divisions = sorted(df['division'].unique()) if 'division' in df.columns else []
     conferences = []
     if 'home_conference' in df.columns and 'away_conference' in df.columns:
@@ -620,7 +692,8 @@ def matches():
                          divisions=divisions,
                          conferences=conferences,
                          total_matches=total_matches,
-                         current_week_display=current_week_display)
+                         current_week_display=current_week_display,
+                         selected_day_iso=selected_day_iso)
 
 @app.route('/team/<team_slug>')
 def team_page(team_slug):

@@ -44,6 +44,11 @@
                 </select>
             </div>
 
+            <div class="filter-group">
+                <label for="day">Date:</label>
+                <input type="date" id="day" name="day" class="filter-select" value="{{ selected_day_iso or '' }}" />
+            </div>
+
             <div class="filter-actions">
                 <button type="submit" class="btn btn-primary">Apply Filters</button>
                 <a href="{{ url_for('matches', gender=gender) }}" class="btn btn-danger">Reset</a>
